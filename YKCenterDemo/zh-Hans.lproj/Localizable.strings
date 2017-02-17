@@ -1,0 +1,81 @@
+/*
+ Localizable.strings
+ */
+
+"tip" = "提示";
+"OK" = "确定";
+"Cancel" = "取消";
+"NO" = "不了";
+
+
+"please enter verification code" = "请输入验证码";
+"Phone verification code sent successfully" = "手机验证码发送成功";
+"Phone verification code sent failure" = "手机验证码发送失败";
+"Registered successfully" = "注册成功";
+"Registration failed" = "注册失败";
+"Try again" = "秒后重试";
+"Verification code error" = "验证码输入有误";
+
+"Reset success" = "重置成功";
+"Reset failed" = "重置失败";
+
+"Go to Setting" = "去设置";
+
+"Scan QR code" = "扫码";
+"Add Device" = "添加设备";
+"Setting" = "设置";
+"Logout" = "注销";
+"Login" = "登录";
+"Logout?" = "确定要注销吗？";
+"Login Cancel" = "登录取消";
+
+"Bound devices" = "已绑定设备";
+"Discovery of new devices" = "发现新设备";
+"Offline devices" = "离线设备";
+"No device" = "没有设备";
+"Lan" = "局域网";
+"Remote" = "远程";
+"unbound" = "未绑定";
+"Unbinding" = "解除绑定";
+"Please switch to Wifi environment" = "请切换至Wi-Fi环境";
+"Add Device Failure" = "添加设备失败";
+"Unbinding fail" = "解除绑定失败";
+"Camera access restricted" = "相机权限受限";
+"Allow camera prepend" = "请在iPhone的\"设置->隐私->相机\"选项中,允许";
+"Allow camera append" = "访问您的相机";
+
+"About" = "关于";
+"Program Version" = "程序版本";
+"SDK Version" = "SDK版本";
+
+"No open Wi-Fi" = "没有打开无线网络";
+"Device is not connected to Wi-Fi, can not configure" = "设备没有连接到Wi-Fi，无法配置";
+"Searching for devices" = "正在搜索设备...";
+"Searched to device" = "已搜索到设备";
+"Trying to connect with the device" = "正在尝试与设备连接...";
+"Bad network, switch to manual connection" = "网络不佳，切换到手动连接";
+"Search for and connect the device" = "搜索并连接设备";
+"It is expected to need" = "预计还需";
+"seconds" = "秒";
+"Connect successfully, click to return App" = "连接成功，点击返回App";
+"Manually click \"Settings\" icon on your desktop, then select \"Wi-Fi\"" = "请手动点击桌面的 '设置' 图标，然后选择 '无线局域网'。";
+"Configuration success" = "配置成功";
+
+"Password is empty?" = "确定密码为空吗？";
+"Discard your configuration?" = "确定放弃配置吗？";
+
+"Put the QR Code into the frame" = "将二维码放入框内，即可自动扫描";
+"Scanning code, Binding Device" = "扫一扫，轻松绑定设备";
+
+
+"get device status" = "获取设备状态";
+"get device hardware info" = "获取硬件信息";
+"set device info" = "设置设备信息";
+"device hardware info" = "设备硬件信息";
+"Waiting for device ready" = "等待设备就绪";
+
+"set alias and remark" = "设置别名及备注";
+"input alias" = "请输入别名";
+"input remark" = "请输入备注";
+"set successful" = "设置成功";
+"set failed" = "设置失败";

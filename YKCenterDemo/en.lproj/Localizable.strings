@@ -1,0 +1,105 @@
+/* 
+  Localizable.strings
+  GOpenSourceAppKit
+
+  Created by Zono on 16/5/27.
+  Copyright © 2016年 Gizwits. All rights reserved.
+*/
+
+"tip" = "tip";
+"Username can not be empty" = "Username can not be empty";
+"The password must be at least six characters" = "The password must be at least six characters";
+"OK" = "OK";
+"Login failed" = "Login failed";
+"Login successful" = "Login successful";
+"the phone number is incorrect" = "the phone number is incorrect";
+"Cancel" = "Cancel";
+"NO" = "NO";
+"Get verification code" = "Get code";
+
+
+"please enter verification code" = "please enter verification code";
+"Phone verification code sent successfully" = "Phone verification code sent successfully";
+"Phone verification code sent failure" = "Phone verification code sent failure";
+"Registered successfully" = "Registered successfully";
+"Registration failed" = "Registration failed";
+"Try again" = "Try again";
+"Verification code error" = "Verification code error";
+
+"Reset success" = "Reset success";
+"Reset failed" = "Reset failed";
+
+"Go to Setting" = "Go to Setting";
+
+"Scan QR code" = "Scan QR code";
+"Add Device" = "Add Device";
+"Setting" = "Setting";
+"Logout" = "Logout";
+"Login" = "Login";
+"Logout?" = "Logout?";
+"Login Cancel" = "Login Cancel";
+
+"Bound devices" = "Bound devices";
+"Discovery of new devices" = "Discovery of new devices";
+"Offline devices" = "Offline devices";
+"No device" = "No device";
+"Lan" = "Lan";
+"Remote" = "Remote";
+"unbound" = "Unbound";
+"Unbinding" = "Unbinding";
+"Please switch to Wifi environment" = "Please switch to Wifi environment";
+"Add Device Failure" = "Add Device Failure";
+"Unbinding fail" = "Unbinding fail";
+
+"Camera access restricted" = "Camera access restricted";
+"Allow camera prepend" = "Please in your iPhone settings –> privacy-> camera, Allow";
+"Allow camera append" = "to access your camera";
+
+"About" = "About";
+"Program Version" = "Program Version";
+"SDK Version" = "SDK Version";
+
+"No open Wi-Fi" = "No open Wi-Fi";
+"Device is not connected to Wi-Fi, can not configure" = "Device is not connected to Wi-Fi, can not configure";
+"Searching for devices" = "Searching for devices ...";
+"Searched to device" = "Searched to device";
+"Trying to connect with the device" = "Trying to connect with the device ...";
+"Bad network, switch to manual connection" = "Bad network, switch to manual connection";
+"Search for and connect the device" = "Search for and connect the device";
+"It is expected to need" = "It is expected to need";
+"seconds" = "seconds";
+"Connect successfully, click to return App" = "Connect successfully, click to return App";
+"Manually click \"Settings\" icon on your desktop, then select \"Wi-Fi\"" = "Manually click \"Settings\" icon on your desktop, then select \"Wi-Fi\"";
+"Configuration success" = "Configuration success";
+
+"Password is empty?" = "Password is empty?";
+"Discard your configuration?" = "Discard your configuration?";
+
+"Put the QR Code into the frame" = "Put the QR Code into the frame";
+"Scanning code, Binding Device" = "Easy way to bind device";
+
+"Module type selection" = "Module type selection";
+"Select the type of module" = "Select the type of module";
+"ESP" = "ESP";
+"HF" = "HF";
+"MXCHIP" = "MXCHIP";
+"RTK" = "RTK";
+"WM" = "WM";
+"QCA" = "QCA";
+"TI" = "TI";
+"BL" = "BL";
+"Atmel" = "Atmel";
+"FSK" = "FSK";
+
+"get device status" = "get device status";
+"get device hardware info" = "get device hardware info";
+"set device info" = "set device info";
+"device hardware info" = "device hardware info";
+"Waiting for device ready" = "Waiting for device ready";
+
+"set alias and remark" = "set alias and remark";
+"input alias" = "input alias";
+"input remark" = "input remark";
+
+"set successful" = "set successful";
+"set failed" = "set failed";
