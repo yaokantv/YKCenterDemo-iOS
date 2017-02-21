@@ -11,7 +11,7 @@
 #import <YKCenterSDK/YKCenterSDK.h>
 
 // 请将 APP_ID 更改为自己注册到的
-static NSString *const YK_APP_ID = @"14649204849260";
+static NSString *const YK_APP_ID = @"";
 
 @interface AppDelegate ()
 

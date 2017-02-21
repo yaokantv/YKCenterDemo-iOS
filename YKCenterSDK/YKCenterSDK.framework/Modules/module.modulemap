@@ -1,5 +1,5 @@
 framework module YKCenterSDK {
-  umbrella header "YKCenterSDK-umbrella.h"
+  umbrella header "YKCenterSDK.h"
 
   export *
   module * { export * }

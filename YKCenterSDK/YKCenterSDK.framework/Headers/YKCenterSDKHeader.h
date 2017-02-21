@@ -13,7 +13,7 @@
 #import <YKCenterSDK/YKRemoteDeviceBrand.h>
 #import <YKCenterSDK/YKRemoteMatchDeviceKey.h>
 #import <YKCenterSDK/YKRemoteMatchDevice.h>
-#import <YKCenterSDK/YKRemoteDevice+CoreDataClass.h>
+#import <YKCenterSDK/YKRemoteDevice+YKDB.h>
 #import <YKCenterSDK/YKRemoteDeviceKey+CoreDataClass.h>
 
 #endif /* YKCenterSDKHeader_h */

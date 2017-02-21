@@ -1,9 +1,9 @@
 //
 //  YKRemoteDevice+CoreDataClass.h
-//  Pods
+//  YKCenterSDK
 //
-//  Created by Don on 2017/1/18.
-//
+//  Created by Don on 2017/2/21.
+//  Copyright © 2017年 Shenzhen Yaokan Technology Co., Ltd. All rights reserved.
 //  This file was automatically generated and should not be edited.
 //
 
@@ -21,4 +21,3 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 
 #import "YKRemoteDevice+CoreDataProperties.h"
-#import "YKRemoteDevice+YKDB.h"

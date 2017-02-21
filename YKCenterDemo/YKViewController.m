@@ -50,7 +50,7 @@
                                                 delegate:self
                                                 cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                                                 destructiveButtonTitle:nil
-                                                otherButtonTitles:NSLocalizedString(@"About", nil), NSLocalizedString(@"Setting", nil), nil];
+                                                otherButtonTitles:NSLocalizedString(@"Add Device", nil), NSLocalizedString(@"Setting", nil), nil];
     actionSheet.actionSheetStyle = UIBarStyleBlackTranslucent;
     [actionSheet showInView:self.view];
 }
@@ -175,7 +175,7 @@
     
     if (dev.netStatus == GizDeviceOnline || dev.netStatus == GizDeviceControlled) {
         cell.imageView.backgroundColor = [UIColor brownColor];
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.lan.text = dev.isLAN?NSLocalizedString(@"Lan", nil):NSLocalizedString(@"Remote", nil);
         if (!dev.isBind) {
             cell.lan.text = NSLocalizedString(@"unbound", nil);
@@ -189,41 +189,11 @@
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-//    NSMutableArray *devArr = [self.deviceListArray objectAtIndex:indexPath.section];
-//    if ([devArr count] > 0) {
-//        GizWifiDevice *dev = [devArr objectAtIndex:indexPath.row];
-//        
-//        if (dev.isSubscribed) {
-////            [SendCommandHelper startStudyWithDeivce:dev];
-//            //            [SendCommandHelper deivce:dev sendCommand:@"1,38000,49,16,49,16,17,48,49,16,49,16,17,48,17,48,17,48,17,48,17,48,17,48,17,300,49,16,49,16,17,48,49,16,49,16,17,48,17,48,17,48,17,48,17,48,17,48,17,300,49,16,49,16,17,48,49,16,49,16,17,48,17,48,17,48,17,48,17,48,17,48,17,300,49,16,49,16,17,48,49,16,49,16,17,48,17,48,17,48,17,48,17,48,17,48,17,300"];
-//        }
-//    }
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    //    NSArray *devArray = [self.deviceListArray objectAtIndex:indexPath.section];
-    //    if ([devArray count] > 0) {
-    ////        [self.delegate deviceListController:self device:[devArray objectAtIndex:indexPath.row]];
-    //        [[GizDeviceControllerInstance sharedInstance] controller:self device:[devArray objectAtIndex:indexPath.row]];
-    //    }
-    
-//    NSMutableArray *devArr = [self.deviceListArray objectAtIndex:indexPath.section];
-//    if ([devArr count] > 0) {
-//        //        if ([[GizCommon sharedInstance] currentLoginStatus] == GizLoginNone) {
-//        //            [self showAlert:@"请登录后再进行绑定操作"];
-//        //            return;
-//        //        }
-//        GizWifiDevice *dev = [devArr objectAtIndex:indexPath.row];
-//        
-//        if (dev.netStatus == GizDeviceOnline || dev.netStatus == GizDeviceControlled) {
-//            [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-//            dev.delegate = self;
-//            [dev setSubscribe:YES];
-//        }
-//    }
-    
     
     GizWifiDevice *dev = self.deviceListArray[indexPath.row];
     [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
@@ -239,18 +209,6 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //        [dataArray removeObjectAtIndex:indexPath.row];
-        // Delete the row from the data source.
-        //        [self.deviceListTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-//        NSString *uid = [GosCommon sharedInstance].uid;
-//        NSString *token = [GosCommon sharedInstance].token;
-//        GizWifiDevice *dev = [self getDeviceFromTable:indexPath];
-//        [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-//        [[GizWifiSDK sharedInstance] unbindDevice:uid token:token did:dev.did];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
 
