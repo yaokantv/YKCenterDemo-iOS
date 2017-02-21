@@ -57,7 +57,8 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
 
  @param completion 回调返回已绑定遥控中心列表
  */
-+ (void)fetchBoundYKC:(void (^__nullable)(NSArray<GizWifiDevice *> *devices, NSError *error))completion;
++ (void)fetchBoundYKC:(void (^__nullable)(NSArray<GizWifiDevice *> * _Nullable devices,
+                                          NSError *error))completion;
 
 
 /**
