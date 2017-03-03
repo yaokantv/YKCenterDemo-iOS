@@ -74,7 +74,11 @@
                                                             forIndexPath:indexPath];
     
     YKRemoteDevice *device = self.remotes[indexPath.row];
-    cell.textLabel.text = device.name;
+    NSString *displayName = device.showName;
+    if (displayName.length == 0) {
+        displayName = device.name;
+    }
+    cell.textLabel.text = displayName;
     cell.detailTextLabel.text = device.modelName;
     
     return cell;
@@ -102,7 +106,40 @@
     }
 }
 
-
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    YKRemoteDevice *device = self.remotes[indexPath.row];
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"请输入名称"
+                                                                message:@""
+                                                         preferredStyle:(UIAlertControllerStyleAlert)];
+    [ac addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        NSString *displayName = device.showName;
+        if (displayName.length == 0) {
+            displayName = device.name;
+        }
+        
+        textField.placeholder = displayName;
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"Cancel action");
+                                   }];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   UITextField *showNameField = ac.textFields.firstObject;
+                                   device.showName = showNameField.text;
+                                   [device save];
+                               }];
+    [ac addAction:cancelAction];
+    [ac addAction:okAction];
+    [self presentViewController:ac animated:YES completion:nil];
+}
 
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
