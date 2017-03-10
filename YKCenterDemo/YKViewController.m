@@ -38,6 +38,8 @@
                 [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:info delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
             }
         }];
+    } else {
+        [self getBoundDevice];
     }
 }
 

@@ -217,4 +217,13 @@
     [self userLogin:NO];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.textCell.textInput) {
+        [self.passwordCell.textPassword becomeFirstResponder];
+    } else {
+        [self.passwordCell.textPassword resignFirstResponder];
+        [self setViewY:self.top];
+    }
+    return NO;
+}
 @end
