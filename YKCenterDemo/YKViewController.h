@@ -10,6 +10,7 @@
 
 @interface YKViewController : UITableViewController
 
+@property (nonatomic, strong) UIViewController *parent;
 
 @end
 

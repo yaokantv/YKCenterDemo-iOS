@@ -25,13 +25,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self getBoundDevice];
+    if ([YKCenterCommon sharedInstance].loginStatus == YKLoginNone ||
+        [YKCenterCommon sharedInstance].loginStatus == YKLoginAnonymousCancel) {
+        [YKCenterCommon sharedInstance].loginStatus = YKLoginAnonymousProcess;
+        [[YKCenterSDK sharedInstance] anonymousLogin:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token) {
+            if (result.code == 0) {
+                [YKCenterCommon sharedInstance].loginStatus = YKLoginAnonymous;
+                [self getBoundDevice];
+            }
+            else {
+                NSString *info = [NSString stringWithFormat:@"%@\n%@ - %@", NSLocalizedString(@"Login failed", nil), @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];
+                [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:info delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
+            }
+        }];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self getBoundDevice];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,12 +56,31 @@
 }
 
 - (IBAction)actionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                                initWithTitle:nil
-                                                delegate:self
-                                                cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                                destructiveButtonTitle:nil
-                                                otherButtonTitles:NSLocalizedString(@"Add Device", nil), NSLocalizedString(@"Setting", nil), nil];
+    UIActionSheet *actionSheet = nil;
+    NSString *appVersion = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Program Version", nil), [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    NSString *sdkVersion = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SDK Version", nil), [YKCenterSDK sdkVersion]];
+    
+    if ([[YKCenterCommon sharedInstance] loginStatus] == YKLoginUser) {
+        actionSheet = [[UIActionSheet alloc]
+                                      initWithTitle:[appVersion stringByAppendingFormat:@"-%@", sdkVersion]
+                                      delegate:self
+                                      cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                      destructiveButtonTitle:nil
+                                      otherButtonTitles:NSLocalizedString(@"Logout", nil),
+                                      NSLocalizedString(@"Add Device", nil),
+                                      NSLocalizedString(@"Setting", nil), nil];
+    }
+    else {
+        actionSheet = [[UIActionSheet alloc]
+                       initWithTitle:[appVersion stringByAppendingFormat:@"-%@", sdkVersion]
+                       delegate:self
+                       cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                       destructiveButtonTitle:nil
+                       otherButtonTitles:NSLocalizedString(@"Login", nil),
+                       NSLocalizedString(@"Add Device", nil),
+                       NSLocalizedString(@"Setting", nil), nil];
+    }
+    
     actionSheet.actionSheetStyle = UIBarStyleBlackTranslucent;
     [actionSheet showInView:self.view];
 }
@@ -77,11 +107,29 @@
     //    if (![GizCommon sharedInstance].isLogin) {
     //        offset = -1;
     //    }
-   if (buttonIndex == 0) {
+    if (buttonIndex == offset) {
+        [self toLogin];
+    }
+    else if (buttonIndex == offset+1) {
         [self toAirLink:nil];
-   } else if(buttonIndex == offset+1) {
+    } else if(buttonIndex == offset+1) {
         [self showAbout];
-   }
+    }
+}
+
+- (void)toLogin {
+    if ([[YKCenterCommon sharedInstance] loginStatus] == YKLoginUser) {
+        [[YKCenterCommon sharedInstance] removeUserDefaults];
+        [YKCenterCommon sharedInstance].loginStatus = YKLoginNone;
+        [self.navigationController popToViewController:self.parent animated:YES];
+    }
+    else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.deviceListArray  = @[];
+            [YKCenterCommon sharedInstance].loginStatus = YKLoginAnonymousCancel;
+            [self.navigationController popToViewController:self.parent animated:YES];
+        });
+    }
 }
 
 - (IBAction)toAirLink:(id)sender {

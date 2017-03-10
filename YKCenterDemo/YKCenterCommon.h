@@ -9,6 +9,36 @@
 #import <UIKit/UIKit.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
+/**
+ 登录类型类型
+ */
+typedef NS_ENUM(NSInteger, YKLoginStatus) {
+    /**
+     未登录
+     */
+    YKLoginNone = 0,
+    
+    /**
+     用户登录
+     */
+    YKLoginUser = 1,
+    
+    /**
+     匿名登录
+     */
+    YKLoginAnonymous = 2,
+    
+    /**
+     尝试匿名登录中
+     */
+    YKLoginAnonymousProcess = 3,
+    
+    /**
+     匿名登录中断
+     */
+    YKLoginAnonymousCancel = 4,
+};
+
 static inline NSString *YKGetCurrentSSID() {
     NSArray *interfaces = (__bridge_transfer NSArray *)CNCopySupportedInterfaces();
     for (NSString *interface in interfaces) {
@@ -36,6 +66,9 @@ id YKGetControllerWithClass(Class class, UITableView *tableView, NSString *reuse
 
 @property (nonatomic, copy) NSString *ssid;
 @property (nonatomic, copy) NSString *currentYKCId;
+@property (nonatomic, assign) YKLoginStatus loginStatus;
+@property (nonatomic, copy) NSString *uid;
+@property (nonatomic, copy) NSString *token;
 
 + (instancetype)sharedInstance;
 
@@ -46,5 +79,8 @@ id YKGetControllerWithClass(Class class, UITableView *tableView, NSString *reuse
  */
 - (void)saveSSID:(NSString *)ssid key:(NSString *)key;
 - (NSString *)getPasswrodFromSSID:(NSString *)ssid;
+- (void)saveUserDefaults:(NSString *)username password:(NSString *)password uid:(NSString *)uid token:(NSString *)token;
+- (void)removeUserDefaults;
++ (BOOL)isMobileNumber:(NSString *)mobileNum;
 
 @end

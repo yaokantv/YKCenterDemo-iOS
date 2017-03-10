@@ -1,5 +1,5 @@
 # coding: utf-8
-source 'https://github.com/CocoaPods/Old-Specs'
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://git.oschina.net/dantang/PodSpecs.git'
 
 # Uncomment this line to define a global platform for your project
@@ -9,7 +9,7 @@ use_frameworks!
 
 target 'YKCenterDemo' do
 
-pod 'YKCenterSDK', :path => './'
+pod 'YKCenterSDK', :path => 'YKCenterSDK/'
 pod 'MBProgressHUD', '~> 1.0.0'
 
 end

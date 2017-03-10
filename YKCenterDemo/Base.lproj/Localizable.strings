@@ -15,6 +15,7 @@
 "Registration failed" = "Registration failed";
 "Try again" = "Try again";
 "Verification code error" = "Verification code error";
+"Username can not be empty" = "Username can not be empty";
 
 "Reset success" = "Reset success";
 "Reset failed" = "Reset failed";
@@ -28,6 +29,7 @@
 "Login" = "Login";
 "Logout?" = "Logout?";
 "Login Cancel" = "Login Cancel";
+"the phone number is incorrect" = "the phone number is incorrect";
 
 "Bound devices" = "Bound devices";
 "Discovery of new devices" = "Discovery of new devices";
@@ -63,6 +65,7 @@
 "Configuration success" = "Configuration success";
 
 "Password is empty?" = "Password is empty?";
+"The password must be at least six characters" = "The password must be at least six characters";
 "Discard your configuration?" = "Discard your configuration?";
 
 "Put the QR Code into the frame" = "Put the QR Code into the frame";

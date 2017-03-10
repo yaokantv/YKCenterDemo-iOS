@@ -15,6 +15,8 @@
 "Registration failed" = "注册失败";
 "Try again" = "秒后重试";
 "Verification code error" = "验证码输入有误";
+"the phone number is incorrect" = "手机号码不正确";
+"Username can not be empty" = "用户名不能为空";
 
 "Reset success" = "重置成功";
 "Reset failed" = "重置失败";
@@ -62,6 +64,7 @@
 "Configuration success" = "配置成功";
 
 "Password is empty?" = "确定密码为空吗？";
+"The password must be at least six characters" = "密码不能小于6位";
 "Discard your configuration?" = "确定放弃配置吗？";
 
 "Put the QR Code into the frame" = "将二维码放入框内，即可自动扫描";

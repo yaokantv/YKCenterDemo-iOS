@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GizWifiDevice.h"
+//#import "GizWifiDevice.h"
+#import <GizWifiSDK/GizWifiDevice.h>
 #import <YKCenterSDK/YKCenterSDKHeader.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -119,6 +120,45 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
 + (void)sendRemoteWithYKCId:(NSString *)ykcId
                       datas:(NSArray *)datas
         completion:(void (^__nullable)(id result, NSError *error))completion;
+
+#pragma mark - 用户管理
+/**
+ 匿名登陆
+ 
+ @param completion 登陆结果回调
+ */
+- (void)anonymousLogin:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
+
+
+/**
+ 使用用户名密码登陆，需使用注册成功的用户名、密码进行登录
+ 
+ @param username 用户名，可以是邮箱用户名或普通用户名
+ @param password 密码
+ @param completion 登陆结果回调
+ */
+- (void)login:(NSString *)username
+     password:(NSString *)password
+      handler:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
+
+/**
+ 使用用户名密码注册
+ 
+ @param username 用户名，普通用户名
+ @param password 密码
+ @param completion 登陆结果回调
+ */
+- (void)reg:(NSString *)username
+   password:(NSString *)password
+    handler:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
+
+
+/**
+ 获取 SDK 版本号
+
+ @return SDK 版本号
+ */
++ (NSString *)sdkVersion;
 
 @end
 
