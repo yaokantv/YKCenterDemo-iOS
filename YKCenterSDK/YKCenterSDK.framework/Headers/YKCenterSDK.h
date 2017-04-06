@@ -54,6 +54,15 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
 
 
 /**
+ 解除遥控中心绑定，完成后使用 block 回调返回结果。
+
+ @param device 遥控中心对象
+ @param completion 成功，error 为空
+ */
++ (void)unbindYKC:(GizWifiDevice *)device completion:(void (^__nullable)(NSError *error))completion;
+
+
+/**
  获取已绑定遥控中心 YKC
 
  @param completion 回调返回已绑定遥控中心列表

@@ -259,6 +259,12 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        GizWifiDevice *dev = self.deviceListArray[indexPath.row];
+        __weak __typeof(self)weakSelf = self;
+        [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        [YKCenterSDK unbindYKC:dev completion:^(NSError * _Nonnull error) {
+            [weakSelf refreshBtnPressed:nil];
+        }];
     }
 }
 
