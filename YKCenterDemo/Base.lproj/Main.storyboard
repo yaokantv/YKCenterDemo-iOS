@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Omb-B8-3i5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--设备列表-->
+        <scene sceneID="VEX-fp-hbY">
+            <objects>
+                <tableViewController storyboardIdentifier="YKViewController" id="9SZ-vR-kiC" customClass="YKViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iej-ei-OGS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="9SZ-vR-kiC" id="hOb-N7-s1O"/>
+                            <outlet property="delegate" destination="9SZ-vR-kiC" id="5K5-4I-GsX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设备列表" id="q5f-O6-hYQ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Na6-kl-T46">
+                            <connections>
+                                <action selector="refreshBtnPressed:" destination="9SZ-vR-kiC" id="AUo-vN-Dp2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="CXo-G3-HIE">
+                            <connections>
+                                <action selector="actionSheet:" destination="9SZ-vR-kiC" id="Ktm-l7-Fle"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="oKp-QR-Ss1" kind="presentation" identifier="toAirLink" id="h8E-7M-hmW"/>
+                        <segue destination="H5w-0d-FHe" kind="show" identifier="YKRemoteList" id="Leh-Wt-rNX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2R-wj-QQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647.2" y="155.17241379310346"/>
+        </scene>
+        <!--YKAirLink-->
+        <scene sceneID="azh-ZR-3MT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Config" referencedIdentifier="YKAirLink" id="oKp-QR-Ss1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLO-tX-b9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="574"/>
+        </scene>
+        <!--遥控器列表-->
+        <scene sceneID="H4U-Zu-4n9">
+            <objects>
+                <tableViewController id="H5w-0d-FHe" customClass="YKRemoteTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3XN-TV-zNw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="YKRemotesCellIdentifier" textLabel="toZ-bm-M4O" style="IBUITableViewCellStyleDefault" id="v2l-s4-VPb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v2l-s4-VPb" id="T3Y-S0-OZz">
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="toZ-bm-M4O">
+                                            <rect key="frame" x="15" y="0.0" width="293" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="tmI-u5-KSi" kind="show" id="T7E-nq-5Tb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="H5w-0d-FHe" id="Beb-W4-2pr"/>
+                            <outlet property="delegate" destination="H5w-0d-FHe" id="bE7-hF-ozc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="遥控器列表" id="7WV-6s-2aT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bI8-yO-UH5">
+                            <connections>
+                                <segue destination="Aox-3M-A5D" kind="presentation" id="8bW-UH-gFu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgQ-EU-l9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="155"/>
+        </scene>
+        <!--Remote View Controller-->
+        <scene sceneID="8uZ-7i-AIb">
+            <objects>
+                <tableViewController id="tmI-u5-KSi" customClass="YKRemoteViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DXW-Xe-wnM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YKRemoteCellIdentifier" textLabel="mZo-VY-xEl" detailTextLabel="o2L-NU-fqr" style="IBUITableViewCellStyleSubtitle" id="vCs-pT-yjt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCs-pT-yjt" id="mCi-2c-Edw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mZo-VY-xEl">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o2L-NU-fqr">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tmI-u5-KSi" id="q7Y-ge-zcl"/>
+                            <outlet property="delegate" destination="tmI-u5-KSi" id="u4l-eq-s0X"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nA-bY-wt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3420" y="155"/>
+        </scene>
+        <!--YKAddRemote-->
+        <scene sceneID="vOm-de-dqI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Remote" referencedIdentifier="YKAddRemote" id="Aox-3M-A5D" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-aG-CZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2582" y="574"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jb2-oZ-2o1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Omb-B8-3i5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qNj-nP-flm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9SZ-vR-kiC" kind="relationship" relationship="rootViewController" id="6CC-Yf-iJ0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aO-bz-M4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="155.17241379310346"/>
+        </scene>
+    </scenes>
+</document>

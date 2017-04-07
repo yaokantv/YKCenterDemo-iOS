@@ -1,0 +1,6 @@
+framework module YKCenterSDK {
+  umbrella header "YKCenterSDK.h"
+
+  export *
+  module * { export * }
+}
