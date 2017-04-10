@@ -122,15 +122,12 @@
         self.textTips.text = NSLocalizedString(@"Trying to connect with the device", nil);
         
         if (elapsed == 59) {
-            __block UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Bad network, switch to manual connection", nil) delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+            __block UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                        message:@"未匹配到设备，请重试"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"好的"
+                                                              otherButtonTitles:nil];
             [alertView show];
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                sleep(1);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self cancel];
-                });
-            });
         }
     } else {
         self.textTips.text = NSLocalizedString(@"Search for and connect the device", nil);
