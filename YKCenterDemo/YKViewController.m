@@ -8,7 +8,7 @@
 
 #import "YKViewController.h"
 #import <YKCenterSDK/YKCenterSDK.h>
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "YKDeviceListCell.h"
 
 #import "YKCenterCommon.h"

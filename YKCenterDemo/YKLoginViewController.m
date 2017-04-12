@@ -11,7 +11,7 @@
 #import "YKTextCell.h"
 #import "YKPasswordCell.h"
 #import "YKViewController.h"
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 #import <YKCenterSDK/YKCenterSDK.h>
 
 @interface YKLoginViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
