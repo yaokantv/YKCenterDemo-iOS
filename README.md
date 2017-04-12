@@ -13,16 +13,15 @@
 ## 手动集成
 
 1. 集成依赖库 YKCenterSDK
-   1. 打开 `YKCenterDemo.xcodeproj`, 然后拖拽 `YKCenterSDK` 目录下的 `YKCenterSDK.framework` 进来 (使用 "Product Navigator view")。
-   2. Choose options for adding these files 窗口中，Add to targets 选中 `YKCenterDemo`，点击 Finish。
+   1. 打开 `YKCenterDemo.xcodeproj`, 选择 Target `YKCenterDemo` 打开 General 标签项
+   2. 在 Embedded Binaries 中点击“+”号，点击 Add Other.. 打开项目根目录，选择在 YKCenterSDK 目录下的 `YKCenterSDK.framework`。
 
 2. 集成依赖库 [GizWifiSDK](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.1.zip)
-   1. 解压后，将 `GizWifiSDK.framework` 拖拽进打开的 `YKCenterDemo.xcodeproj` 中 (使用 "Product Navigator view")。
-   2. Choose options for adding these files 窗口中，Add to targets 选中 `YKCenterDemo`，点击 Finish。
+   解压后，按步骤 1 的方法将 `GizWifiSDK.framework` 添加到 Embedded Binaries.
 
 3. 集成依赖库 [MBProgressHUD](https://github.com/matej/MBProgressHUD/archive/master.zip)
    1. 使用 Xcode 打开 `YKCenterDemo.xcodeproj`, 然后拖拽 `MBProgressHUD.xcodeproj` 进来 (使用 "Product Navigator view")。
-   2. 选择 target `YKCenterDemo` 然后打开 Build phases. 在 Link Binary With Libraries 点击加号 +，从列表中选择 `MBProgressHUD.framework`。
+   2. 选择 target `YKCenterDemo` 然后打开 General， 在 Embedded Binaries 点击加号 +，从列表中选择 `MBProgressHUD.framework`。
    3. 将 MBProgressHUD 添加到 `Target Dependencies` 中。
    4. 然后可以在项目中通过 #import `<MBProgressHUD/MBProgressHUD.h>` 来使用。
 
