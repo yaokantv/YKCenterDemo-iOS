@@ -1,7 +1,7 @@
 # YKCenterDemo-iOS
 遥控中心 SDK demo for iOS
 
-![运行效果](/Screenshot/screenshot_1.PNG)
+<img src="/Screenshot/screenshot_1.PNG" width="320">
 
 ## 使用 Pod
 安装最新版本 Pod：
@@ -27,4 +27,4 @@
    4. 然后可以在项目中通过 #import `<MBProgressHUD/MBProgressHUD.h>` 来使用。
 
 4. 配置完成：
-![项目配置](/screenshot/project_settings.png)
+![项目配置](/Screenshot/project_settings.png)
