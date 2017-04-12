@@ -12,7 +12,7 @@
 
 ## 手动集成
 
-1. 集成依赖库 [YKCenterSDK]
+1. 集成依赖库 YKCenterSDK
    1. 打开 `YKCenterDemo.xcodeproj`, 然后拖拽 `YKCenterSDK` 目录下的 `YKCenterSDK.framework` 进来 (使用 "Product Navigator view")。
    2. Choose options for adding these files 窗口中，Add to targets 选中 `YKCenterDemo`，点击 Finish。
 
