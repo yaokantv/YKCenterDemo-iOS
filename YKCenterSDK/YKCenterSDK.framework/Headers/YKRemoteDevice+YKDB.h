@@ -15,13 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)save;
 - (BOOL)remove;
+- (BOOL)removeMemoryModel;
 
 + (YKRemoteDevice *)modelsWithLocalDeviceId:(NSString *)localDeviceId;
 + (NSArray <YKRemoteDevice *> *)modelsWithDeviceId:(NSString *)enterId;
 
 + (YKRemoteDevice *)saveRemoteDeviceWithDictionary:(NSDictionary *)dict;
++ (YKRemoteDevice *)remoteDeviceWithDictionary:(NSDictionary *)dict isMemoryModel:(BOOL)memory;
 
 + (YKRemoteDevice *)newModel;
++ (YKRemoteDevice *)newMemoryModel;
 
 @end
 

@@ -123,9 +123,8 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
                     remoteDeviceBrandId:(NSUInteger)brandId
                              completion:(void (^__nullable)(NSArray<YKRemoteMatchDevice*> *mathes, NSError *error))completion;
 
-
 /**
- 获取遥控器设备
+ 获取遥控器设备，此方法会保存遥控器
 
  @param ykcId           遥控中心 id
  @param remoteDeviceId  遥控器设备 id
@@ -135,6 +134,29 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
                     remoteDeviceId:(NSString *)remoteDeviceId
                         completion:(void (^__nullable)(YKRemoteDevice *remote, NSError *error))completion;
 
+/**
+ 获取遥控器
+ 
+ @param ykcId           遥控中心 id
+ @param remoteDeviceId  遥控器设备 id
+ @param match           是否匹配模式，是则不保存，保存需调用 YKRemoteDevice 的 + (void)fetchRemoteDeivceWithYKCId:remoteDeviceId:completion:，删除掉用 YKRemoteDevice 的 + (BOOL)removeMemoryModel
+ @param completion      回调返回遥控器
+ */
++ (void)fetchRemoteDeivceWithYKCId:(NSString *)ykcId
+                    remoteDeviceId:(NSString *)remoteDeviceId
+                        matchModel:(BOOL)match
+                        completion:(void (^__nullable)(YKRemoteDevice *remote, NSError *error))completion;
+
+/**
+ 获取匹配遥控器
+ 
+ @param ykcId           遥控中心 id
+ @param remoteDeviceId  遥控器设备 id
+ @param completion      回调返回匹配遥控器
+ */
++ (void)matchRemoteDeivceWithYKCId:(NSString *)ykcId
+                    remoteDeviceId:(NSString *)remoteDeviceId
+                        completion:(void (^__nullable)(YKRemoteMatchDevice *remote, NSError *error))completion;
 
 /**
  发码给遥控中心

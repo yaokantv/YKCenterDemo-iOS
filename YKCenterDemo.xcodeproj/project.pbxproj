@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2292110B7B34D5EF0DCF0F47 /* Pods_YKCenterDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */; };
 		3F5A21AD1E27666F006BF365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21AC1E27666F006BF365 /* main.m */; };
 		3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21AF1E27666F006BF365 /* AppDelegate.m */; };
 		3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21B21E27666F006BF365 /* YKViewController.m */; };
@@ -18,6 +19,7 @@
 		3F5A21EE1E276CE7006BF365 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21F01E276CE7006BF365 /* Localizable.strings */; };
 		3F5A21F61E277483006BF365 /* YKDeviceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21F41E277483006BF365 /* YKDeviceListCell.m */; };
 		3F5A21F71E277483006BF365 /* YKDeviceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21F51E277483006BF365 /* YKDeviceListCell.xib */; };
+		3F660B341EBAD2B1005A9B9C /* YKAllMatchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F660B331EBAD2B1005A9B9C /* YKAllMatchTableViewController.m */; };
 		3FA2D7E61E2C5CFA00551F8F /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */; };
 		3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */; };
 		3FA2D7F71E2C5FAA00551F8F /* YKSSIDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7F51E2C5FAA00551F8F /* YKSSIDCell.m */; };
@@ -46,6 +48,8 @@
 		3FE818CA1E723994002FD52F /* YKTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE818C91E723994002FD52F /* YKTextCell.m */; };
 		3FE818CC1E723A16002FD52F /* YKTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE818CB1E723A16002FD52F /* YKTextCell.xib */; };
 		3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE818CE1E7249CF002FD52F /* YKRegisterViewController.m */; };
+		8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */; };
+		F81597718802442D66D96326 /* Pods_YKCenterDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5A21A81E27666F006BF365 /* YKCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5A21AC1E27666F006BF365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F5A21AE1E27666F006BF365 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,6 +105,8 @@
 		3F5A21F31E277483006BF365 /* YKDeviceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDeviceListCell.h; sourceTree = "<group>"; };
 		3F5A21F41E277483006BF365 /* YKDeviceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDeviceListCell.m; sourceTree = "<group>"; };
 		3F5A21F51E277483006BF365 /* YKDeviceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKDeviceListCell.xib; sourceTree = "<group>"; };
+		3F660B321EBAD2B1005A9B9C /* YKAllMatchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAllMatchTableViewController.h; sourceTree = "<group>"; };
+		3F660B331EBAD2B1005A9B9C /* YKAllMatchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKAllMatchTableViewController.m; sourceTree = "<group>"; };
 		3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		3FA2D7E71E2C5EE200551F8F /* YKConfigStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKConfigStartController.h; sourceTree = "<group>"; };
 		3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKConfigStartController.m; sourceTree = "<group>"; };
@@ -150,9 +157,11 @@
 		44A2DD7874924338FB5FC93E /* Pods-YKCenterDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoTests/Pods-YKCenterDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		474C1B9CFFE633D1CB331BF7 /* Pods-YKCenterDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoUITests/Pods-YKCenterDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		750A4D20AAEFF164616399CD /* Pods-YKCenterDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoTests/Pods-YKCenterDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		953D650F0BE54DF95127B38B /* Pods-YKCenterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C27E20758E35C3EA31589872 /* Pods-YKCenterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CDC7C44A38E90531FA3BFC2B /* Pods-YKCenterDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoUITests/Pods-YKCenterDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81597718802442D66D96326 /* Pods_YKCenterDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2292110B7B34D5EF0DCF0F47 /* Pods_YKCenterDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +352,8 @@
 				3FA2D82F1E2E184100551F8F /* YKMatchDeviceTableViewController.m */,
 				3FA2D8311E2E186400551F8F /* YKMatchKeyTableViewController.h */,
 				3FA2D8321E2E186400551F8F /* YKMatchKeyTableViewController.m */,
+				3F660B321EBAD2B1005A9B9C /* YKAllMatchTableViewController.h */,
+				3F660B331EBAD2B1005A9B9C /* YKAllMatchTableViewController.m */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -375,6 +389,9 @@
 		ACF749D161E65BEC47C3B512 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */,
+				869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */,
+				14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -386,10 +403,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F5A21D51E27666F006BF365 /* Build configuration list for PBXNativeTarget "YKCenterDemo" */;
 			buildPhases = (
+				C2AAF2853A8FE4901582AEC4 /* [CP] Check Pods Manifest.lock */,
 				3F5A21A41E27666F006BF365 /* Sources */,
 				3F5A21A51E27666F006BF365 /* Frameworks */,
 				3F5A21A61E27666F006BF365 /* Resources */,
 				3F5A22021E27761F006BF365 /* Embed Frameworks */,
+				A6B6DBB5827EBA40C9BA027B /* [CP] Embed Pods Frameworks */,
+				09C292576C2204E9C602E00B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -529,6 +549,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09C292576C2204E9C602E00B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		52804815537885DCA589D7C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,7 +576,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9F30FF0225887C43FDC9A8E0 /* [CP] Copy Pods Resources */ = {
@@ -571,7 +606,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6B6DBB5827EBA40C9BA027B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B658F39BD587533BB94CA982 /* [CP] Copy Pods Resources */ = {
@@ -587,6 +637,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterDemoTests/Pods-YKCenterDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2AAF2853A8FE4901582AEC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E3414B486F6E8D90BABAAA4B /* [CP] Embed Pods Frameworks */ = {
@@ -637,6 +702,7 @@
 				3FA2D81F1E2DF96D00551F8F /* YKDeviceTypeViewController.m in Sources */,
 				3FA2D8001E2C602800551F8F /* YKCenterCommon.m in Sources */,
 				3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */,
+				3F660B341EBAD2B1005A9B9C /* YKAllMatchTableViewController.m in Sources */,
 				3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */,
 				3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */,
 				3FE818CA1E723994002FD52F /* YKTextCell.m in Sources */,
@@ -808,16 +874,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HY8S4564M8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YKCenterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "efe4a673-3974-4610-a1fc-46ec08aaa48c";
+				PROVISIONING_PROFILE_SPECIFIER = Yaokan_Developer;
 			};
 			name = Debug;
 		};
@@ -827,7 +893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
