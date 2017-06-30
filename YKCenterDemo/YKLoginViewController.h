@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface YKLoginViewController : UIViewController
-
+- (void)userLogin:(BOOL)automatic;
 @end

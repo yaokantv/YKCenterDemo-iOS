@@ -84,3 +84,9 @@
 
 "set successful" = "set successful";
 "set failed" = "set failed";
+
+"自动" = "Auto";
+"制冷" = "Cool";
+"抽湿" = "Dry";
+"送风" = "Fan";
+"制热" = "Heat";

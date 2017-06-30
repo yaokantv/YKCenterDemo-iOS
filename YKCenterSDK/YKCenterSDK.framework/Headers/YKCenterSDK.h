@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "GizWifiDevice.h"
-#import <GizWifiSDK/GizWifiDevice.h>
 #import <YKCenterSDK/YKCenterSDKHeader.h>
+
+@class GizWifiDevice;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,6 +40,14 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
  */
 + (void)registApp:(NSString *)appId;
 
+/**
+ 注册并初始化遥控中心 SDK。
+ 
+ 注意：此接口仅初始化遥控中心SDK。
+ 
+ @param appId 应用 ID 是在遥看开发者中心注册。
+ */
++ (void)registYKApp:(NSString *)appId;
 
 /**
  绑定遥控中心 YKC，完成后使用 block 回调返回结果。
@@ -194,7 +202,7 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
  
  @param username 用户名，普通用户名
  @param password 密码
- @param completion 登陆结果回调
+ @param completion 注册结果回调
  */
 - (void)reg:(NSString *)username
    password:(NSString *)password

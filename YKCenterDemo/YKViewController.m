@@ -7,6 +7,7 @@
 //
 
 #import "YKViewController.h"
+#import <GizWifiSDK/GizWifiSDK.h>
 #import <YKCenterSDK/YKCenterSDK.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "YKDeviceListCell.h"

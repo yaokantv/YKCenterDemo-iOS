@@ -9,6 +9,7 @@
 #import "YKRemoteTableViewController.h"
 #import <YKCenterSDK/YKCenterSDK.h>
 #import "YKRemoteViewController.h"
+#import "YKRemoteACViewController.h"
 
 @interface YKRemoteTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -76,7 +77,7 @@
     YKRemoteDevice *device = self.remotes[indexPath.row];
     NSString *displayName = device.showName;
     if (displayName.length == 0) {
-        displayName = device.name;
+        displayName = [device.name stringByAppendingFormat:@"-%@", device.modelName];
     }
     cell.textLabel.text = displayName;
     cell.detailTextLabel.text = device.modelName;
@@ -144,16 +145,41 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[YKRemoteViewController class]]) {
-        YKRemoteViewController *vc = segue.destinationViewController;
-        
+    if (segue.identifier) {
         UITableViewCell *cell = sender;
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         YKRemoteDevice *remote = self.remotes[indexPath.row];
         
-        vc.remote = remote;
+        
+        if ([segue.destinationViewController isKindOfClass:[YKRemoteViewController class]]) {
+            YKRemoteViewController *vc = segue.destinationViewController;
+            
+            vc.remote = remote;
+        } else {
+            YKRemoteACViewController *vc = segue.destinationViewController;
+            vc.remote = remote;
+        }
     }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    if (identifier) {
+        UITableViewCell *cell = sender;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        YKRemoteDevice *remote = self.remotes[indexPath.row];
+        
+        if (remote.typeId == kDeviceACType) {
+            if ([identifier isEqualToString:@"normal"]) {
+                [self performSegueWithIdentifier:@"ac" sender:sender];
+                return NO;
+            }
+        }
+    }
+    
+    return YES;
 }
 
 @end

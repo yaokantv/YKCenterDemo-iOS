@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 
 #import <YKCenterSDK/YKCenterSDK.h>
+#import <GizWifiSDK/GizWifiSDK.h>
 
-// 请将 APP_ID 更改为自己注册到的
+#warning 请输入注册到的 APP_ID
 static NSString *const YK_APP_ID = @"";
 
 @interface AppDelegate ()
@@ -21,8 +22,17 @@ static NSString *const YK_APP_ID = @"";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 方案1：使用遥控中心SDK进行初始化
     [YKCenterSDK registApp:YK_APP_ID];
     
+    //  方案2：自己管理第三方平台的方式
+//    [YKCenterSDK registYKApp:YK_APP_ID];
+//    [GizWifiSDK setLogLevel:GizLogPrintNone];
+//    [GizWifiSDK startWithAppID:@"xxx"
+//                     appSecret:@"xxx"
+//            specialProductKeys:@[@"xxx"]
+//              cloudServiceInfo:nil
+//           autoSetDeviceDomain:NO];
     return YES;
 }
 
