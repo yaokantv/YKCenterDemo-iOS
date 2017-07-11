@@ -39,4 +39,6 @@ static NSString *ACModelHot    = @"h";    // 制热
 + (YKRemoteDeviceKey *)remoteDeviceKeyWith:(NSArray<YKRemoteDeviceKey *> *)asteriskKeys
                              leftRightWind:(NSUInteger)wind;
 
++ (BOOL)supportLRSweepInRemoteDevice:(YKRemoteDevice *)remote;
++ (BOOL)supportUDSweepInRemoteDevice:(YKRemoteDevice *)remote;
 @end
