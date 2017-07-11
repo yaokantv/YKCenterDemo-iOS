@@ -62,6 +62,16 @@
                            NSLocalizedString(@"送风", @"w"),
                            NSLocalizedString(@"制热", @"h")];
     self.temperature = 23;
+    
+    _currentWindL = 0;
+    _currentWindU = 0;
+    
+    if (![YKRemoteDeviceKey supportLRSweepInRemoteDevice:self.remote]) {
+        _currentWindL = INT_MAX;
+    }
+    if (![YKRemoteDeviceKey supportUDSweepInRemoteDevice:self.remote]) {
+        _currentWindU = INT_MAX;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,10 +100,17 @@
     [self updateStatusView];
 }
 
+/**
+ 风量调整
+ 
+ A 表示自动档
+ 
+ @param sender 消息发送的对象
+ */
 - (IBAction)windAction:(id)sender {
     if (_currentSpeed < 3) {
         _currentSpeed++;
-    } else {
+    } else  {
         _currentSpeed = 0;
     }
     
@@ -117,10 +134,18 @@
     [self updateStatusView];
 }
 
+
+/**
+ 切换上下扫风
+ 
+ 目前仅支持关和自动
+
+ @param sender 消息发送的对象
+ */
 - (IBAction)sweepUDAction:(id)sender {
     if (_currentWindU < 1) {
         _currentWindU++;
-    } else {
+    } else if (_currentWindU != INT_MAX) {
         _currentWindU = 0;
     }
     
@@ -141,10 +166,17 @@
     [self updateStatusView];
 }
 
+/**
+ 切换左右扫风
+ 
+ 目前仅支持关和自动
+ 
+ @param sender 消息发送的对象
+ */
 - (IBAction)sweepLRAction:(id)sender {
     if (_currentWindL < 1) {
         _currentWindL++;
-    } else {
+    } else if (_currentWindU != INT_MAX) {
         _currentWindL = 0;
     }
     
@@ -222,8 +254,9 @@
     if (_currentSpeed != INT_MAX) {
         self.windLabel.text = _currentSpeed==0?@"A":[NSString stringWithFormat:@"%lu", (unsigned long)_currentSpeed];
     }
-//    self.windLevelLabel.text = speedString;
-//    self.windModelLabel.text = [NSString stringWithFormat:@"%@%@", windUString, windLString];
+    else {
+        self.windLabel.text = @"";
+    }
     
     if (_currentWindU != INT_MAX) {
         if (_currentWindU>1) {
@@ -236,6 +269,10 @@
             self.sweepUDLabel.text = @"--";
         }
     }
+    else {
+        self.sweepUDLabel.text = @"--";
+    }
+    
     if (_currentWindL != INT_MAX) {
         if (_currentWindL>1) {
             // +1个区间-(关闭和自动)，(l2是一档)
@@ -246,6 +283,9 @@
         } else {
             self.sweepLRLabel.text = @"--";
         }
+    }
+    else {
+        self.sweepLRLabel.text = @"--";
     }
 }
 

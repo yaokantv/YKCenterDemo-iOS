@@ -10,7 +10,7 @@
 #import "UAProgressView.h"
 #import "YKCenterCommon.h"
 #import <YKCenterSDK/YKCenterSDK.h>
-//#import <GizWifiSDK/GizWifiSDK.h>
+#import <GizWifiSDK/GizWifiSDK.h>
 
 #define CONFIG_TIMEOUT      60
 

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import <YKCenterSDK/YKCenterSDK.h>
-#import <GizWifiSDK/GizWifiSDK.h>
+//#import <GizWifiSDK/GizWifiSDK.h>
 
 #warning 请输入注册到的 APP_ID
 static NSString *const YK_APP_ID = @"";
