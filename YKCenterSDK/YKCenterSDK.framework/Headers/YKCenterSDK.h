@@ -177,6 +177,18 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
                       datas:(NSArray *)datas
         completion:(void (^__nullable)(id result, NSError *error))completion;
 
+
+/**
+ 发码给遥控中心
+
+ @param ykcDevice 遥控中心对象
+ @param datas 遥控码对象数组
+ @param completion 发码结果回调
+ */
++ (void)sendRemoteWithYKC:(id)ykcDevice
+                    datas:(NSArray *)datas
+               completion:(void (^__nullable)(id result, NSError *error))completion;
+
 #pragma mark - 用户管理
 /**
  匿名登陆
