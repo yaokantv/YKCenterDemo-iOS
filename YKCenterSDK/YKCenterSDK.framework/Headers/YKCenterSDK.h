@@ -189,6 +189,30 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
                     datas:(NSArray *)datas
                completion:(void (^__nullable)(id result, NSError *error))completion;
 
+
+/**
+ 发空调码给摇控中心
+
+ @param ykcId 遥控中心 id
+ @param remoteDevice 遥控器对象
+ @param mode 空调模式
+ @param temp 温度
+ @param speed 风速
+ @param windU 上下扫风级别
+ @param windL 左右扫风级别
+ @param asteriskDatas 匹配数据，可选
+ @param completion 发码结果回调
+ */
++ (void)sendRemoteKeyWithYKCId:(NSString *)ykcId
+                  remoteDevice:(YKRemoteDevice *)remoteDevice
+                      withMode:(NSString *)mode
+                          temp:(NSUInteger)temp
+                         speed:(NSUInteger)speed
+                         windU:(NSUInteger)windU
+                         windL:(NSUInteger)windL
+                 asteriskDatas:(nullable NSArray *)asteriskDatas
+                    completion:(void (^__nullable)(id result, NSError *error))completion;
+
 #pragma mark - 用户管理
 /**
  匿名登陆

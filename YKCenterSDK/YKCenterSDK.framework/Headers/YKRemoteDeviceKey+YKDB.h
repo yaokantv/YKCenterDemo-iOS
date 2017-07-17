@@ -17,16 +17,7 @@ static NSString *ACModelDry    = @"d";    // 抽湿
 static NSString *ACModelWind   = @"w";    // 送风
 static NSString *ACModelHot    = @"h";    // 制热
 
-
 @interface YKRemoteDeviceKey (YKDB)
-
-+ (YKRemoteDeviceKey *)remoteDeviceKeyIn:(YKRemoteDevice *)remoteDevice
-                                withMode:(NSString *)mode
-                                    temp:(NSUInteger)temp
-                                   speed:(NSUInteger)speed
-                                   windU:(NSUInteger)windU
-                                   windL:(NSUInteger)windL
-                           asteriskDatas:(NSArray *)asteriskDatas;
 
 + (YKRemoteDeviceKey *)remoteDeviceKeyInRemoteDevice:(YKRemoteDevice *)remote
                                                  key:(NSString *)key;

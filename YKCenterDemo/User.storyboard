@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3KG-V8-LbZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3KG-V8-LbZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,15 +70,15 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xnh-2c-OKV">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="90"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weibo" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-9f-NJp">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-9f-NJp">
                                                 <rect key="frame" x="74.5" y="14" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="lhL-CQ-OZ2"/>
                                                     <constraint firstAttribute="width" constant="40" id="sOR-xn-Rwb"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weibo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdo-bA-KpG">
-                                                <rect key="frame" x="75.5" y="62" width="38" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方案二" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdo-bA-KpG">
+                                                <rect key="frame" x="74.5" y="62" width="40" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -156,11 +156,20 @@
                         <outlet property="loginBtnsBar" destination="ybD-RH-tot" id="3uR-m2-wQ8"/>
                         <outlet property="loginSkipBtn" destination="D3a-Na-4C2" id="pN0-C5-3IP"/>
                         <outlet property="loginWeiboBtn" destination="Xnh-2c-OKV" id="TDe-aZ-brU"/>
+                        <segue destination="TwG-E6-WuJ" kind="presentation" identifier="AddRemote" id="niS-dc-Q8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUZ-ET-vqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="178.56071964017991"/>
+        </scene>
+        <!--YKAddRemote-->
+        <scene sceneID="mwD-Kc-MJv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Remote" referencedIdentifier="YKAddRemote" id="TwG-E6-WuJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooQ-p7-m4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yay-ZI-kbk">
@@ -252,7 +261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="left" width="257" height="256"/>
         <image name="skip" width="257" height="256"/>
-        <image name="weibo" width="257" height="256"/>
     </resources>
 </document>

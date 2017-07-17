@@ -51,6 +51,8 @@
     [[self.loginBtnsBar layer] addSublayer:shapeLayer];
     
     [self.loginSkipBtn addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginSkipBtnPressed)]];
+    
+    [self.loginWeiboBtn addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(regYKOnlyBtnPressed)]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,6 +158,10 @@
 
 - (void)loginSkipBtnPressed {
     [self toDeviceListWithoutLogin:YES];
+}
+
+- (void)regYKOnlyBtnPressed {
+    [self performSegueWithIdentifier:@"AddRemote" sender:self];
 }
 
 - (void)toDeviceListWithoutLogin:(BOOL)animated {

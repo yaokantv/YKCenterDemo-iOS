@@ -15,7 +15,7 @@
 #import <YKCenterSDK/YKRemoteMatchDevice.h>
 #import <YKCenterSDK/YKRemoteDevice+YKDB.h>
 #import <YKCenterSDK/YKRemoteDeviceKey+CoreDataClass.h>
-#import <YKCenterSDK/YKRemoteDeviceKey+YKDB.h>
+#import "YKRemoteDeviceKey+YKDB.h"
 
 typedef NS_ENUM(NSInteger, RemoteDeviceType){
     kDeviceTypeUnkown = -1,
@@ -37,5 +37,6 @@ typedef NS_ENUM(NSInteger, RemoteDeviceType){
     kDeviceFootbathType = 16,       // 洗脚盆
     kDeviceCarAudioType = 17,       // 汽车音响
 };
+
 
 #endif /* YKCenterSDKHeader_h */

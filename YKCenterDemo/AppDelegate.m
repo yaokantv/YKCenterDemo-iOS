@@ -12,7 +12,7 @@
 //#import <GizWifiSDK/GizWifiSDK.h>
 
 #warning 请输入注册到的 APP_ID
-static NSString *const YK_APP_ID = @"";
+static NSString *const YK_APP_ID = @"14643193728462";
 
 @interface AppDelegate ()
 
@@ -28,9 +28,9 @@ static NSString *const YK_APP_ID = @"";
     //  方案2：自己管理第三方平台的方式
 //    [YKCenterSDK registYKApp:YK_APP_ID];
 //    [GizWifiSDK setLogLevel:GizLogPrintNone];
-//    [GizWifiSDK startWithAppID:@"xxx"
-//                     appSecret:@"xxx"
-//            specialProductKeys:@[@"xxx"]
+//    [GizWifiSDK startWithAppID:@""
+//                     appSecret:@""
+//            specialProductKeys:@[@""]
 //              cloudServiceInfo:nil
 //           autoSetDeviceDomain:NO];
     return YES;

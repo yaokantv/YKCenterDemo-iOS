@@ -65,13 +65,6 @@
     
     _currentWindL = 0;
     _currentWindU = 0;
-    
-    if (![YKRemoteDeviceKey supportLRSweepInRemoteDevice:self.remote]) {
-        _currentWindL = INT_MAX;
-    }
-    if (![YKRemoteDeviceKey supportUDSweepInRemoteDevice:self.remote]) {
-        _currentWindU = INT_MAX;
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -88,15 +81,8 @@
         modelIndex++;
     }
     _currentModel = [self.modelKeys objectAtIndex:modelIndex];
-    
-    YKRemoteDeviceKey *key = [YKRemoteDeviceKey remoteDeviceKeyIn:self.remote
-                                                         withMode:self.currentModel
-                                                             temp:_temperature
-                                                            speed:_currentSpeed
-                                                            windU:_currentWindU
-                                                            windL:_currentWindL
-                                                    asteriskDatas:self.asteriskDatas];
-    [self remoteControlWithKey:key];
+  
+    [self remoteControl];
     [self updateStatusView];
 }
 
@@ -122,15 +108,8 @@
         // 送风没有 s0
         _currentSpeed = 1;
     }
-    
-    YKRemoteDeviceKey *key = [YKRemoteDeviceKey remoteDeviceKeyIn:self.remote
-                                                         withMode:self.currentModel
-                                                             temp:_temperature
-                                                            speed:_currentSpeed
-                                                            windU:_currentWindU
-                                                            windL:_currentWindL
-                                                    asteriskDatas:self.asteriskDatas];
-    [self remoteControlWithKey:key];
+
+    [self remoteControl];
     [self updateStatusView];
 }
 
@@ -149,20 +128,7 @@
         _currentWindU = 0;
     }
     
-    YKRemoteDeviceKey *remoteData = [YKRemoteDeviceKey remoteDeviceKeyWith:self.asteriskDatas
-                                                                  upDownWind:_currentWindU];
-    
-    if (remoteData == nil) {
-        remoteData = [YKRemoteDeviceKey remoteDeviceKeyIn:self.remote
-                                                 withMode:self.currentModel
-                                                     temp:_temperature
-                                                    speed:_currentSpeed
-                                                    windU:_currentWindU
-                                                    windL:_currentWindL
-                                            asteriskDatas:self.asteriskDatas];
-    }
-    
-    [self remoteControlWithKey:remoteData];
+    [self remoteControl];
     [self updateStatusView];
 }
 
@@ -180,61 +146,41 @@
         _currentWindL = 0;
     }
     
-    YKRemoteDeviceKey *remoteData = [YKRemoteDeviceKey remoteDeviceKeyWith:self.asteriskDatas
-                                                                  upDownWind:_currentWindL];
-    
-    if (remoteData == nil) {
-        remoteData = [YKRemoteDeviceKey remoteDeviceKeyIn:self.remote
-                                                 withMode:self.currentModel
-                                                     temp:_temperature
-                                                    speed:_currentSpeed
-                                                    windU:_currentWindU
-                                                    windL:_currentWindL
-                                            asteriskDatas:self.asteriskDatas];
-    }
-    
-    [self remoteControlWithKey:remoteData];
+    [self remoteControl];
     [self updateStatusView];
 }
 
 - (IBAction)tempAction:(UIStepper *)sender {
     _temperature = sender.value;
-    YKRemoteDeviceKey *key = [YKRemoteDeviceKey remoteDeviceKeyIn:self.remote
-                                                         withMode:self.currentModel
-                                                             temp:_temperature
-                                                            speed:_currentSpeed
-                                                            windU:_currentWindU
-                                                            windL:_currentWindL
-                                                    asteriskDatas:self.asteriskDatas];
-    [self remoteControlWithKey:key];
+    [self remoteControl];
     [self updateStatusView];
 }
 
 - (IBAction)powerOnAction:(id)sender {
-    YKRemoteDeviceKey *key = [YKRemoteDeviceKey remoteDeviceKeyIn:self.remote
-                                                         withMode:self.currentModel
-                                                             temp:_temperature
-                                                            speed:_currentSpeed
-                                                            windU:_currentWindU
-                                                            windL:_currentWindL
-                                                    asteriskDatas:self.asteriskDatas];
-    [self remoteControlWithKey:key];
+    [self remoteControl];
     [self updateStatusView];
 }
 
 - (IBAction)powerOffAction:(id)sender {
     YKRemoteDeviceKey *key = [YKRemoteDeviceKey remoteDeviceKeyInRemoteDevice:self.remote
                                                                           key:KeyPowerOff];
-    [self remoteControlWithKey:key];
-}
-
-- (void)remoteControlWithKey:(YKRemoteDeviceKey *)key {
-    if (key == nil) {
-        return;
-    }
     [YKCenterSDK sendRemoteWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
                                datas:@[key]
                           completion:nil];
+}
+
+- (void)remoteControl {
+    [YKCenterSDK sendRemoteKeyWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
+                           remoteDevice:self.remote
+                               withMode:self.currentModel
+                                   temp:self.temperature
+                                  speed:self.currentSpeed
+                                  windU:self.currentWindU
+                                  windL:self.currentWindL
+                          asteriskDatas:self.asteriskDatas
+                             completion:^(id  _Nonnull result, NSError * _Nonnull error) {
+                                 NSLog(@"result=%@", result);
+                             }];
 }
 
 - (void)updateStatusView {
