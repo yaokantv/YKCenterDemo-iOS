@@ -12,7 +12,7 @@
 //#import <GizWifiSDK/GizWifiSDK.h>
 
 #warning 请输入注册到的 APP_ID
-static NSString *const YK_APP_ID = @"14643193728462";
+static NSString *const YK_APP_ID = @"";
 
 @interface AppDelegate ()
 
