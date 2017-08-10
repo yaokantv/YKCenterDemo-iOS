@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (YKRemoteDevice *)modelsWithLocalDeviceId:(NSString *)localDeviceId;
 + (NSArray <YKRemoteDevice *> *)modelsWithDeviceId:(NSString *)enterId;
 
-+ (YKRemoteDevice *)saveRemoteDeviceWithDictionary:(NSDictionary *)dict;
-+ (YKRemoteDevice *)remoteDeviceWithDictionary:(NSDictionary *)dict isMemoryModel:(BOOL)memory;
++ (nullable YKRemoteDevice *)saveRemoteDeviceWithDictionary:(NSDictionary *)dict;
++ (nullable YKRemoteDevice *)remoteDeviceWithDictionary:(NSDictionary *)dict isMemoryModel:(BOOL)memory;
 
 + (YKRemoteDevice *)newModel;
 + (YKRemoteDevice *)newMemoryModel;
