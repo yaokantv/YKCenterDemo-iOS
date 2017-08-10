@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Omb-B8-3i5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Omb-B8-3i5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -274,7 +275,7 @@
             </objects>
             <point key="canvasLocation" x="3420" y="913.49325337331345"/>
         </scene>
-        <!--Remote View Controller-->
+        <!--遥控器-->
         <scene sceneID="8uZ-7i-AIb">
             <objects>
                 <tableViewController id="tmI-u5-KSi" customClass="YKRemoteViewController" sceneMemberID="viewController">
@@ -313,6 +314,20 @@
                             <outlet property="delegate" destination="tmI-u5-KSi" id="u4l-eq-s0X"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="遥控器" id="z9x-BZ-vVi">
+                        <rightBarButtonItems>
+                            <barButtonItem title="测试" id="7Nv-7I-PxW">
+                                <connections>
+                                    <action selector="sendLearnCode:" destination="tmI-u5-KSi" id="TS4-5S-syh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="学码" id="2Xy-In-CnH">
+                                <connections>
+                                    <action selector="learnCode:" destination="tmI-u5-KSi" id="3zS-zD-ljN"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nA-bY-wt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

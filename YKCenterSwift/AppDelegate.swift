@@ -13,9 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // 简单演示 YKCenterSDK 在 Swift 中调用
         print("YKCenterSDK version: \(YKCenterSDK.sdkVersion())")
         return true
     }
