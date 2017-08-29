@@ -10,12 +10,10 @@
 #import <YKCenterSDK/YKCenterSDK.h>
 #import "YKCenterCommon.h"
 #import "YKMatchKeyTableViewController.h"
-#import "YKAllMatchTableViewController.h"
 
 @interface YKMatchDeviceTableViewController ()
 
 @property (nonatomic, strong) NSArray<YKRemoteMatchDevice *> *matchList;
-@property (weak, nonatomic) IBOutlet UISwitch *allMatchSwitch;
 
 @end
 
@@ -57,14 +55,6 @@
     return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (self.allMatchSwitch.on) {
-//        YKRemoteMatchDevice *match = self.matchList[indexPath.row];
-//        [self performSegueWithIdentifier:@"YKAllMatchTableViewController"
-//                                  sender:match.rid];
-//    }
-//}
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,25 +67,8 @@
         YKRemoteMatchDevice *device = self.matchList[indexPath.row];
         
         vc.matchDevice = device;
-        vc.allMatch = self.allMatchSwitch.on;
     }
-//    else if ([segue.destinationViewController isKindOfClass:[YKAllMatchTableViewController class]]) {
-//        YKAllMatchTableViewController *vc = segue.destinationViewController;
-//        vc.rId = sender;
-//    }
 }
-
-// 方案2
-//- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-//    if (self.allMatchSwitch.on) {
-//        // all match
-//        if ([identifier isEqualToString:@"YKMatchKeyTableViewController"]) {
-//            return NO;
-//        }
-//    }
-//    
-//    return YES;
-//}
 
 
 @end

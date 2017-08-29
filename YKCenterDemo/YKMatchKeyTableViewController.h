@@ -13,6 +13,5 @@
 @interface YKMatchKeyTableViewController : UITableViewController
 
 @property (nonatomic, strong) YKRemoteMatchDevice *matchDevice;
-@property (nonatomic, assign) BOOL allMatch;
 
 @end

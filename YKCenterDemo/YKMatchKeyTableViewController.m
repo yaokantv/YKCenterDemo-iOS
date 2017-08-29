@@ -18,18 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if (self.allMatch) {
-        __weak __typeof(self)weakSelf = self;
-        [YKCenterSDK matchRemoteDeivceWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
-                                 remoteDeviceId:self.matchDevice.rid
-                                     completion:^(YKRemoteMatchDevice * _Nonnull remote, NSError * _Nonnull error)
-         {
-             __strong __typeof(weakSelf)strongSelf = weakSelf;
-             strongSelf.matchDevice = remote;
-             [strongSelf.tableView reloadData];
-         }];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

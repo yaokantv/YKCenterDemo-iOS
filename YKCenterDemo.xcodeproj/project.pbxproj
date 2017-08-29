@@ -28,7 +28,6 @@
 		3F5A21F61E277483006BF365 /* YKDeviceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21F41E277483006BF365 /* YKDeviceListCell.m */; };
 		3F5A21F71E277483006BF365 /* YKDeviceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21F51E277483006BF365 /* YKDeviceListCell.xib */; };
 		3F5AC80A1EE7DF04001ACA9A /* YKTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AC8091EE7DF04001ACA9A /* YKTest.m */; };
-		3F660B341EBAD2B1005A9B9C /* YKAllMatchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F660B331EBAD2B1005A9B9C /* YKAllMatchTableViewController.m */; };
 		3FA2D7E61E2C5CFA00551F8F /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */; };
 		3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */; };
 		3FA2D7F71E2C5FAA00551F8F /* YKSSIDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7F51E2C5FAA00551F8F /* YKSSIDCell.m */; };
@@ -149,8 +148,6 @@
 		3F5AC8071EE7DF04001ACA9A /* YKCenterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YKCenterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F5AC8081EE7DF04001ACA9A /* YKTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTest.h; sourceTree = "<group>"; };
 		3F5AC8091EE7DF04001ACA9A /* YKTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTest.m; sourceTree = "<group>"; };
-		3F660B321EBAD2B1005A9B9C /* YKAllMatchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAllMatchTableViewController.h; sourceTree = "<group>"; };
-		3F660B331EBAD2B1005A9B9C /* YKAllMatchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKAllMatchTableViewController.m; sourceTree = "<group>"; };
 		3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		3FA2D7E71E2C5EE200551F8F /* YKConfigStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKConfigStartController.h; sourceTree = "<group>"; };
 		3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKConfigStartController.m; sourceTree = "<group>"; };
@@ -469,8 +466,6 @@
 				3FA2D82F1E2E184100551F8F /* YKMatchDeviceTableViewController.m */,
 				3FA2D8311E2E186400551F8F /* YKMatchKeyTableViewController.h */,
 				3FA2D8321E2E186400551F8F /* YKMatchKeyTableViewController.m */,
-				3F660B321EBAD2B1005A9B9C /* YKAllMatchTableViewController.h */,
-				3F660B331EBAD2B1005A9B9C /* YKAllMatchTableViewController.m */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -998,7 +993,6 @@
 				3FA2D81F1E2DF96D00551F8F /* YKDeviceTypeViewController.m in Sources */,
 				3FA2D8001E2C602800551F8F /* YKCenterCommon.m in Sources */,
 				3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */,
-				3F660B341EBAD2B1005A9B9C /* YKAllMatchTableViewController.m in Sources */,
 				3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */,
 				3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */,
 				3FE818CA1E723994002FD52F /* YKTextCell.m in Sources */,
