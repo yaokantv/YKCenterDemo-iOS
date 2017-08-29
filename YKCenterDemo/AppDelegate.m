@@ -26,6 +26,7 @@ static NSString *const YK_APP_ID = @"";
     [YKCenterSDK registApp:YK_APP_ID completion:^(NSError * _Nonnull error) {
         NSLog(@"YKCenterSDK 初始化成功：%@", error);
     }];
+//    [YKCenterSDK disableSDKLog:YES];
 //    NSLog(@"[GizWifiSDK getVersion]:%@", [GizWifiSDK getVersion]);
     
     //  方案2：自己管理第三方平台的方式
