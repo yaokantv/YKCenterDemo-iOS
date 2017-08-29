@@ -153,7 +153,7 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
                         completion:(void (^__nullable)(YKRemoteDevice *remote, NSError *error))completion;
 
 /**
- 获取遥控器
+ 获取遥控器，此方法已废弃，请不要使用
  
  @param ykcId           遥控中心 id
  @param remoteDeviceId  遥控器设备 id
@@ -163,10 +163,10 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
 + (void)fetchRemoteDeivceWithYKCId:(NSString *)ykcId
                     remoteDeviceId:(NSString *)remoteDeviceId
                         matchModel:(BOOL)match
-                        completion:(void (^__nullable)(YKRemoteDevice *remote, NSError *error))completion;
+                        completion:(void (^__nullable)(YKRemoteDevice *remote, NSError *error))completion __attribute__((deprecated("use fetchRemoteDeivceWithYKCId:remoteDeviceId:completion: instead")));
 
 /**
- 获取匹配遥控器
+ 获取匹配遥控器，此方法已废弃，请不要使用
  
  @param ykcId           遥控中心 id
  @param remoteDeviceId  遥控器设备 id
@@ -174,7 +174,8 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
  */
 + (void)matchRemoteDeivceWithYKCId:(NSString *)ykcId
                     remoteDeviceId:(NSString *)remoteDeviceId
-                        completion:(void (^__nullable)(YKRemoteMatchDevice *remote, NSError *error))completion;
+                        completion:(void (^__nullable)(YKRemoteMatchDevice *remote, NSError *error))completion
+__attribute__((deprecated("no available anymore")));
 
 /**
  发码给遥控中心
@@ -270,6 +271,14 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
  @return SDK 版本号
  */
 + (NSString *)sdkVersion;
+
+
+/**
+ 关闭 SDK 日志
+
+ @param disable YES 为关闭 SDK 日志，NO 为打开日志，默认为打开
+ */
++ (void)disableSDKLog:(BOOL)disable;
 
 @end
 
