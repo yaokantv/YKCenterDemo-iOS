@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2292110B7B34D5EF0DCF0F47 /* Pods_YKCenterDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */; };
+		3F1382FE1F5577BB00D5FD0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F1383001F5577BB00D5FD0A /* Localizable.strings */; };
 		3F32EEF61EE7D5BC0032FC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F32EEF51EE7D5BC0032FC6A /* AppDelegate.swift */; };
 		3F32EEF81EE7D5BC0032FC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F32EEF71EE7D5BC0032FC6A /* ViewController.swift */; };
 		3F32EEFB1EE7D5BC0032FC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F32EEF91EE7D5BC0032FC6A /* Main.storyboard */; };
@@ -24,11 +25,9 @@
 		3F5A21BB1E27666F006BF365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21B91E27666F006BF365 /* LaunchScreen.storyboard */; };
 		3F5A21C61E27666F006BF365 /* YKCenterDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21C51E27666F006BF365 /* YKCenterDemoTests.m */; };
 		3F5A21D11E27666F006BF365 /* YKCenterDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21D01E27666F006BF365 /* YKCenterDemoUITests.m */; };
-		3F5A21EE1E276CE7006BF365 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21F01E276CE7006BF365 /* Localizable.strings */; };
 		3F5A21F61E277483006BF365 /* YKDeviceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21F41E277483006BF365 /* YKDeviceListCell.m */; };
 		3F5A21F71E277483006BF365 /* YKDeviceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21F51E277483006BF365 /* YKDeviceListCell.xib */; };
 		3F5AC80A1EE7DF04001ACA9A /* YKTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AC8091EE7DF04001ACA9A /* YKTest.m */; };
-		3F8341B31F555CE2007ACAB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8341B21F555CE2007ACAB0 /* libz.tbd */; };
 		3FA2D7E61E2C5CFA00551F8F /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */; };
 		3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */; };
 		3FA2D7F71E2C5FAA00551F8F /* YKSSIDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7F51E2C5FAA00551F8F /* YKSSIDCell.m */; };
@@ -111,6 +110,17 @@
 /* Begin PBXFileReference section */
 		14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		355C6262D1154727EB7321AF /* Pods-YKCenterSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift.release.xcconfig"; sourceTree = "<group>"; };
+		3F1382F41F55775F00D5FD0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3F1382F51F55776000D5FD0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3F1382F61F55776000D5FD0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3F1382F71F55776000D5FD0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3F1382F81F55776500D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		3F1382F91F55776500D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3F1382FA1F55776500D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		3F1382FB1F55776500D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3F1382FF1F5577BB00D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3F1383011F5577F000D5FD0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3F1383021F55789800D5FD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F32EEF31EE7D5BC0032FC6A /* YKCenterSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKCenterSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F32EEF51EE7D5BC0032FC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F32EEF71EE7D5BC0032FC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,15 +151,12 @@
 		3F5A21CC1E27666F006BF365 /* YKCenterDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKCenterDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5A21D01E27666F006BF365 /* YKCenterDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKCenterDemoUITests.m; sourceTree = "<group>"; };
 		3F5A21D21E27666F006BF365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F5A21EF1E276CE7006BF365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3F5A21F21E2770DE006BF365 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3F5A21F31E277483006BF365 /* YKDeviceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDeviceListCell.h; sourceTree = "<group>"; };
 		3F5A21F41E277483006BF365 /* YKDeviceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDeviceListCell.m; sourceTree = "<group>"; };
 		3F5A21F51E277483006BF365 /* YKDeviceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YKDeviceListCell.xib; sourceTree = "<group>"; };
 		3F5AC8071EE7DF04001ACA9A /* YKCenterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YKCenterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F5AC8081EE7DF04001ACA9A /* YKTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTest.h; sourceTree = "<group>"; };
 		3F5AC8091EE7DF04001ACA9A /* YKTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTest.m; sourceTree = "<group>"; };
-		3F8341B21F555CE2007ACAB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		3FA2D7E71E2C5EE200551F8F /* YKConfigStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKConfigStartController.h; sourceTree = "<group>"; };
 		3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKConfigStartController.m; sourceTree = "<group>"; };
@@ -240,7 +247,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F8341B31F555CE2007ACAB0 /* libz.tbd in Frameworks */,
 				8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,10 +359,10 @@
 				3F5A21B71E27666F006BF365 /* Assets.xcassets */,
 				3F5A21B91E27666F006BF365 /* LaunchScreen.storyboard */,
 				3F5A21BC1E27666F006BF365 /* Info.plist */,
-				3F5A21F01E276CE7006BF365 /* Localizable.strings */,
 				3F5A21AB1E27666F006BF365 /* Supporting Files */,
 				3FD9FA1B1EEA993F0037A44C /* SwiftYKViewController.swift */,
 				3FD9FA1A1EEA993F0037A44C /* YKCenterDemo-Bridging-Header.h */,
+				3F1383001F5577BB00D5FD0A /* Localizable.strings */,
 			);
 			path = YKCenterDemo;
 			sourceTree = "<group>";
@@ -506,7 +512,6 @@
 		ACF749D161E65BEC47C3B512 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3F8341B21F555CE2007ACAB0 /* libz.tbd */,
 				D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */,
 				869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */,
 				14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */,
@@ -689,9 +694,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
-				"zh-Hans",
+				en,
 			);
 			mainGroup = 3F5A219F1E27666F006BF365;
 			productRefGroup = 3F5A21A91E27666F006BF365 /* Products */;
@@ -740,12 +744,12 @@
 				3FA2D81C1E2DEA7500551F8F /* Remote.storyboard in Resources */,
 				3FA2D7FD1E2C5FB500551F8F /* YKPasswordCell.xib in Resources */,
 				3F5A21BB1E27666F006BF365 /* LaunchScreen.storyboard in Resources */,
+				3F1382FE1F5577BB00D5FD0A /* Localizable.strings in Resources */,
 				3FA2D8081E2C68B400551F8F /* checked@2x.png in Resources */,
 				3FA2D80D1E2C7D7D00551F8F /* 02-airlink.gif in Resources */,
 				3F5A21F71E277483006BF365 /* YKDeviceListCell.xib in Resources */,
 				3FE818CC1E723A16002FD52F /* YKTextCell.xib in Resources */,
 				3FA2D7E61E2C5CFA00551F8F /* Config.storyboard in Resources */,
-				3F5A21EE1E276CE7006BF365 /* Localizable.strings in Resources */,
 				3F5A21B81E27666F006BF365 /* Assets.xcassets in Resources */,
 				3FA2D8091E2C68B400551F8F /* unchecked@2x.png in Resources */,
 				3F5A21B61E27666F006BF365 /* Main.storyboard in Resources */,
@@ -1055,10 +1059,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3F1383001F5577BB00D5FD0A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1382FF1F5577BB00D5FD0A /* zh-Hans */,
+				3F1383011F5577F000D5FD0A /* en */,
+				3F1383021F55789800D5FD0A /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3F32EEF91EE7D5BC0032FC6A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3F32EEFA1EE7D5BC0032FC6A /* Base */,
+				3F1382F61F55776000D5FD0A /* en */,
+				3F1382FA1F55776500D5FD0A /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1067,6 +1083,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F32EF021EE7D5BD0032FC6A /* Base */,
+				3F1382F71F55776000D5FD0A /* en */,
+				3F1382FB1F55776500D5FD0A /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1075,6 +1093,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F5A21B51E27666F006BF365 /* Base */,
+				3F1382F41F55775F00D5FD0A /* en */,
+				3F1382F81F55776500D5FD0A /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1083,17 +1103,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F5A21BA1E27666F006BF365 /* Base */,
+				3F1382F51F55776000D5FD0A /* en */,
+				3F1382F91F55776500D5FD0A /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		3F5A21F01E276CE7006BF365 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F5A21EF1E276CE7006BF365 /* Base */,
-				3F5A21F21E2770DE006BF365 /* zh-Hans */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1318,8 +1331,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HY8S4564M8;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = YKCenterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;
@@ -1341,8 +1355,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = YKCenterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;

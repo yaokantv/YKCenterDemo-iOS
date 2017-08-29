@@ -118,7 +118,7 @@ Pod::Spec.new do |s|
   s.framework  = "GizWifiSDK"
   # s.frameworks = "SomeFramework", "AnotherFramework"
   s.ios.vendored_frameworks = 'YKCenterSDK.framework'
-  # s.library   = "iconv"
+  s.library   = "z"
   # s.libraries = "iconv", "xml2"
 
   # s.ios.preserve_paths      = 'Library/libcrypto.a', 'Library/libEasyLink.a', 'Library/libemTMF.a', 'Library/libEsptouch_v0.3.5.2.a', 'Library/libssl.a', 'Library/libBLEasyConfig.a'

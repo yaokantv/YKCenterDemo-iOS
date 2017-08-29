@@ -1,6 +1,10 @@
-/* 
-  Localizable.strings
-*/
+/*
+ Localizable.strings
+ YKCenterDemo
+ 
+ Created by Don on 2017/8/29.
+ Copyright © 2017年 Shenzhen Yaokan Technology Co., Ltd. All rights reserved.
+ */
 
 "tip" = "tip";
 "OK" = "OK";

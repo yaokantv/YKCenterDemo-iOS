@@ -1,21 +1,15 @@
 /* 
   Localizable.strings
-  GOpenSourceAppKit
+  YKCenterDemo
 
-  Created by Zono on 16/5/27.
-  Copyright © 2016年 Gizwits. All rights reserved.
+  Created by Don on 2017/8/29.
+  Copyright © 2017年 Shenzhen Yaokan Technology Co., Ltd. All rights reserved.
 */
 
 "tip" = "tip";
-"Username can not be empty" = "Username can not be empty";
-"The password must be at least six characters" = "The password must be at least six characters";
 "OK" = "OK";
-"Login failed" = "Login failed";
-"Login successful" = "Login successful";
-"the phone number is incorrect" = "the phone number is incorrect";
 "Cancel" = "Cancel";
 "NO" = "NO";
-"Get verification code" = "Get code";
 
 
 "please enter verification code" = "please enter verification code";
@@ -25,6 +19,7 @@
 "Registration failed" = "Registration failed";
 "Try again" = "Try again";
 "Verification code error" = "Verification code error";
+"Username can not be empty" = "Username can not be empty";
 
 "Reset success" = "Reset success";
 "Reset failed" = "Reset failed";
@@ -38,6 +33,7 @@
 "Login" = "Login";
 "Logout?" = "Logout?";
 "Login Cancel" = "Login Cancel";
+"the phone number is incorrect" = "the phone number is incorrect";
 
 "Bound devices" = "Bound devices";
 "Discovery of new devices" = "Discovery of new devices";
@@ -58,6 +54,7 @@
 "About" = "About";
 "Program Version" = "Program Version";
 "SDK Version" = "SDK Version";
+"GizWifiSDK Version" = "GizWifiSDK Version";
 
 "No open Wi-Fi" = "No open Wi-Fi";
 "Device is not connected to Wi-Fi, can not configure" = "Device is not connected to Wi-Fi, can not configure";
@@ -73,23 +70,12 @@
 "Configuration success" = "Configuration success";
 
 "Password is empty?" = "Password is empty?";
+"The password must be at least six characters" = "The password must be at least six characters";
 "Discard your configuration?" = "Discard your configuration?";
 
 "Put the QR Code into the frame" = "Put the QR Code into the frame";
 "Scanning code, Binding Device" = "Easy way to bind device";
 
-"Module type selection" = "Module type selection";
-"Select the type of module" = "Select the type of module";
-"ESP" = "ESP";
-"HF" = "HF";
-"MXCHIP" = "MXCHIP";
-"RTK" = "RTK";
-"WM" = "WM";
-"QCA" = "QCA";
-"TI" = "TI";
-"BL" = "BL";
-"Atmel" = "Atmel";
-"FSK" = "FSK";
 
 "get device status" = "get device status";
 "get device hardware info" = "get device hardware info";
@@ -103,3 +89,9 @@
 
 "set successful" = "set successful";
 "set failed" = "set failed";
+
+"自动" = "Auto";
+"制冷" = "Cool";
+"抽湿" = "Dry";
+"送风" = "Fan";
+"制热" = "Heat";

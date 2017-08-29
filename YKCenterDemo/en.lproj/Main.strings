@@ -1,0 +1,72 @@
+
+/* Class = "UIBarButtonItem"; title = "学码"; ObjectID = "2Xy-In-CnH"; */
+"2Xy-In-CnH.title" = "学码";
+
+/* Class = "UILabel"; text = "制冷"; ObjectID = "6ec-DO-QoA"; */
+"6ec-DO-QoA.text" = "制冷";
+
+/* Class = "UIBarButtonItem"; title = "测试"; ObjectID = "7Nv-7I-PxW"; */
+"7Nv-7I-PxW.title" = "测试";
+
+/* Class = "UINavigationItem"; title = "遥控器列表"; ObjectID = "7WV-6s-2aT"; */
+"7WV-6s-2aT.title" = "遥控器列表";
+
+/* Class = "UILabel"; text = "自动"; ObjectID = "B5m-HW-OqC"; */
+"B5m-HW-OqC.text" = "自动";
+
+/* Class = "UILabel"; text = "自动"; ObjectID = "IaL-ZZ-F8x"; */
+"IaL-ZZ-F8x.text" = "自动";
+
+/* Class = "UILabel"; text = "左右扫风："; ObjectID = "Iig-x9-bqn"; */
+"Iig-x9-bqn.text" = "左右扫风：";
+
+/* Class = "UILabel"; text = "23"; ObjectID = "bQd-LP-mbw"; */
+"bQd-LP-mbw.text" = "23";
+
+/* Class = "UIButton"; normalTitle = "电源开"; ObjectID = "eLi-Vp-3kn"; */
+"eLi-Vp-3kn.normalTitle" = "电源开";
+
+/* Class = "UILabel"; text = "风量："; ObjectID = "fnd-Nj-cHr"; */
+"fnd-Nj-cHr.text" = "风量：";
+
+/* Class = "UIButton"; normalTitle = "风量"; ObjectID = "jCC-U2-dyh"; */
+"jCC-U2-dyh.normalTitle" = "风量";
+
+/* Class = "UIButton"; normalTitle = "电源关"; ObjectID = "jJI-95-FKR"; */
+"jJI-95-FKR.normalTitle" = "电源关";
+
+/* Class = "UIButton"; normalTitle = "上下扫风"; ObjectID = "jcr-z5-USu"; */
+"jcr-z5-USu.normalTitle" = "上下扫风";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "mZo-VY-xEl"; */
+"mZo-VY-xEl.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "o2L-NU-fqr"; */
+"o2L-NU-fqr.text" = "Subtitle";
+
+/* Class = "UIButton"; normalTitle = "左右扫风"; ObjectID = "p5D-O5-JW8"; */
+"p5D-O5-JW8.normalTitle" = "左右扫风";
+
+/* Class = "UILabel"; text = "温度："; ObjectID = "plY-0a-9S4"; */
+"plY-0a-9S4.text" = "温度：";
+
+/* Class = "UINavigationItem"; title = "设备列表"; ObjectID = "q5f-O6-hYQ"; */
+"q5f-O6-hYQ.title" = "设备列表";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "rXU-D4-GXK"; */
+"rXU-D4-GXK.text" = "A";
+
+/* Class = "UIButton"; normalTitle = "模式"; ObjectID = "sMG-I7-jet"; */
+"sMG-I7-jet.normalTitle" = "模式";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "toZ-bm-M4O"; */
+"toZ-bm-M4O.text" = "Title";
+
+/* Class = "UILabel"; text = "模式："; ObjectID = "wsP-L2-uhP"; */
+"wsP-L2-uhP.text" = "模式：";
+
+/* Class = "UILabel"; text = "上下扫风："; ObjectID = "yxv-8R-Gaf"; */
+"yxv-8R-Gaf.text" = "上下扫风：";
+
+/* Class = "UINavigationItem"; title = "遥控器"; ObjectID = "z9x-BZ-vVi"; */
+"z9x-BZ-vVi.title" = "遥控器";

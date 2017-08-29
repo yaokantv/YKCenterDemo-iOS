@@ -1,12 +1,14 @@
-/*
- Localizable.strings
- */
+/* 
+  Localizable.strings
+  YKCenterDemo
 
+  Created by Don on 2017/8/29.
+  Copyright © 2017年 Shenzhen Yaokan Technology Co., Ltd. All rights reserved.
+*/
 "tip" = "提示";
 "OK" = "确定";
 "Cancel" = "取消";
 "NO" = "不了";
-
 
 "please enter verification code" = "请输入验证码";
 "Phone verification code sent successfully" = "手机验证码发送成功";
@@ -90,3 +92,5 @@
 "抽湿" = "抽湿";
 "送风" = "送风";
 "制热" = "制热";
+
+
