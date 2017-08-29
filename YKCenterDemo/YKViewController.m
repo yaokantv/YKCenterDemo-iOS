@@ -62,10 +62,13 @@
     UIActionSheet *actionSheet = nil;
     NSString *appVersion = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Program Version", nil), [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     NSString *sdkVersion = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"SDK Version", nil), [YKCenterSDK sdkVersion]];
+    NSString *gizWifiSDKVersion = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"GizWifiSDK Version", nil), [GizWifiSDK getVersion]];
+    
+    NSString *fullVerion = [appVersion stringByAppendingFormat:@"\n%@\n%@", sdkVersion, gizWifiSDKVersion];
     
     if ([[YKCenterCommon sharedInstance] loginStatus] == YKLoginUser) {
         actionSheet = [[UIActionSheet alloc]
-                                      initWithTitle:[appVersion stringByAppendingFormat:@"-%@", sdkVersion]
+                                      initWithTitle:fullVerion
                                       delegate:self
                                       cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                                       destructiveButtonTitle:nil
@@ -75,7 +78,7 @@
     }
     else {
         actionSheet = [[UIActionSheet alloc]
-                       initWithTitle:[appVersion stringByAppendingFormat:@"-%@", sdkVersion]
+                       initWithTitle:fullVerion
                        delegate:self
                        cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
                        destructiveButtonTitle:nil

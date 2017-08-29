@@ -126,6 +126,8 @@ extern NSString *XPGWifiDeviceHardwareProductKey DEPRECATED_ATTRIBUTE;
  */
 - (void)device:(GizWifiDevice *)device didExitProductionTesting:(NSError *)result;
 
+- (void)device:(GizWifiDevice *)device didUpdateProduct:(NSError *)result productUI:(NSString *)productUI;
+
 @end
 
 /*
@@ -258,17 +260,16 @@ extern NSString *XPGWifiDeviceHardwareProductKey DEPRECATED_ATTRIBUTE;
  给设备发送控制指令。已订阅的设备变为可控状态后才能发送控制指令
  @param data 该参数为要发给设备的操作指令。为字典格式，字典键值对可按以下方式填充：
  如果设备有数据点定义，操作指令一次可以下发多个数据点。字典中的key为数据点名称，value为数据点的值。value类型要与数据点定义一致：
- （1）如果数据点为布尔类型，则value为boolean类型；
- （2）如果数据点为数值类型，则value为int或float类型；
- （3）如果数据点为枚举类型，则value为枚举序号（int类型）或者枚举字符串（String类型）；
- （4）如果数据点为扩展类型，则value为Byte[]类型；
- 如果设备操作采用透传方式，透传指令一次只能下发一条。透传数据的key为”binary”，value为 NSData类型
+ （1）如果数据点为布尔类型，则value为NSNumber类型；
+ （2）如果数据点为数值类型，则value为NSNumber类型；
+ （3）如果数据点为枚举类型，则value为枚举序号（NSNumber类型）或者枚举字符串（NSString类型）；
+ （4）如果数据点为扩展类型，则value为NSData类型；
+ 如果设备操作采用透传方式，透传指令一次只能下发一条。透传数据的key为”binary”，value为NSData类型
  @param sn 控制指令序号，用于对应控制指令应答数据。控制确认回调时会返回这个sn
  @note 主动上报的sn为0。如果要准确判断sn，这里的sn不要设置为0
  @see 对应的回调接口：[GizWifiDeviceDelegate device:didReceiveData:data:withSN:]
  */
 - (void)write:(NSDictionary *)data withSN:(int)sn;
-//- (void)write:(GizWifiCentralControlDevice *)centralControlDevice data:(NSDictionary *)data withSN:(int)sn;
 
 /*
  @deprecated 此接口已废弃，不再提供支持。替代接口：[write:key:withSN:]、[getDeviceStatus]
@@ -292,5 +293,7 @@ extern NSString *XPGWifiDeviceHardwareProductKey DEPRECATED_ATTRIBUTE;
  @deprecated 此接口已废弃，不再提供支持。替代接口：[setSubscribe:]
  */
 - (void)login:(NSString *)uid token:(NSString *)token DEPRECATED_ATTRIBUTE;
+
+- (void)updateProduct;
 
 @end

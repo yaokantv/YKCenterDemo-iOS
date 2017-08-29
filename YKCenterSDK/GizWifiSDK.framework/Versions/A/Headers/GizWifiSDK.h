@@ -23,6 +23,7 @@
 #import <GizWifiSDK/GizDeviceSceneCenter.h>
 #import <GizWifiSDK/GizDeviceSceneItem.h>
 #import <GizWifiSDK/GizDeviceScene.h>
+#import <GizWifiSDK/GizDeviceSchedulerTask.h>
 
 @class GizWifiSDK;
 
@@ -46,7 +47,7 @@
 - (void)wifiSDK:(GizWifiSDK *)wifiSDK didSetDeviceOnboarding:(NSError *)result mac:(NSString *)mac did:(NSString *)did productKey:(NSString *)productKey;
 
 /*
- @deprecated 此接口已废弃，不再提供支持。请使用替代接口：[GizWifiSDKDelegate wifiSDK:didSetDeviceOnboarding:device:]
+ @deprecated 此接口已废弃，不再提供支持。请使用替代接口：[GizWifiSDKDelegate wifiSDK:didSetDeviceOnboarding:mac:did:productKey:]
  */
 - (void)XPGWifiSDK:(GizWifiSDK *)wifiSDK didSetDeviceWifi:(GizWifiDevice *)device result:(int)result DEPRECATED_ATTRIBUTE;
 
@@ -90,7 +91,7 @@
  @param productUI 下载的 Json 格式的产品 UI 信息
  @see GizWifiErrorCode
  */
-- (void)wifiSDK:(GizWifiSDK *)wifiSDK didUpdateProduct:(NSError *)result producKey:(NSString *)productKey productUI:(NSString *)productUI;
+- (void)wifiSDK:(GizWifiSDK *)wifiSDK didUpdateProduct:(NSError *)result producKey:(NSString *)productKey productUI:(NSString *)productUI DEPRECATED_ATTRIBUTE;
 
 /*
  @deprecated 此接口已废弃，不再提供支持。请使用替代接口：[GizWifiSDKDelegate wifiSDK:didUpdateProduct:producKey:productName:productUI:]
@@ -422,7 +423,7 @@
  @param softAPSSIDPrefix SoftAPMode 模式下 SoftAP 的 SSID 前缀或全名。默认前缀为：XPG-GAgent-，SDK 以此判断手机当前是否连上了设备的 SoftAP 热点。AirLink 模式时传 nil 即可
  @param timeout 配置的超时时间。SDK 默认执行的最小超时时间为30秒
  @param types 待配置的模组类型，是一个GizWifiGAgentType 枚举数组。若不指定则默认配置乐鑫模组。GizWifiGAgentType定义了 SDK 支持的所有模组类型
- @see 对应的回调接口：[GizWifiSDKDelegate wifiSDK:didSetDeviceOnboarding:device:]
+ @see 对应的回调接口：[GizWifiSDKDelegate wifiSDK:didSetDeviceOnboarding:mac:did:productKey:]
  @see GizConfigureMode
  @see GizWifiGAgentType
  */
@@ -763,5 +764,13 @@
  @see 对应的回调接口：[GizWifiSDKDelegate wifiSDK:didSetDeviceServerInfo:mac:]
  */
 + (void)setDeviceServerInfo:(NSString *)domain mac:(NSString *)mac;
+
+/**
+ 用户反馈，此接口无回调。调用后就会上传信息
+ @param contactInfo 用户的联系方式。此参数为选填
+ @param feedbackInfo 用户反馈的信息。此参数为选填
+ @param sendLog 是否发送问题日志。如果前面两个参数都没填，则默认发送问题日志
+ */
++ (void)userFeedback:(NSString *)contactInfo feedbackInfo:(NSString *)feedbackInfo sendLog:(BOOL)sendLog;
 
 @end

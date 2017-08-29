@@ -28,6 +28,7 @@
 		3F5A21F61E277483006BF365 /* YKDeviceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21F41E277483006BF365 /* YKDeviceListCell.m */; };
 		3F5A21F71E277483006BF365 /* YKDeviceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F5A21F51E277483006BF365 /* YKDeviceListCell.xib */; };
 		3F5AC80A1EE7DF04001ACA9A /* YKTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AC8091EE7DF04001ACA9A /* YKTest.m */; };
+		3F8341B31F555CE2007ACAB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8341B21F555CE2007ACAB0 /* libz.tbd */; };
 		3FA2D7E61E2C5CFA00551F8F /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */; };
 		3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */; };
 		3FA2D7F71E2C5FAA00551F8F /* YKSSIDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D7F51E2C5FAA00551F8F /* YKSSIDCell.m */; };
@@ -148,6 +149,7 @@
 		3F5AC8071EE7DF04001ACA9A /* YKCenterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YKCenterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F5AC8081EE7DF04001ACA9A /* YKTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTest.h; sourceTree = "<group>"; };
 		3F5AC8091EE7DF04001ACA9A /* YKTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTest.m; sourceTree = "<group>"; };
+		3F8341B21F555CE2007ACAB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		3FA2D7E71E2C5EE200551F8F /* YKConfigStartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKConfigStartController.h; sourceTree = "<group>"; };
 		3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKConfigStartController.m; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F8341B31F555CE2007ACAB0 /* libz.tbd in Frameworks */,
 				8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +506,7 @@
 		ACF749D161E65BEC47C3B512 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F8341B21F555CE2007ACAB0 /* libz.tbd */,
 				D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */,
 				869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */,
 				14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */,

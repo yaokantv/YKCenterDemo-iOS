@@ -124,7 +124,27 @@ typedef NS_ENUM(NSInteger, GizWifiErrorCode) {
      日志级别无效
      */
     GIZ_SDK_LOG_LEVEL_INVALID = 8009,
+    /*
+     uid参数无效
+     */
+    GIZ_SDK_UID_INVALID = 8010,
+    /*
+     token参数无效
+     */
+    GIZ_SDK_TOKEN_INVALID = 8011,
+    /*
+     用户未登录
+     */
+    GIZ_SDK_USER_NOT_LOGIN = 8012,
     
+    /*
+     设备标识不在指定的产品标识列表内
+     */
+    GIZ_SDK_PRODUCTKEY_NOT_IN_SPECIAL_LIST = 8018,
+    /*
+     设备标识跟当前应用标识未关联
+     */
+    GIZ_SDK_PRODUCTKEY_NOT_RELATED_WITH_APPID = 8019,
     /*
      批量设置设备域名信息时没有可用设备
      */
@@ -250,6 +270,10 @@ typedef NS_ENUM(NSInteger, GizWifiErrorCode) {
      当前外网不可达
      */
     GIZ_SDK_INTERNET_NOT_REACHABLE = 8050,
+    /*
+     M2M服务器连接失败
+     */
+    GIZ_SDK_M2M_CONNECTION_INVALID = 8051,
     
     /*
      HTTP服务不支持此API
@@ -286,37 +310,25 @@ typedef NS_ENUM(NSInteger, GizWifiErrorCode) {
     GIZ_SDK_THREAD_CREATE_FAILED = 8102,
     
     /*
-     用户ID无效
-     */
-    GIZ_SDK_USER_ID_INVALID = 8150,
-    /*
-     用户token无效
-     */
-    GIZ_SDK_TOKEN_INVALID = 8151,
-    /*
      组ID无效
      */
-    GIZ_SDK_GROUP_ID_INVALID = 8152,
-    /*
-     组名称无效
-     */
-    GIZ_SDK_GROUPNAME_INVALID = 8153,
+    GIZ_SDK_GROUP_ID_INVALID = 8150,
     /*
      组类型无效
      */
-    GIZ_SDK_GROUP_PRODUCTKEY_INVALID = 8154,
+    GIZ_SDK_GROUP_PRODUCTKEY_INVALID = 8151,
     /*
      组设备删除失败
      */
-    GIZ_SDK_GROUP_FAILED_DELETE_DEVICE = 8155,
+    GIZ_SDK_GROUP_FAILED_DELETE_DEVICE = 8152,
     /*
      组设备添加失败
      */
-    GIZ_SDK_GROUP_FAILED_ADD_DEVICE = 8156,
+    GIZ_SDK_GROUP_FAILED_ADD_DEVICE = 8153,
     /*
      组设备获取失败
      */
-    GIZ_SDK_GROUP_GET_DEVICE_FAILED = 8157,
+    GIZ_SDK_GROUP_GET_DEVICE_FAILED = 8154,
     
     /*
      配置文件还未下载
@@ -391,39 +403,39 @@ typedef NS_ENUM(NSInteger, GizWifiErrorCode) {
     /*
      当前固件是最新版本，不需要升级
      */
-    GIZ_SDK_DEVICE_FIRMWARE_IS_LATEST = 8350,
+    GIZ_SDK_OTA_FIRMWARE_IS_LATEST = 8350,
     /*
      固件下载成功
      */
-    GIZ_SDK_DEVICE_FIRMWARE_DOWNLOAD_OK = 8351,
+    GIZ_SDK_OTA_FIRMWARE_DOWNLOAD_OK = 8351,
     /*
      固件下载失败
      */
-    GIZ_SDK_DEVICE_FIRMWARE_DOWNLOAD_FAILED = 8352,
+    GIZ_SDK_OTA_FIRMWARE_DOWNLOAD_FAILED = 8352,
     /*
      设备忙，固件正在升级
      */
-    GIZ_SDK_DEVICE_BUSY_IN_UPGRADE = 8353,
+    GIZ_SDK_OTA_DEVICE_BUSY_IN_UPGRADE = 8353,
     /*
      固件推送失败
      */
-    GIZ_SDK_DEVICE_FIRMWARE_PUSH_FAILED = 8354,
+    GIZ_SDK_OTA_PUSH_FAILED = 8354,
     /*
      固件版本过低
      */
-    GIZ_SDK_DEVICE_FIRMWARE_VERSION_TOO_LOW = 8355,
+    GIZ_SDK_OTA_FIRMWARE_VERSION_TOO_LOW = 8355,
     /*
      固件校验失败
      */
-    GIZ_SDK_DEVICE_FIRMWARE_CHECK_FAILED = 8356,
+    GIZ_SDK_OTA_FIRMWARE_CHECK_FAILED = 8356,
     /*
      固件升级失败
      */
-    GIZ_SDK_DEVICE_UPGRADE_FAILED = 8357,
+    GIZ_SDK_OTA_UPGRADE_FAILED = 8357,
     /*
      固件升级成功
      */
-    GIZ_SDK_DEVICE_UPGRADE_SUCCESS = 8358,
+    GIZ_SDK_OTA_UPGRADE_SUCCESS = 8358,
     
     /*
      mac already registered!
@@ -961,16 +973,18 @@ typedef NS_ENUM(NSInteger, GizEventType) {
  GizWifiDeviceType枚举，描述SDK支持的设备分类
  */
 typedef NS_ENUM(NSInteger, GizWifiDeviceType) {
-    
     /*
      普通设备
      */
     GizDeviceNormal = 0,
-    
     /*
      中控设备
      */
     GizDeviceCenterControl = 1,
+    /*
+     子设备
+     */
+    GizDeviceSub = 2,
 };
 
 /*
@@ -1042,7 +1056,8 @@ typedef NS_ENUM(NSInteger, GizPushType) {
     /*
      极光
      */
-    GizPushJiGuang = 1
+    GizPushJiGuang = 1,
+    GizPushAWS = 2,
 };
 
 /*

@@ -50,6 +50,7 @@
 "About" = "About";
 "Program Version" = "Program Version";
 "SDK Version" = "SDK Version";
+"GizWifiSDK Version" = "GizWifiSDK Version";
 
 "No open Wi-Fi" = "No open Wi-Fi";
 "Device is not connected to Wi-Fi, can not configure" = "Device is not connected to Wi-Fi, can not configure";

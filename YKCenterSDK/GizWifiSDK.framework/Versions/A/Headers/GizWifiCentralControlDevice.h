@@ -62,14 +62,15 @@
  添加子设备，只有中控设备可控后才能执行添加操作。该接口会向中控设备发送添加子设备请求，中控设备将添加后的子设备列表通过回调返回
  @see 对应的回调接口：[GizWifiCentralControlDeviceDelegate GizWifiCentralControlDevice:didDiscovered:subDeviceList:]
  */
+- (void)addSubDevice;
+
 - (void)addSubDevice:(NSArray *)deviceMacs; //deviceMacs可不填
-- (void)addSubDevice DEPRECATED_ATTRIBUTE;
 
 /*
  删除子设备，只有中控设备可控后才能执行删除操作。该接口会向中控设备发送删除子设备请求，中控设备将删除后的子设备列表通过回调返回
- @param deviceID 待删除子设备的did。在中控设备的子设备列表中找到子设备，取到did传入该参数
+ @param device 待删除子设备，必须是这台中控网关对应的子设备
  @see 对应的回调接口：[GizWifiCentralControlDeviceDelegate GizWifiCentralControlDevice:didDiscovered:subDeviceList:]
  */
-- (void)deleteSubDevice:(NSString *)deviceID;
+- (void)deleteSubDevice:(GizWifiDevice *)device;
 
 @end

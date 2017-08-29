@@ -9,6 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <GizWifiSDK/GizWifiDefinitions.h>
 
+@class GizWifiDevice;
+
+@protocol GizDeviceSchedulerDelegate <NSObject>
+@optional
+
+- (void)didUpdateTasks:(NSString *)schedulerID result:(NSError *)result taskList:(NSArray *)taskList;
+- (void)didEnableScheduler:(NSString *)schedulerID result:(NSError *)result sn:(int)sn;
+- (void)didUpdateSchedulerEnableStatus:(NSString *)schedulerID result:(NSError *)result enableStatus:(BOOL)enableStatus;
+
+@end
+
 /*
  GizDeviceScheduler类是基于设备的定时任务类，可设置一次性定时任务、按月重复的定时任务、按周重复的定时任务。
  一次性定时任务是指只执行一次定时任务，按月重复定时任务是指在每月特定日期执行定时任务，按周重复定时任务是指在每周特定时间执行定时任务。
@@ -17,6 +28,7 @@
 
 - (GizDeviceScheduler *)init;
 
+@property (weak, nonatomic, readonly) GizWifiDevice *schedulerOwner;
 /*
  NSString类型，只读不可写。定时任务ID，定时任务创建成功时会被分配一个ID
  */
@@ -25,6 +37,7 @@
  NSString类型，只读不可写。定时任务的创建时间
  */
 @property (strong, nonatomic, readonly) NSString *createdDateTime;
+@property (strong, nonatomic, readonly) NSArray *taskList;
 /*
  NSString类型，可读写。定时任务的执行日期，年月日以“－”符号分割，例如：2017-01-30。此变量默认值为nil
  */
@@ -67,8 +80,14 @@
 @property (strong, nonatomic) NSString *name; //只用于中控设备
 @property (assign, nonatomic) BOOL delay; //只用于中控设备
 
-@property (strong, nonatomic) NSArray *taskList DEPRECATED_ATTRIBUTE;
 @property (assign, nonatomic) GizScheduleRepeatRule repeatRule DEPRECATED_ATTRIBUTE;
 @property (assign, nonatomic) NSInteger repeatCount DEPRECATED_ATTRIBUTE;
+
+@property (weak, nonatomic) id<GizDeviceSchedulerDelegate> delegate;
+
+- (void)editTasks:(NSArray *)tasks;
+- (void)updateTasks;
+- (void)enableScheduler:(BOOL)enable sn:(int)sn;
+- (void)updateSchedulerEnableStatus;
 
 @end

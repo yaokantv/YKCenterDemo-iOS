@@ -49,6 +49,7 @@
 "About" = "关于";
 "Program Version" = "程序版本";
 "SDK Version" = "SDK版本";
+"GizWifiSDK Version" = "GizWifiSDK版本";
 
 "No open Wi-Fi" = "没有打开无线网络";
 "Device is not connected to Wi-Fi, can not configure" = "设备没有连接到Wi-Fi，无法配置";

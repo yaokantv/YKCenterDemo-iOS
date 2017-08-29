@@ -13,7 +13,6 @@
 /*
  GizWifiGroupDelegate 是 GizWifiGroup 类的委托协议，为 APP 开发者处理子设备添加、子设备删除、获取子设备列表提供委托函数
  */
-NS_CLASS_DEPRECATED_IOS(1_0, 2_0, "GizWifiGroupDelegate is deprecated.")
 @protocol GizWifiGroupDelegate <NSObject>
 @optional
 
@@ -42,6 +41,7 @@ NS_CLASS_DEPRECATED_IOS(1_0, 2_0, "GizWifiGroupDelegate is deprecated.")
 /*
  GizWifiGroup 类为 APP 开发者提供中控子设备的设备分组操作，包括获取分组内的设备、往分组内添加设备、删除分组内的设备等功能
  */
+NS_CLASS_DEPRECATED_IOS(1_0, 2_0, "GizWifiGroupDelegate is deprecated.")
 @interface GizWifiGroup : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
