@@ -235,8 +235,10 @@ __attribute__((deprecated("no available anymore")));
 
 /**
  使用用户名密码登陆，需使用注册成功的用户名、密码进行登录
+
+ 注意：此方法仅支持普通用户名登录，需要使用手机或邮箱登录，请使用 -login:password:accountType:handler: 方法
  
- @param username 用户名，可以是邮箱用户名或普通用户名
+ @param username 用户名
  @param password 密码
  @param completion 登陆结果回调
  */
@@ -245,7 +247,21 @@ __attribute__((deprecated("no available anymore")));
       handler:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
 
 /**
+ 使用用户名密码登陆，需使用注册成功的用户名、密码进行登录
+ 
+ @param username 用户名
+ @param password 密码
+ @param accountType 用户类型，详细见 YKUserAccountType 枚举定义。注册手机号时，此参数指定为手机用户，注册邮箱时，此参数指定为邮箱用户，注册普通用户名时，此参数指定为普通用户
+ @param completion 登陆结果回调
+ */
+- (void)login:(NSString *)username
+     password:(NSString *)password
+  accountType:(YKUserAccountType)accountType
+      handler:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
+
+/**
  使用用户名密码注册
+ 注意：使用此方式注册不支持找回密码
  
  @param username 用户名，普通用户名
  @param password 密码
@@ -255,6 +271,49 @@ __attribute__((deprecated("no available anymore")));
    password:(NSString *)password
     handler:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
 
+/**
+ 用户注册，需指定用户类型注册。手机用户的用户名是手机号，邮箱用户的用户名是邮箱、普通用户的用户名可以是普通用户名
+ 使用此方式注册支持找回密码
+ 
+ @param username 用户名，普通用户名
+ @param password 密码
+ @param accountType 用户类型，详细见 YKUserAccountType 枚举定义。注册手机号时，此参数指定为手机用户，注册邮箱时，此参数指定为邮箱用户，注册普通用户名时，此参数指定为普通用户
+ @param code 手机短信验证码。短信验证码注册后就失效了，不能被再次使用
+ @param completion 注册结果回调
+ */
+- (void)reg:(NSString *)username
+   password:(NSString *)password
+ verifyCode:(NSString *)code
+accountType:(YKUserAccountType)accountType
+    handler:(void (^__nullable)(NSError *result, NSString *uid, NSString *token))completion;
+
+
+/**
+ 通过手机号请求短信验证码
+
+ 注意，验证短信验证码后，验证码就失效了，无法再用于手机号注册
+ 
+ @param phone 手机号
+ @param completion 结果回调
+ */
++ (void)sendPhoneSMSCode:(NSString *)phone
+              completion:(void (^)(NSError *result, NSString *token))completion;
+
+
+/**
+ 重置密码，找回密码
+
+ @param username 待重置密码的手机号或邮箱
+ @param code 重置手机用户密码时需要使用手机短信验证码（通过 sendPhoneSMSCode:completion: 方法获取）
+ @param newPassword 新密码
+ @param accountType 用户类型，详细见 YKUserAccountType 枚举定义。待重置密码的用户名是手机号时，此参数指定为手机用户，待重置密码的用户名是邮箱时，此参数指定为邮箱用户
+ @param completion 结果回调
+ */
++ (void)resetPassword:(NSString *)username
+           verifyCode:(NSString *)code
+          newPassword:(NSString *)newPassword
+          accountType:(YKUserAccountType)accountType
+           completion:(void (^)(NSError *__nullable result))completion;
 
 /**
  学习红外码

@@ -7,10 +7,12 @@
 */
 
 "tip" = "tip";
+"Username can not be empty" = "Username can not be empty";
+"The password must be at least six characters" = "The password must be at least six characters";
 "OK" = "OK";
 "Cancel" = "Cancel";
 "NO" = "NO";
-
+"Get verification code" = "Get code";
 
 "please enter verification code" = "please enter verification code";
 "Phone verification code sent successfully" = "Phone verification code sent successfully";

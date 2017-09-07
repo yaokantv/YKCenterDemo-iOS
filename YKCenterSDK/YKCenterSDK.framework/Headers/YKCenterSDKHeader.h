@@ -9,6 +9,28 @@
 #ifndef YKCenterSDKHeader_h
 #define YKCenterSDKHeader_h
 
+/*
+ YKUserAccountType枚举，描述SDK支持的用户（非第三方）账号类型
+ */
+typedef NS_ENUM(NSInteger, YKUserAccountType) {
+    /*
+     普通用户
+     */
+    YKUserAccountTypeNormal = 0,
+    /*
+     手机用户
+     */
+    YKUserAccountTypePhone = 1,
+    /*
+     电子邮箱用户
+     */
+    YKUserAccountTypeEmail = 2,
+    /*
+     其他用户类型（包括匿名用户）
+     */
+    YKUserAccountTypeOther = 3,
+};
+
 #import <YKCenterSDK/YKRemoteDeviceType.h>
 #import <YKCenterSDK/YKRemoteDeviceBrand.h>
 #import <YKCenterSDK/YKRemoteMatchDeviceKey.h>
@@ -37,6 +59,5 @@ typedef NS_ENUM(NSInteger, RemoteDeviceType){
     kDeviceFootbathType = 16,       // 洗脚盆
     kDeviceCarAudioType = 17,       // 汽车音响
 };
-
 
 #endif /* YKCenterSDKHeader_h */

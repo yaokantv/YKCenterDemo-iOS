@@ -9,13 +9,13 @@ use_frameworks!
 
 target 'YKCenterDemo' do
 
-pod 'YKCenterSDK', :path => 'YKCenterSDK/'
+pod 'YKCenterSDK', :path => './'
 pod 'MBProgressHUD', '~> 1.0.0'
 
 end
 
 target 'YKCenterSwift' do
-pod 'YKCenterSDK', :path => 'YKCenterSDK/'
+pod 'YKCenterSDK', :path => './'
 end
 
 target 'YKCenterDemoTests' do

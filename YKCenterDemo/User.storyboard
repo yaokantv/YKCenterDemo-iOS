@@ -54,6 +54,9 @@
                                 <state key="normal" title="Forgot password ?">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0NN-UH-NuD" kind="show" id="4XY-rQ-bBA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTE-aK-nzu">
                                 <rect key="frame" x="16" y="229" width="52" height="30"/>
@@ -214,14 +217,12 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-T5-UIn">
                                 <rect key="frame" x="36" y="191" width="303" height="44"/>
-                                <color key="backgroundColor" red="0.97647058819999999" green="0.86274509799999999" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.48627450980392156" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="19c-aA-kOO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Sign up now">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Sign up now"/>
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -258,6 +259,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQO-OL-stm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1897" y="179"/>
+        </scene>
+        <!--Reset password-->
+        <scene sceneID="JSW-DB-akb">
+            <objects>
+                <viewController id="0NN-UH-NuD" customClass="YKForgetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Yh-h1-oWr"/>
+                        <viewControllerLayoutGuide type="bottom" id="RYj-1F-TE9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t93-e9-MJX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RTb-lZ-pCt">
+                                <rect key="frame" x="0.0" y="84" width="375" height="131"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="zBc-Zg-WK9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="0NN-UH-NuD" id="ian-eh-iK7"/>
+                                    <outlet property="delegate" destination="0NN-UH-NuD" id="6eu-8o-Yc9"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-Lp-IbT">
+                                <rect key="frame" x="36" y="235" width="303" height="44"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.48627450979999998" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KsR-RU-FlQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Reset password"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retsetBtnPressed:" destination="0NN-UH-NuD" eventType="touchUpInside" id="hWC-cW-G7R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RTb-lZ-pCt" secondAttribute="trailing" id="2kK-HI-8WK"/>
+                            <constraint firstItem="Jej-Lp-IbT" firstAttribute="top" secondItem="RTb-lZ-pCt" secondAttribute="bottom" constant="20" id="2m7-yr-sZ4"/>
+                            <constraint firstItem="Jej-Lp-IbT" firstAttribute="leading" secondItem="t93-e9-MJX" secondAttribute="leadingMargin" constant="20" id="PPx-Ej-BkB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jej-Lp-IbT" secondAttribute="trailing" constant="20" id="VeW-jf-VKZ"/>
+                            <constraint firstItem="RTb-lZ-pCt" firstAttribute="leading" secondItem="t93-e9-MJX" secondAttribute="leading" id="hAU-KJ-Lmy"/>
+                            <constraint firstItem="RTb-lZ-pCt" firstAttribute="top" secondItem="5Yh-h1-oWr" secondAttribute="bottom" constant="20" id="tbh-5R-3pM"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="返回" id="OeA-Zz-dzf">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Reset password" id="xC9-tg-YWL">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Xzf-f7-rG3"/>
+                        <connections>
+                            <outlet property="backBarButtonItem" destination="OeA-Zz-dzf" id="Udu-Tm-eZw"/>
+                        </connections>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="forgetBtn" destination="Jej-Lp-IbT" id="YNK-gw-FDG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ApU-rW-fy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="947"/>
         </scene>
     </scenes>
     <resources>

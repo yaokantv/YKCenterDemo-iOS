@@ -87,6 +87,23 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+#pragma mark - IBAction
+/**
+ 发送手机验证码
+ */
+- (void)didSendCodeBtnPressed {
+    if([YKCenterCommon isMobileNumber:self.textCell.textInput.text]) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [YKCenterSDK sendPhoneSMSCode:self.textCell.textInput.text
+                           completion:^(NSError * _Nonnull result, NSString * _Nonnull token) {
+                               [MBProgressHUD hideHUDForView:self.view animated:YES];
+                           }];
+    }
+    else {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"the phone number is incorrect", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
+    }
+}
+
 #pragma mark - Event
 - (void)onClearPassword {
     self.passwordCell.textPassword.text = @"";
@@ -116,14 +133,14 @@
     if(self.textCell.textInput.text.length < 1) {
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"Username can not be empty", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
     }
-    
-    if (self.passwordCell.textPassword.text.length < 6) {
+    else if (self.passwordCell.textPassword.text.length < 6) {
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"The password must be at least six characters", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
         return;
     }
-    
+
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
+    // 注意：此方法是普通用户名注册，非手机或邮箱注册
     [[YKCenterSDK sharedInstance] reg:self.textCell.textInput.text
                              password:self.passwordCell.textPassword.text
                               handler:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token)

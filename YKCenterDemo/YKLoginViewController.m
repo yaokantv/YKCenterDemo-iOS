@@ -199,24 +199,47 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[YKCenterCommon sharedInstance] saveUserDefaults:username password:password uid:nil token:nil];
 
+    
     __weak __typeof(self)weakSelf = self;
-    [[YKCenterSDK sharedInstance] login:username
-                               password:password
-                                handler:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token)
-     {
-         __strong __typeof(weakSelf)strongSelf = weakSelf;
-         [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
-         if (result.code == 0) {
-             [[YKCenterCommon sharedInstance] setUid:uid];
-             [[YKCenterCommon sharedInstance] setToken:token];
-             [YKCenterCommon sharedInstance].loginStatus  = YKLoginUser;
-             [strongSelf toDeviceListWithoutLogin:YES];
-         }
-         else {
-             NSString *info = [NSString stringWithFormat:@"%@\n%@ - %@", NSLocalizedString(@"Login failed", nil), @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];
-             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:info delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
-         }
-     }];
+    if ([YKCenterCommon isMobileNumber:username]) {
+        [[YKCenterSDK sharedInstance] login:username
+                                   password:password
+         accountType:(YKUserAccountTypePhone)
+                                    handler:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token)
+         {
+             __strong __typeof(weakSelf)strongSelf = weakSelf;
+             [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+             if (result.code == 0) {
+                 [[YKCenterCommon sharedInstance] setUid:uid];
+                 [[YKCenterCommon sharedInstance] setToken:token];
+                 [YKCenterCommon sharedInstance].loginStatus  = YKLoginUser;
+                 [strongSelf toDeviceListWithoutLogin:YES];
+             }
+             else {
+                 NSString *info = [NSString stringWithFormat:@"%@\n%@ - %@", NSLocalizedString(@"Login failed", nil), @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];
+                 [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:info delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
+             }
+         }];
+    }
+    else {
+        [[YKCenterSDK sharedInstance] login:username
+                                   password:password
+                                    handler:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token)
+         {
+             __strong __typeof(weakSelf)strongSelf = weakSelf;
+             [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
+             if (result.code == 0) {
+                 [[YKCenterCommon sharedInstance] setUid:uid];
+                 [[YKCenterCommon sharedInstance] setToken:token];
+                 [YKCenterCommon sharedInstance].loginStatus  = YKLoginUser;
+                 [strongSelf toDeviceListWithoutLogin:YES];
+             }
+             else {
+                 NSString *info = [NSString stringWithFormat:@"%@\n%@ - %@", NSLocalizedString(@"Login failed", nil), @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];
+                 [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:info delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
+             }
+         }];
+    }
 }
 
 - (IBAction)userLoginBtnPressed:(id)sender {

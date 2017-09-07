@@ -58,6 +58,11 @@
 		3FE818CC1E723A16002FD52F /* YKTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE818CB1E723A16002FD52F /* YKTextCell.xib */; };
 		3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE818CE1E7249CF002FD52F /* YKRegisterViewController.m */; };
 		3FEC71061F0357D10018F46C /* YKRemoteACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC71051F0357D10018F46C /* YKRemoteACViewController.m */; };
+		3FF3D8EC1F5F894F00A7110C /* YKForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D8EB1F5F894F00A7110C /* YKForgetViewController.m */; };
+		3FF3D8EF1F5F8A8300A7110C /* YKVerificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D8EE1F5F8A8300A7110C /* YKVerificationCell.m */; };
+		3FF3D8F31F5F8AD900A7110C /* YKVerificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D8F21F5F8AD900A7110C /* YKVerificationCell.xib */; };
+		3FF3D8F71F5F8C1100A7110C /* YKPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3D8F51F5F8C1100A7110C /* YKPhoneCell.m */; };
+		3FF3D8F81F5F8C1100A7110C /* YKPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D8F61F5F8C1100A7110C /* YKPhoneCell.xib */; };
 		6412A8F483A6B5AB75D8C98D /* Pods_YKCenterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F73659886A02EA84FFEB71 /* Pods_YKCenterSwift.framework */; };
 		8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */; };
 		F81597718802442D66D96326 /* Pods_YKCenterDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */; };
@@ -120,7 +125,6 @@
 		3F1382FB1F55776500D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3F1382FF1F5577BB00D5FD0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3F1383011F5577F000D5FD0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3F1383021F55789800D5FD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F32EEF31EE7D5BC0032FC6A /* YKCenterSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKCenterSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F32EEF51EE7D5BC0032FC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F32EEF71EE7D5BC0032FC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,14 @@
 		3FE818CE1E7249CF002FD52F /* YKRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKRegisterViewController.m; sourceTree = "<group>"; };
 		3FEC71041F0357D10018F46C /* YKRemoteACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKRemoteACViewController.h; sourceTree = "<group>"; };
 		3FEC71051F0357D10018F46C /* YKRemoteACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKRemoteACViewController.m; sourceTree = "<group>"; };
+		3FF3D8EA1F5F894F00A7110C /* YKForgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKForgetViewController.h; sourceTree = "<group>"; };
+		3FF3D8EB1F5F894F00A7110C /* YKForgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKForgetViewController.m; sourceTree = "<group>"; };
+		3FF3D8ED1F5F8A8200A7110C /* YKVerificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKVerificationCell.h; sourceTree = "<group>"; };
+		3FF3D8EE1F5F8A8300A7110C /* YKVerificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKVerificationCell.m; sourceTree = "<group>"; };
+		3FF3D8F21F5F8AD900A7110C /* YKVerificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YKVerificationCell.xib; sourceTree = "<group>"; };
+		3FF3D8F41F5F8C1100A7110C /* YKPhoneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKPhoneCell.h; sourceTree = "<group>"; };
+		3FF3D8F51F5F8C1100A7110C /* YKPhoneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKPhoneCell.m; sourceTree = "<group>"; };
+		3FF3D8F61F5F8C1100A7110C /* YKPhoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YKPhoneCell.xib; sourceTree = "<group>"; };
 		44A2DD7874924338FB5FC93E /* Pods-YKCenterDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoTests/Pods-YKCenterDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		474C1B9CFFE633D1CB331BF7 /* Pods-YKCenterDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoUITests/Pods-YKCenterDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		496F3FBD45EAA063D624E25F /* Pods-YKCenterSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -485,11 +497,19 @@
 				3FE818C31E715E33002FD52F /* User.storyboard */,
 				3FE818C51E7160E0002FD52F /* YKLoginViewController.h */,
 				3FE818C61E7160E0002FD52F /* YKLoginViewController.m */,
+				3FF3D8F41F5F8C1100A7110C /* YKPhoneCell.h */,
+				3FF3D8F51F5F8C1100A7110C /* YKPhoneCell.m */,
+				3FF3D8F61F5F8C1100A7110C /* YKPhoneCell.xib */,
 				3FE818C81E723994002FD52F /* YKTextCell.h */,
 				3FE818C91E723994002FD52F /* YKTextCell.m */,
 				3FE818CB1E723A16002FD52F /* YKTextCell.xib */,
+				3FF3D8ED1F5F8A8200A7110C /* YKVerificationCell.h */,
+				3FF3D8EE1F5F8A8300A7110C /* YKVerificationCell.m */,
+				3FF3D8F21F5F8AD900A7110C /* YKVerificationCell.xib */,
 				3FE818CD1E7249CF002FD52F /* YKRegisterViewController.h */,
 				3FE818CE1E7249CF002FD52F /* YKRegisterViewController.m */,
+				3FF3D8EA1F5F894F00A7110C /* YKForgetViewController.h */,
+				3FF3D8EB1F5F894F00A7110C /* YKForgetViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -744,6 +764,7 @@
 				3FA2D81C1E2DEA7500551F8F /* Remote.storyboard in Resources */,
 				3FA2D7FD1E2C5FB500551F8F /* YKPasswordCell.xib in Resources */,
 				3F5A21BB1E27666F006BF365 /* LaunchScreen.storyboard in Resources */,
+				3FF3D8F31F5F8AD900A7110C /* YKVerificationCell.xib in Resources */,
 				3F1382FE1F5577BB00D5FD0A /* Localizable.strings in Resources */,
 				3FA2D8081E2C68B400551F8F /* checked@2x.png in Resources */,
 				3FA2D80D1E2C7D7D00551F8F /* 02-airlink.gif in Resources */,
@@ -754,6 +775,7 @@
 				3FA2D8091E2C68B400551F8F /* unchecked@2x.png in Resources */,
 				3F5A21B61E27666F006BF365 /* Main.storyboard in Resources */,
 				3FE818C41E715E33002FD52F /* User.storyboard in Resources */,
+				3FF3D8F81F5F8C1100A7110C /* YKPhoneCell.xib in Resources */,
 				3FA2D7F81E2C5FAA00551F8F /* YKSSIDCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1002,10 +1024,12 @@
 				3FA2D8001E2C602800551F8F /* YKCenterCommon.m in Sources */,
 				3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */,
 				3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */,
+				3FF3D8EC1F5F894F00A7110C /* YKForgetViewController.m in Sources */,
 				3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */,
 				3FE818CA1E723994002FD52F /* YKTextCell.m in Sources */,
 				3FA2D8191E2C7F3B00551F8F /* UAProgressView.m in Sources */,
 				3FA2D8261E2E0DE900551F8F /* YKBrandTableViewController.m in Sources */,
+				3FF3D8F71F5F8C1100A7110C /* YKPhoneCell.m in Sources */,
 				3F5A21AD1E27666F006BF365 /* main.m in Sources */,
 				3FA2D80A1E2C68B400551F8F /* RadioButton.m in Sources */,
 				3FA2D7FC1E2C5FB500551F8F /* YKPasswordCell.m in Sources */,
@@ -1013,6 +1037,7 @@
 				3FA2D8331E2E186400551F8F /* YKMatchKeyTableViewController.m in Sources */,
 				3FA2D8141E2C7DB000551F8F /* YFGIFImageView.m in Sources */,
 				3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */,
+				3FF3D8EF1F5F8A8300A7110C /* YKVerificationCell.m in Sources */,
 				3FD9FA1C1EEA993F0037A44C /* SwiftYKViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1064,7 +1089,6 @@
 			children = (
 				3F1382FF1F5577BB00D5FD0A /* zh-Hans */,
 				3F1383011F5577F000D5FD0A /* en */,
-				3F1383021F55789800D5FD0A /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1273,7 +1297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1315,7 +1339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
