@@ -19,4 +19,6 @@
 
 1. 打开 `[your_project].xcodeproj`, 选择 Target `[your_target_name]` 打开 General 标签项。
 
-2. 在 Embedded Binaries 中点击“+”号，点击 Add Other.. 打开项目根目录，选择 YKCenterSDK 目录下的 `YKCenterSDK.framework` 和 `GizWifiSDK.framework`。直接将这两个文件拖进 `Embedded Binaries` 一样可以。
+2. 在 `Embedded Binaries` 中点击 `+` 号，点击 `Add Other..` 打开 `YKCenterSDK` 目录选择 `YKCenterSDK.framework` 和 `GizWifiSDK.framework`。
+
+   直接将这两个文件拖进 `Embedded Binaries` 一样可以。
