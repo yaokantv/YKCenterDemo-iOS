@@ -324,6 +324,14 @@ accountType:(YKUserAccountType)accountType
 + (void)learnCodeWithYKCId:(NSString *)ykcId
                 completion:(void (^)( BOOL result, NSString * __nullable code))completion;
 
+
+/**
+ 切换遥控中心LED灯开关
+
+ @param ykcId 遥控中心 id
+ */
++ (void)toogleLEDWithYKCId:(NSString *)ykcId;
+
 /**
  获取 SDK 版本号
 

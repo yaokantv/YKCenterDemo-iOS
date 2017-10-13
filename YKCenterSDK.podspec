@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YKCenterSDK"
-  s.version      = "1.8.1096"
+  s.version      = "1.9.2027"
   s.summary      = "YKCenterSDK makes your app control your home."
 
   # This description is used to generate tags and improve search results.
@@ -115,9 +115,9 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "YKCenterSDK/GizWifiSDK"
+  # s.framework  = "YKCenterSDK/GizWifiSDK.framework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-  s.ios.vendored_frameworks = 'YKCenterSDK/YKCenterSDK.framework'
+  s.ios.vendored_frameworks = 'YKCenterSDK/YKCenterSDK.framework', 'YKCenterSDK/GizWifiSDK.framework'
   s.library   = "z"
   # s.libraries = "iconv", "xml2"
 
@@ -135,6 +135,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency "GizWifiSDK", "~> 2.07.07.21015"
+  # s.dependency "GizWifiSDK"
 
 end

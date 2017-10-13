@@ -1,0 +1,6 @@
+framework module GizWifiSDK {
+  umbrella header "GizWifiSDK.h"
+
+  export *
+  module * { export * }
+}
