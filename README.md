@@ -8,12 +8,12 @@
 ```$ sudo gem install cocoapods```，官方安装文档：[CocoaPods Guides - Getting Started](https://guides.cocoapods.org/using/getting-started.html#getting-started)
 
 2. 集成遥控中心 SDK：
+  
+   1. 在 Podfile 添加 `pod 'YKCenterSDK'`，如果没有此文件则新建一个再添加。
 
-  在 Podfile 添加 `pod 'YKCenterSDK'`，如果没有此文件则新建一个再添加。
+   2. 然后执行 ```$ pod install --verbose```。
 
-  然后执行 ```$ pod install --verbose```。
-
-  如果找不到 `YKCenterSDK` 请先更新 Pod 仓库：`pod repo update`
+   3. 如果找不到 `YKCenterSDK` 请先更新 Pod 仓库：`pod repo update`
 
 ## 手动集成
 
