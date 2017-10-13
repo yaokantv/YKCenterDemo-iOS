@@ -36,15 +36,16 @@
 - (IBAction)learnCode:(id)sender {
     __weak __typeof(self)weakSelf = self;
     [YKCenterSDK learnCodeWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
-                         completion:^(BOOL result, NSString * _Nullable code) {
-                             NSLog(@"result:%ld, code:%@", (long)result, code);
-                             if (result) {
-                                 // 使用举例：修改第一个key的码值
-                                 YKRemoteDeviceKey *key = weakSelf.remote.keys[0];
-                                 key.src = code;
-                                 key.zip = 2;
-                             }
-                         }];
+                         completion:^(BOOL result, NSString * _Nullable code)
+     {
+         NSLog(@"result:%ld, code:%@", (long)result, code);
+         if (result) {
+             // 使用举例：修改第一个key的码值
+             YKRemoteDeviceKey *key = weakSelf.remote.keys[0];
+             key.src = code;
+             key.zip = 2;
+         }
+     }];
 }
 
 

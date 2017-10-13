@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
+@class GizWifiDevice;
 
 /**
  登录类型类型
@@ -66,6 +67,7 @@ id YKGetControllerWithClass(Class class, UITableView *tableView, NSString *reuse
 
 @property (nonatomic, copy) NSString *ssid;
 @property (nonatomic, copy) NSString *currentYKCId;
+@property (nonatomic, strong) GizWifiDevice *currentDevice;
 @property (nonatomic, assign) YKLoginStatus loginStatus;
 @property (nonatomic, copy) NSString *uid;
 @property (nonatomic, copy) NSString *token;

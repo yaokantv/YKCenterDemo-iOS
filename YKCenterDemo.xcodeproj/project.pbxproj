@@ -99,19 +99,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3F5A22021E27761F006BF365 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		14EE1DA3AE4F1B5ABB9A8CAA /* Pods_YKCenterDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		355C6262D1154727EB7321AF /* Pods-YKCenterSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -607,7 +594,6 @@
 				3F5A21A41E27666F006BF365 /* Sources */,
 				3F5A21A51E27666F006BF365 /* Frameworks */,
 				3F5A21A61E27666F006BF365 /* Resources */,
-				3F5A22021E27761F006BF365 /* Embed Frameworks */,
 				A6B6DBB5827EBA40C9BA027B /* [CP] Embed Pods Frameworks */,
 				09C292576C2204E9C602E00B /* [CP] Copy Pods Resources */,
 			);
@@ -1356,10 +1342,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HY8S4564M8;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YKCenterSDK",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = YKCenterDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "efe4a673-3974-4610-a1fc-46ec08aaa48c";
@@ -1380,10 +1369,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YKCenterSDK",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = YKCenterDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -32,6 +32,8 @@
         [[YKCenterSDK sharedInstance] anonymousLogin:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token) {
             if (result.code == 0) {
                 [YKCenterCommon sharedInstance].loginStatus = YKLoginAnonymous;
+                [YKCenterCommon sharedInstance].token = token;
+                [YKCenterCommon sharedInstance].uid = uid;
                 [self getBoundDevice];
             }
             else {
@@ -233,6 +235,8 @@
         cell.lan.text = dev.isLAN?NSLocalizedString(@"Lan", nil):NSLocalizedString(@"Remote", nil);
         if (!dev.isBind) {
             cell.lan.text = NSLocalizedString(@"unbound", nil);
+        } else if (dev.isSubscribed) {
+            cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         }
     }
     else {
@@ -243,7 +247,10 @@
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-
+    GizWifiDevice *dev = self.deviceListArray[indexPath.row];
+    if (dev.isSubscribed) {
+        [YKCenterSDK toogleLEDWithYKCId:dev.macAddress];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -256,6 +263,7 @@
         // 直接订阅会自动绑定
         if (device.isSubscribed) {
             [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
+            [[YKCenterCommon sharedInstance] setCurrentDevice:dev];
             [weakSelf performSegueWithIdentifier:@"YKRemoteList" sender:nil];
         }
     }];

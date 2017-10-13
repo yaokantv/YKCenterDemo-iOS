@@ -11,6 +11,7 @@ target 'YKCenterDemo' do
 
 pod 'YKCenterSDK', :path => './'
 pod 'MBProgressHUD', '~> 1.0.0'
+#pod 'GizWifiSDK'
 
 end
 
