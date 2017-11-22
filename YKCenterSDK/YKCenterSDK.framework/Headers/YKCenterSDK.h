@@ -188,6 +188,22 @@ __attribute__((deprecated("no available anymore")));
                       datas:(NSArray *)datas
         completion:(void (^__nullable)(id result, NSError *error))completion;
 
+/**
+ 一键匹配新接口（未开放）
+
+ @param ykcid 遥控中心 id
+ @param type 遥控器设备类型
+ @param brandId 品牌 id
+ @param key 键名
+ @param cmd 键值
+ @param completion 结果回调
+ */
++ (void)oneKeyMatchWithYKCId:(NSString *)ykcid
+                beRemoteType:(NSUInteger)type
+                     brandId:(NSUInteger)brandId
+                     cmd_key:(NSString *)key
+                   cmd_value:(NSString *)cmd
+                  completion:(void (^__nullable)(id result, NSError *error))completion;
 
 /**
  发码给遥控中心
@@ -223,6 +239,25 @@ __attribute__((deprecated("no available anymore")));
                          windL:(NSUInteger)windL
                  asteriskDatas:(nullable NSArray *)asteriskDatas
                     completion:(void (^__nullable)(id result, NSError *error))completion;
+
+
+/**
+ 透传数据接口
+
+ @param ykcId 遥控中心 id
+ @param hexData 透传数据（16进制格式）
+ @param completion 结果回调
+ */
++ (void)sendTrunkWithYKCId:(NSString *)ykcId
+                      data:(NSData *)hexData
+                completion:(void (^__nullable)(id result, NSError *error))completion;
+
+/**
+ 注册接收透传数据监听
+
+ @param completion 结果回调
+ */
++ (void)registerReceiveTrunkDataHandler:(void (^__nullable)(NSData *trunkData))completion;
 
 #pragma mark - 用户管理
 /**
@@ -316,13 +351,21 @@ accountType:(YKUserAccountType)accountType
            completion:(void (^)(NSError *__nullable result))completion;
 
 /**
- 学习红外码
+ 开始学习
  
  @param ykcId 遥控中心 id
  @param completion 学习结果回调
  */
 + (void)learnCodeWithYKCId:(NSString *)ykcId
                 completion:(void (^)( BOOL result, NSString * __nullable code))completion;
+
+
+/**
+ 停止学习
+
+ @param ykcId 遥控中心 id
+ */
++ (void)stopLearnCode:(NSString *)ykcId;
 
 
 /**
