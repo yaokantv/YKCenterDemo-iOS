@@ -11,7 +11,7 @@
 #import "YKCenterCommon.h"
 
 @interface YKRemoteViewController ()
-
+@property (nonatomic, assign) BOOL isLearning;
 @end
 
 @implementation YKRemoteViewController
@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     self.title = self.remote.name;
+    self.isLearning = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,25 +28,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 /**
  用于演示如何使用学习红外码接口
 
  @param sender sender 对象
  */
 - (IBAction)learnCode:(id)sender {
-    __weak __typeof(self)weakSelf = self;
-    [YKCenterSDK learnCodeWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
-                         completion:^(BOOL result, NSString * _Nullable code)
-     {
-         NSLog(@"result:%ld, code:%@", (long)result, code);
-         if (result) {
-             // 使用举例：修改第一个key的码值
-             YKRemoteDeviceKey *key = weakSelf.remote.keys[0];
-             key.src = code;
-             key.zip = 2;
-         }
-     }];
+    if (self.isLearning) {
+        [YKCenterSDK stopLearnCode:[[YKCenterCommon sharedInstance] currentYKCId]];
+        self.isLearning = NO;
+    }
+    else {
+        __weak __typeof(self)weakSelf = self;
+        [YKCenterSDK learnCodeWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
+                             completion:^(BOOL result, NSString * _Nullable code)
+         {
+             NSLog(@"result:%ld, code:%@", (long)result, code);
+             
+             if (result) {
+                 __strong __typeof(weakSelf)strongSelf = weakSelf;
+                 strongSelf.isLearning = NO;
+                 // 使用举例：修改第一个key的码值
+                 YKRemoteDeviceKey *key = strongSelf.remote.keys[0];
+                 key.src = code;
+                 key.zip = 2;
+             }
+         }];
+    }
+    
+    self.isLearning = YES;
 }
 
 
@@ -76,13 +87,12 @@
     YKRemoteDeviceKey *key = self.remote.keys[indexPath.row];
     cell.textLabel.text = key.key;
     cell.detailTextLabel.text = key.name;
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     YKRemoteDeviceKey *key = self.remote.keys[indexPath.row];
-    
+    NSLog(@"%@ = %@, zip=%d", key.name, key.src, key.zip);
     [YKCenterSDK sendRemoteWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
                                datas:@[key]
                           completion:^(id  _Nonnull result, NSError * _Nonnull error) {

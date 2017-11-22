@@ -165,13 +165,11 @@
 }
 
 - (void)toDeviceListWithoutLogin:(BOOL)animated {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UINavigationController *navCtrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-        YKViewController *devListCtrl = navCtrl.viewControllers.firstObject;
-        devListCtrl.parent = self;
-//        devListCtrl.needRefresh = YES;
-        [self.navigationController pushViewController:devListCtrl animated:animated];
-    });
+    UINavigationController *navCtrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+    YKViewController *devListCtrl = navCtrl.viewControllers.firstObject;
+    devListCtrl.parent = self;
+    //        devListCtrl.needRefresh = YES;
+    [self.navigationController pushViewController:devListCtrl animated:animated];
 }
 
 - (void)userLogin:(BOOL)automatic {
@@ -213,7 +211,9 @@
                  [[YKCenterCommon sharedInstance] setUid:uid];
                  [[YKCenterCommon sharedInstance] setToken:token];
                  [YKCenterCommon sharedInstance].loginStatus  = YKLoginUser;
-                 [strongSelf toDeviceListWithoutLogin:YES];
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     [strongSelf toDeviceListWithoutLogin:YES];
+                 });
              }
              else {
                  NSString *info = [NSString stringWithFormat:@"%@\n%@ - %@", NSLocalizedString(@"Login failed", nil), @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];

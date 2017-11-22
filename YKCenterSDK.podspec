@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YKCenterSDK"
-  s.version      = "1.9.2029"
+  s.version      = "2.0.2030"
   s.summary      = "YKCenterSDK makes your app control your home."
 
   # This description is used to generate tags and improve search results.
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
 
   # s.platform     = :ios
   # s.platform     = :ios, "5.0"
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '8.1'
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"

@@ -233,7 +233,7 @@
         cell.imageView.backgroundColor = [UIColor brownColor];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.lan.text = dev.isLAN?NSLocalizedString(@"Lan", nil):NSLocalizedString(@"Remote", nil);
-        if (!dev.isBind) {
+        if (!dev.isSubscribed) {
             cell.lan.text = NSLocalizedString(@"unbound", nil);
         } else if (dev.isSubscribed) {
             cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
@@ -245,7 +245,7 @@
     }
 }
 
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     GizWifiDevice *dev = self.deviceListArray[indexPath.row];
     if (dev.isSubscribed) {

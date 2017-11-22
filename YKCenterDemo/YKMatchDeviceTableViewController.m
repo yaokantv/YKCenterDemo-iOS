@@ -10,6 +10,7 @@
 #import <YKCenterSDK/YKCenterSDK.h>
 #import "YKCenterCommon.h"
 #import "YKMatchKeyTableViewController.h"
+#import "YKOneKeyMatchViewController.h"
 
 @interface YKMatchDeviceTableViewController ()
 
@@ -67,6 +68,11 @@
         YKRemoteMatchDevice *device = self.matchList[indexPath.row];
         
         vc.matchDevice = device;
+    }
+    else if ([segue.destinationViewController isKindOfClass:[YKOneKeyMatchViewController class]]) {
+        YKOneKeyMatchViewController *vc = segue.destinationViewController;
+        vc.deviceBrand = self.deviceBrand;
+        vc.deviceType = self.deviceType;
     }
 }
 

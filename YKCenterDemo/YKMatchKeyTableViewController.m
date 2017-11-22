@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = [NSString stringWithFormat:@"%@-%@",
+                  self.matchDevice.name, self.matchDevice.rmodel];
 }
 
 - (void)didReceiveMemoryWarning {

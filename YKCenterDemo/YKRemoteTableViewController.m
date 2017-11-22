@@ -10,6 +10,7 @@
 #import <YKCenterSDK/YKCenterSDK.h>
 #import "YKRemoteViewController.h"
 #import "YKRemoteACViewController.h"
+#import "YKCenterCommon.h"
 
 @interface YKRemoteTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -62,7 +63,6 @@
     //    [self updateEditingVisible];
     [self.tableView reloadData];
 }
-
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

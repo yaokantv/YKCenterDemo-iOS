@@ -17,6 +17,7 @@
 		3F32EF031EE7D5BD0032FC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F32EF011EE7D5BD0032FC6A /* LaunchScreen.storyboard */; };
 		3F32EF0E1EE7D5BD0032FC6A /* YKCenterSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F32EF0D1EE7D5BD0032FC6A /* YKCenterSwiftTests.swift */; };
 		3F32EF191EE7D5BD0032FC6A /* YKCenterSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F32EF181EE7D5BD0032FC6A /* YKCenterSwiftUITests.swift */; };
+		3F52B1211FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F52B1201FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m */; };
 		3F5A21AD1E27666F006BF365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21AC1E27666F006BF365 /* main.m */; };
 		3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21AF1E27666F006BF365 /* AppDelegate.m */; };
 		3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5A21B21E27666F006BF365 /* YKViewController.m */; };
@@ -65,6 +66,7 @@
 		3FF3D8F81F5F8C1100A7110C /* YKPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D8F61F5F8C1100A7110C /* YKPhoneCell.xib */; };
 		6412A8F483A6B5AB75D8C98D /* Pods_YKCenterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F73659886A02EA84FFEB71 /* Pods_YKCenterSwift.framework */; };
 		8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */; };
+		F64FDDF81FBECDDE00350337 /* YKTrunkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */; };
 		F81597718802442D66D96326 /* Pods_YKCenterDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		3F32EF141EE7D5BD0032FC6A /* YKCenterSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKCenterSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F32EF181EE7D5BD0032FC6A /* YKCenterSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKCenterSwiftUITests.swift; sourceTree = "<group>"; };
 		3F32EF1A1EE7D5BD0032FC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F52B11F1FA07CBA00EA05F7 /* YKOneKeyMatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKOneKeyMatchViewController.h; sourceTree = "<group>"; };
+		3F52B1201FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKOneKeyMatchViewController.m; sourceTree = "<group>"; };
 		3F5A21A81E27666F006BF365 /* YKCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5A21AC1E27666F006BF365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F5A21AE1E27666F006BF365 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		C9F73659886A02EA84FFEB71 /* Pods_YKCenterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC7C44A38E90531FA3BFC2B /* Pods-YKCenterDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoUITests/Pods-YKCenterDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64FDDF61FBECDDE00350337 /* YKTrunkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTrunkViewController.h; sourceTree = "<group>"; };
+		F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTrunkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +361,8 @@
 				3FA2D8821E305BEE00551F8F /* YKRemoteViewController.m */,
 				3FEC71041F0357D10018F46C /* YKRemoteACViewController.h */,
 				3FEC71051F0357D10018F46C /* YKRemoteACViewController.m */,
+				F64FDDF61FBECDDE00350337 /* YKTrunkViewController.h */,
+				F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */,
 				3F5A21B71E27666F006BF365 /* Assets.xcassets */,
 				3F5A21B91E27666F006BF365 /* LaunchScreen.storyboard */,
 				3F5A21BC1E27666F006BF365 /* Info.plist */,
@@ -474,6 +482,8 @@
 				3FA2D82F1E2E184100551F8F /* YKMatchDeviceTableViewController.m */,
 				3FA2D8311E2E186400551F8F /* YKMatchKeyTableViewController.h */,
 				3FA2D8321E2E186400551F8F /* YKMatchKeyTableViewController.m */,
+				3F52B11F1FA07CBA00EA05F7 /* YKOneKeyMatchViewController.h */,
+				3F52B1201FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -681,7 +691,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = HY8S4564M8;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					3F5A21C01E27666F006BF365 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -819,13 +829,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YKCenterSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52804815537885DCA589D7C9 /* [CP] Check Pods Manifest.lock */ = {
@@ -834,13 +847,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YKCenterDemoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F30FF0225887C43FDC9A8E0 /* [CP] Copy Pods Resources */ = {
@@ -864,13 +880,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YKCenterDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A6B6DBB5827EBA40C9BA027B /* [CP] Embed Pods Frameworks */ = {
@@ -879,9 +898,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${PODS_ROOT}/../YKCenterSDK/YKCenterSDK.framework",
+				"${PODS_ROOT}/../YKCenterSDK/GizWifiSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YKCenterSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GizWifiSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -909,13 +935,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YKCenterDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E3414B486F6E8D90BABAAA4B /* [CP] Embed Pods Frameworks */ = {
@@ -954,9 +983,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift-frameworks.sh",
+				"${PODS_ROOT}/../YKCenterSDK/YKCenterSDK.framework",
+				"${PODS_ROOT}/../YKCenterSDK/GizWifiSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YKCenterSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GizWifiSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1007,6 +1041,7 @@
 				3FA2D8151E2C7EA800551F8F /* YKConfigWaitingController.m in Sources */,
 				3FA2D8831E305BEE00551F8F /* YKRemoteViewController.m in Sources */,
 				3FA2D81F1E2DF96D00551F8F /* YKDeviceTypeViewController.m in Sources */,
+				3F52B1211FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m in Sources */,
 				3FA2D8001E2C602800551F8F /* YKCenterCommon.m in Sources */,
 				3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */,
 				3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */,
@@ -1024,6 +1059,7 @@
 				3FA2D8141E2C7DB000551F8F /* YFGIFImageView.m in Sources */,
 				3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */,
 				3FF3D8EF1F5F8A8300A7110C /* YKVerificationCell.m in Sources */,
+				F64FDDF81FBECDDE00350337 /* YKTrunkViewController.m in Sources */,
 				3FD9FA1C1EEA993F0037A44C /* SwiftYKViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1340,33 +1376,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HY8S4564M8;
-				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/YKCenterSDK",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				INFOPLIST_FILE = YKCenterDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "efe4a673-3974-4610-a1fc-46ec08aaa48c";
-				PROVISIONING_PROFILE_SPECIFIER = Yaokan_Developer;
-				SWIFT_OBJC_BRIDGING_HEADER = "YKCenterDemo/YKCenterDemo-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		3F5A21D71E27666F006BF365 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C27E20758E35C3EA31589872 /* Pods-YKCenterDemo.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1381,7 +1391,35 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "YKCenterDemo/YKCenterDemo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		3F5A21D71E27666F006BF365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C27E20758E35C3EA31589872 /* Pods-YKCenterDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YKCenterSDK",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				INFOPLIST_FILE = YKCenterDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaokantv.YKCenterDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "YKCenterDemo/YKCenterDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

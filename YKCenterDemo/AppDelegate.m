@@ -23,11 +23,13 @@ static NSString *const YK_APP_ID = @"";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 方案1：使用遥控中心SDK进行初始化
-    [YKCenterSDK registApp:YK_APP_ID completion:^(NSError * _Nonnull error) {
-        NSLog(@"YKCenterSDK 初始化成功：%@", error);
-    }];
     [YKCenterSDK disableSDKLog:NO];
-//    NSLog(@"[GizWifiSDK getVersion]:%@", [GizWifiSDK getVersion]);
+    
+    [YKCenterSDK registApp:YK_APP_ID completion:^(NSError * _Nonnull error) {
+        NSLog(@"YKCenterSDK 初始化结果：%@", error);
+    }];
+    
+    
     
     //  方案2：自己管理第三方平台的方式
 //    [YKCenterSDK registYKApp:YK_APP_ID];
