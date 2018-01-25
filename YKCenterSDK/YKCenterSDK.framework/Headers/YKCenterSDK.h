@@ -186,10 +186,10 @@ __attribute__((deprecated("no available anymore")));
  */
 + (void)sendRemoteWithYKCId:(NSString *)ykcId
                       datas:(NSArray *)datas
-        completion:(void (^__nullable)(id result, NSError *error))completion;
+        completion:(void (^__nullable)(BOOL result, NSError *error))completion;
 
 /**
- 一键匹配新接口（未开放）
+ 一键匹配新接口
 
  @param ykcid 遥控中心 id
  @param type 遥控器设备类型
@@ -214,7 +214,7 @@ __attribute__((deprecated("no available anymore")));
  */
 + (void)sendRemoteWithYKC:(id)ykcDevice
                     datas:(NSArray *)datas
-               completion:(void (^__nullable)(id result, NSError *error))completion;
+               completion:(void (^__nullable)(BOOL result, NSError *error))completion;
 
 
 /**
@@ -238,7 +238,7 @@ __attribute__((deprecated("no available anymore")));
                          windU:(NSUInteger)windU
                          windL:(NSUInteger)windL
                  asteriskDatas:(nullable NSArray *)asteriskDatas
-                    completion:(void (^__nullable)(id result, NSError *error))completion;
+                    completion:(void (^__nullable)(BOOL result, NSError *error))completion;
 
 
 /**
@@ -258,6 +258,53 @@ __attribute__((deprecated("no available anymore")));
  @param completion 结果回调
  */
 + (void)registerReceiveTrunkDataHandler:(void (^__nullable)(NSData *trunkData))completion;
+
+/**
+ 开始学习
+ 
+ @param ykcId 遥控中心 id
+ @param completion 学习结果回调
+ */
++ (void)learnCodeWithYKCId:(NSString *)ykcId
+                completion:(void (^)( BOOL result, NSString * __nullable code))completion;
+
+
+/**
+ 停止学习。
+ 可以退出红外和射频学习状态。
+ 
+ @param ykcId 遥控中心 id
+ */
++ (void)stopLearnCode:(NSString *)ykcId;
+
+
+/**
+ 开始学习 433/315 码
+ 
+ @param ykcId 遥控中心 id
+ @param completion 学习结果回调
+ */
++ (void)learnRFCodeWithYKCId:(NSString *)ykcId
+                  completion:(void (^)( BOOL result, NSString * __nullable code))completion;
+
+
+/**
+ 发送 433/315 码
+
+ @param ykcId 遥控中心 id
+ @param code 遥控码
+ @param completion 结果回调
+ */
++ (void)sendRFCodeWithYKCId:(NSString *)ykcId
+                       code:(NSString *)code
+                 completion:(void (^__nullable)(BOOL result, NSError *error))completion;
+
+/**
+ 切换遥控中心LED灯开关
+ 
+ @param ykcId 遥控中心 id
+ */
++ (void)toogleLEDWithYKCId:(NSString *)ykcId;
 
 #pragma mark - 用户管理
 /**
@@ -350,30 +397,19 @@ accountType:(YKUserAccountType)accountType
           accountType:(YKUserAccountType)accountType
            completion:(void (^)(NSError *__nullable result))completion;
 
-/**
- 开始学习
- 
- @param ykcId 遥控中心 id
- @param completion 学习结果回调
- */
-+ (void)learnCodeWithYKCId:(NSString *)ykcId
-                completion:(void (^)( BOOL result, NSString * __nullable code))completion;
-
 
 /**
- 停止学习
+ 将匿名用户转为普通注册用户
 
- @param ykcId 遥控中心 id
+ @param username 要注册用户的用户名，必须未被使用
+ @param token 匿名用户令牌
+ @param password 要注册用户的密码
+ @param completion 结果回调
  */
-+ (void)stopLearnCode:(NSString *)ykcId;
-
-
-/**
- 切换遥控中心LED灯开关
-
- @param ykcId 遥控中心 id
- */
-+ (void)toogleLEDWithYKCId:(NSString *)ykcId;
+- (void)transAnonymousUser:(NSString *)username
+                     token:(NSString *)token
+                  password:(NSString *)password
+                   handler:(void (^)(NSError * _Nullable))completion;
 
 /**
  获取 SDK 版本号

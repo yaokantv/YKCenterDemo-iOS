@@ -66,6 +66,8 @@
 		3FF3D8F81F5F8C1100A7110C /* YKPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF3D8F61F5F8C1100A7110C /* YKPhoneCell.xib */; };
 		6412A8F483A6B5AB75D8C98D /* Pods_YKCenterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F73659886A02EA84FFEB71 /* Pods_YKCenterSwift.framework */; };
 		8A14D4DC4957FE71EB01A8C9 /* Pods_YKCenterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */; };
+		F620E2AD1FCD167C0090C082 /* YKLearnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F620E2AC1FCD167C0090C082 /* YKLearnTableViewController.m */; };
+		F620E2B01FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = F620E2AF1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m */; };
 		F64FDDF81FBECDDE00350337 /* YKTrunkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */; };
 		F81597718802442D66D96326 /* Pods_YKCenterDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -221,6 +223,10 @@
 		C9F73659886A02EA84FFEB71 /* Pods_YKCenterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC7C44A38E90531FA3BFC2B /* Pods-YKCenterDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCenterDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YKCenterDemoUITests/Pods-YKCenterDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D42A381C206AC2270A0221F1 /* Pods_YKCenterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCenterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F620E2AB1FCD167C0090C082 /* YKLearnTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKLearnTableViewController.h; sourceTree = "<group>"; };
+		F620E2AC1FCD167C0090C082 /* YKLearnTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKLearnTableViewController.m; sourceTree = "<group>"; };
+		F620E2AE1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKOneKeyMatchRemoteController.h; sourceTree = "<group>"; };
+		F620E2AF1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKOneKeyMatchRemoteController.m; sourceTree = "<group>"; };
 		F64FDDF61FBECDDE00350337 /* YKTrunkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTrunkViewController.h; sourceTree = "<group>"; };
 		F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTrunkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,6 +369,8 @@
 				3FEC71051F0357D10018F46C /* YKRemoteACViewController.m */,
 				F64FDDF61FBECDDE00350337 /* YKTrunkViewController.h */,
 				F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */,
+				F620E2AB1FCD167C0090C082 /* YKLearnTableViewController.h */,
+				F620E2AC1FCD167C0090C082 /* YKLearnTableViewController.m */,
 				3F5A21B71E27666F006BF365 /* Assets.xcassets */,
 				3F5A21B91E27666F006BF365 /* LaunchScreen.storyboard */,
 				3F5A21BC1E27666F006BF365 /* Info.plist */,
@@ -484,6 +492,8 @@
 				3FA2D8321E2E186400551F8F /* YKMatchKeyTableViewController.m */,
 				3F52B11F1FA07CBA00EA05F7 /* YKOneKeyMatchViewController.h */,
 				3F52B1201FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m */,
+				F620E2AE1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.h */,
+				F620E2AF1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -1037,6 +1047,7 @@
 				3FA2D8301E2E184100551F8F /* YKMatchDeviceTableViewController.m in Sources */,
 				3FEC71061F0357D10018F46C /* YKRemoteACViewController.m in Sources */,
 				3F5A21F61E277483006BF365 /* YKDeviceListCell.m in Sources */,
+				F620E2B01FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m in Sources */,
 				3FA2D8131E2C7DB000551F8F /* UIImageView+PlayGIF.m in Sources */,
 				3FA2D8151E2C7EA800551F8F /* YKConfigWaitingController.m in Sources */,
 				3FA2D8831E305BEE00551F8F /* YKRemoteViewController.m in Sources */,
@@ -1045,6 +1056,7 @@
 				3FA2D8001E2C602800551F8F /* YKCenterCommon.m in Sources */,
 				3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */,
 				3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */,
+				F620E2AD1FCD167C0090C082 /* YKLearnTableViewController.m in Sources */,
 				3FF3D8EC1F5F894F00A7110C /* YKForgetViewController.m in Sources */,
 				3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */,
 				3FE818CA1E723994002FD52F /* YKTextCell.m in Sources */,

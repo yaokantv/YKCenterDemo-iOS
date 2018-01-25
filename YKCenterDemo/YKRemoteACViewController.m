@@ -178,8 +178,8 @@
                                   windU:self.currentWindU
                                   windL:self.currentWindL
                           asteriskDatas:self.asteriskDatas
-                             completion:^(id  _Nonnull result, NSError * _Nonnull error) {
-                                 NSLog(@"result=%@", result);
+                             completion:^(BOOL result, NSError * _Nonnull error) {
+                                 NSLog(@"result=%s, error=%@", result ? "true" : "false", error);
                              }];
 }
 

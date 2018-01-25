@@ -11,6 +11,7 @@
 #import "YKRemoteViewController.h"
 #import "YKRemoteACViewController.h"
 #import "YKCenterCommon.h"
+#import "YKLearnTableViewController.h"
 
 @interface YKRemoteTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -63,6 +64,45 @@
     //    [self updateEditingVisible];
     [self.tableView reloadData];
 }
+
+- (IBAction)showActions:(id)sender {
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"请选择"
+                                                                message:nil
+                                                         preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    UIAlertAction *learnIR = [UIAlertAction actionWithTitle:@"红外学习"
+                                                      style:(UIAlertActionStyleDefault)
+                                                    handler:^(UIAlertAction * _Nonnull action)
+                              {
+                                [self performSegueWithIdentifier:@"LearnSegue" sender:@(YKLearnTypeIR)];
+                              }];
+    
+    UIAlertAction *learnRF = [UIAlertAction actionWithTitle:@"433/315学习（小苹果2)"
+                                                      style:(UIAlertActionStyleDefault)
+                                                    handler:^(UIAlertAction * _Nonnull action)
+                              {
+                                [self performSegueWithIdentifier:@"LearnSegue" sender:@(YKLearnTypeRF)];
+                              }];
+    
+    UIAlertAction *trunk = [UIAlertAction actionWithTitle:@"透传数据（小苹果2)"
+                                                    style:(UIAlertActionStyleDefault)
+                                                  handler:^(UIAlertAction * _Nonnull action)
+                            {
+                                [self performSegueWithIdentifier:@"TrunkViewControllerSegue" sender:nil];
+                            }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                     style:(UIAlertActionStyleCancel)
+                                                   handler:nil];
+    
+    [ac addAction:learnIR];
+    [ac addAction:learnRF];
+    [ac addAction:trunk];
+    [ac addAction:cancel];
+    
+    [self presentViewController:ac animated:YES completion:nil];
+}
+
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -145,36 +185,41 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (segue.identifier) {
-        UITableViewCell *cell = sender;
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        YKRemoteDevice *remote = self.remotes[indexPath.row];
-        
-        
-        if ([segue.destinationViewController isKindOfClass:[YKRemoteViewController class]]) {
-            YKRemoteViewController *vc = segue.destinationViewController;
+    if (segue.identifier != nil) {
+        if ([segue.identifier isEqualToString:@"LearnSegue"]) {
+            YKLearnTableViewController *vc = segue.destinationViewController;
+            YKLearnType learnType = [sender integerValue];
+            vc.learnType = learnType;
+        }
+        else {
+            UITableViewCell *cell = sender;
             
-            vc.remote = remote;
-        } else {
-            YKRemoteACViewController *vc = segue.destinationViewController;
-            vc.remote = remote;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            YKRemoteDevice *remote = self.remotes[indexPath.row];
+            
+            if ([segue.destinationViewController isKindOfClass:[YKRemoteViewController class]]) {
+                YKRemoteViewController *vc = segue.destinationViewController;
+                vc.remote = remote;
+            } else {
+                YKRemoteACViewController *vc = segue.destinationViewController;
+                vc.remote = remote;
+            }
         }
     }
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    
-    if (identifier) {
-        UITableViewCell *cell = sender;
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        YKRemoteDevice *remote = self.remotes[indexPath.row];
-        
-        if (remote.typeId == kDeviceACType) {
-            if ([identifier isEqualToString:@"normal"]) {
-                [self performSegueWithIdentifier:@"ac" sender:sender];
-                return NO;
+    if (identifier != nil) {
+        if (![identifier isEqualToString:@"LearnSegue"]) {
+            UITableViewCell *cell = sender;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            YKRemoteDevice *remote = self.remotes[indexPath.row];
+            
+            if (remote.typeId == kDeviceACType) {
+                if ([identifier isEqualToString:@"normal"]) {
+                    [self performSegueWithIdentifier:@"ac" sender:sender];
+                    return NO;
+                }
             }
         }
     }

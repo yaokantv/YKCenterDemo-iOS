@@ -189,15 +189,17 @@
                                     <segue destination="Aox-3M-A5D" kind="presentation" id="8bW-UH-gFu"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="compose" id="gBP-qc-beJ">
+                            <barButtonItem systemItem="action" id="gBP-qc-beJ">
                                 <connections>
-                                    <segue destination="S4U-B7-6zB" kind="show" id="zBS-GM-67H"/>
+                                    <action selector="showActions:" destination="H5w-0d-FHe" id="RZE-gC-P02"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="3PE-DO-qOq" kind="show" identifier="ac" id="WmX-50-Yoi"/>
+                        <segue destination="S4U-B7-6zB" kind="show" identifier="TrunkViewControllerSegue" id="baw-mO-bab"/>
+                        <segue destination="e4D-jM-Ykx" kind="show" identifier="LearnSegue" id="oKG-gW-mKu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgQ-EU-l9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2F5-To-aOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3420" y="913.49325337331345"/>
+            <point key="canvasLocation" x="2582" y="973"/>
         </scene>
         <!--遥控器-->
         <scene sceneID="8uZ-7i-AIb">
@@ -441,7 +443,54 @@
                 <viewControllerPlaceholder storyboardName="Remote" referencedIdentifier="YKAddRemote" id="Aox-3M-A5D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hot-aG-CZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="574"/>
+            <point key="canvasLocation" x="2786" y="611"/>
+        </scene>
+        <!--Learn-->
+        <scene sceneID="ngb-CL-0KI">
+            <objects>
+                <tableViewController id="e4D-jM-Ykx" customClass="YKLearnTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ao3-7u-Tvt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CodeCell" textLabel="yOb-p8-VQE" style="IBUITableViewCellStyleDefault" id="CMk-Zf-PR4">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMk-Zf-PR4" id="PQa-pQ-Rrh">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yOb-p8-VQE">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="e4D-jM-Ykx" id="el0-vQ-lff"/>
+                            <outlet property="delegate" destination="e4D-jM-Ykx" id="MEv-ph-edW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Learn" id="0aK-eg-rnU">
+                        <barButtonItem key="rightBarButtonItem" title="开始学习" id="nDN-bP-2Wd">
+                            <connections>
+                                <action selector="startLearn:" destination="e4D-jM-Ykx" id="yg4-Px-Nw8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="learnBarButtonItem" destination="nDN-bP-2Wd" id="J59-to-bbQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-QI-vGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3420" y="926"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jb2-oZ-2o1">

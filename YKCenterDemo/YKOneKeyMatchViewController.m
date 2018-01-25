@@ -11,11 +11,14 @@
 #import "YKCenterCommon.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "YKMatchKeyTableViewController.h"
+//#import "YKOneKeyMatchRemoteController.h"
 
 @interface YKOneKeyMatchViewController ()
 @property (strong, nonatomic) NSArray *keys;
 @property (strong, nonatomic) UIAlertController *ac;
 @property (nonatomic, copy) NSString *matchKey;
+@property (nonatomic, strong) NSArray <YKRemoteMatchDevice *> *devices;
+
 @end
 
 @implementation YKOneKeyMatchViewController
@@ -23,8 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.matchKey = @"power";
-    
+    [self resetFirstMatchKey];
     [self retryAction:nil];
 }
 
@@ -45,6 +47,18 @@
         YKRemoteMatchDevice *device = sender;
         
         vc.matchDevice = device;
+    }
+}
+
+- (void)resetFirstMatchKey {
+    if (self.deviceType.tid.integerValue == kDeviceACType) {
+        self.matchKey = @"on";
+    }
+    else if (self.deviceType.tid.integerValue == kDeviceCarAudioType) {
+        self.matchKey = @"ok";
+    }
+    else {
+        self.matchKey = @"power";
     }
 }
 
@@ -107,10 +121,14 @@
      {
          NSLog(@"result = %@, error=%@", result, error);
          
-         if (result[@"errorMsg"]) {
+         if ([result isKindOfClass:[NSArray class]] && [result count] > 0) {
+             [self hideAlert];
+             [self showTestView:[self parseResult:result]];
+         }
+         else if (result[@"errorMsg"]) {
              NSString *errorMsg = result[@"errorMsg"];
              NSLog(@"errorMsg:%@", errorMsg);
-             self.matchKey = @"power";
+             [self resetFirstMatchKey];
              NSString *message = [NSString stringWithFormat:@"匹配结果：%@\nerrorMsg=%@", result, errorMsg];
              [self showAlert:message isLoading:NO];
          } else if (result[@"next_cmp_key"]) {
@@ -119,11 +137,10 @@
                                   self.matchKey];
              [self showAlert:message isLoading:NO];
 //             [self retryAction:nil];
+//             [self hideAlert];
+         } else if (result[@"rs"]) {
              [self hideAlert];
-         } else if (result[@"rc_command"]) {
-             [self hideAlert];
-             [self showTestView:[self parseResult:result]];
-             return;
+             [self showTestView:[self parseResult:result[@"rs"]]];
          } else {
              [self showAlert:error.localizedDescription isLoading:NO];
          }
@@ -131,36 +148,47 @@
      }];
 }
 
-- (YKRemoteMatchDevice *)parseResult:(NSDictionary *)deviceDict {
-    
-    YKRemoteMatchDevice *device = [[YKRemoteMatchDevice alloc] init];
-    device.name = deviceDict[@"rc_name"];
-//    device.model = deviceDict[@"be_rmodel"];
-//    device.rid = deviceDict[@"rid"];
-    device.rmodel = deviceDict[@"rc_model"];
-//    device.typeId = typeId;
-    
-    NSMutableArray *keys = [NSMutableArray array];
-    NSDictionary *keysDict = deviceDict[@"rc_command"];
-    for (NSString *key in keysDict.allKeys) {
-        YKRemoteMatchDeviceKey *deviceKey = [YKRemoteMatchDeviceKey new];
-//        deviceKey.shortCMD = keyDict[@"short"];
-        deviceKey.src = keysDict[key];
-//        deviceKey.tip = keyDict[@"tip"];
-        deviceKey.kn = key;
-        deviceKey.key = key;
-        deviceKey.zip = [deviceDict[@"zip"] integerValue];
-//        deviceKey.order = [deviceDict[@"order"] integerValue];
-        [keys addObject:deviceKey];
+- (NSArray <YKRemoteMatchDevice *> *)parseResult:(NSArray *)array {
+    NSMutableArray <YKRemoteMatchDevice *> *devices = [NSMutableArray arrayWithCapacity:array.count];
+    for (NSDictionary *deviceDict in array) {
+        YKRemoteMatchDevice *device = [[YKRemoteMatchDevice alloc] init];
+        device.name = deviceDict[@"name"];
+        //    device.model = deviceDict[@"be_rmodel"];
+        //    device.rid = deviceDict[@"rid"];
+        device.rmodel = deviceDict[@"rmodel"];
+        //    device.typeId = typeId;
+        
+        NSMutableArray *keys = [NSMutableArray array];
+        NSDictionary *keysDict = deviceDict[@"rc_command"];
+        for (NSString *key in keysDict.allKeys) {
+            NSDictionary *keyDict = keysDict[key];
+            YKRemoteMatchDeviceKey *deviceKey = [YKRemoteMatchDeviceKey new];
+            //        deviceKey.shortCMD = keyDict[@"short"];
+            deviceKey.src = keyDict[@"src"];
+            //        deviceKey.tip = keyDict[@"tip"];
+            deviceKey.kn = key;
+            deviceKey.key = key;
+            deviceKey.zip = [deviceDict[@"zip"] integerValue];
+            //        deviceKey.order = [deviceDict[@"order"] integerValue];
+            [keys addObject:deviceKey];
+        }
+        
+        device.matchKeys = keys;
+        [devices addObject:device];
     }
     
-    device.matchKeys = keys;
-    
-    return device;
+    return devices;
 }
 
-- (void)showTestView:(YKRemoteMatchDevice *)device {
-    [self performSegueWithIdentifier:@"showTestSegue" sender:device];
+- (void)showTestView:(NSArray <YKRemoteMatchDevice *> *)devices {
+    if (devices.count == 1) {
+        [self performSegueWithIdentifier:@"showTestSegue" sender:devices.firstObject];
+    }
+    else if (devices.count > 1) {
+//        [self performSegueWithIdentifier:@"showMatchRemoteList" sender:devices];
+        self.devices = devices;
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Table view data source
@@ -170,60 +198,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.devices.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OneKeyMatchCellIdentifier"
                                                             forIndexPath:indexPath];
     
-    // Configure the cell...
+    YKRemoteMatchDevice *device = self.devices[indexPath.row];
+    
+    cell.textLabel.text = device.name;//[device.name stringByAppendingFormat:@"-%@", device.rmodel];
+    cell.detailTextLabel.text = device.rmodel;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YKRemoteMatchDevice *device = self.devices[indexPath.row];
+    [self performSegueWithIdentifier:@"showTestSegue" sender:device];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

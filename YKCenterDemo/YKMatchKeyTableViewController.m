@@ -51,8 +51,8 @@
     
     [YKCenterSDK sendRemoteWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]
                                datas:@[key]
-                          completion:^(id  _Nonnull result, NSError * _Nonnull error) {
-                              
+                          completion:^(BOOL result, NSError * _Nonnull error) {
+                              NSLog(@"result=%s, error=%@", result ? "true" : "false", error);
                           }];
 }
 
