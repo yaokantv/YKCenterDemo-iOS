@@ -30,6 +30,11 @@
         [YKCenterCommon sharedInstance].loginStatus == YKLoginAnonymousCancel) {
         [YKCenterCommon sharedInstance].loginStatus = YKLoginAnonymousProcess;
         [[YKCenterSDK sharedInstance] anonymousLogin:^(NSError * _Nonnull result, NSString * _Nonnull uid, NSString * _Nonnull token) {
+            // 匿名转普通用户用法
+//            [[YKCenterSDK sharedInstance] transAnonymousUser:@"test" token:token password:@"test123" handler:^(NSError * _Nullable error) {
+//                NSLog(@"error:%@", error.localizedDescription);
+//            }];
+            
             if (result.code == 0) {
                 [YKCenterCommon sharedInstance].loginStatus = YKLoginAnonymous;
                 [YKCenterCommon sharedInstance].token = token;
