@@ -64,11 +64,11 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
 
  @param ssid Wi-Fi 的 SSID 名称
  @param password Wi-Fi 的密码
- @param completion 绑定遥控中心设备完成的回调。如果绑定出错，返回 error 对象；如果有连接成功，error 为空。
+ @param completion 绑定遥控中心设备完成的回调。如果绑定出错，返回 error 对象；如果有连接成功，error 为空，返回新入网的设备device 对象。
  */
 + (void)bindYKCWithSSID:(NSString *)ssid
                password:(nullable NSString *)password
-             completion:(void (^__nullable)(NSError *error))completion;
+             completion:(void (^__nullable)(NSError * _Nullable error, GizWifiDevice * _Nullable  device))completion;
 
 
 

@@ -55,13 +55,13 @@
         NSString *key = [dataCommon getPasswrodFromSSID:dataCommon.ssid];
         [YKCenterSDK bindYKCWithSSID:dataCommon.ssid
                             password:key
-                          completion:^(NSError * _Nonnull result)
+                          completion:^(NSError * _Nullable result, GizWifiDevice * _Nullable device)
          {
-             NSString *info = [NSString stringWithFormat:@"%@, %@", @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];
-             if (result.code == GIZ_SDK_SUCCESS) {
+             if (device) {
                  [self onConfigSucceed:nil];
              }
              else if (result.code == GIZ_SDK_DEVICE_CONFIG_IS_RUNNING) {
+                 NSString *info = [NSString stringWithFormat:@"%@, %@", @(result.code), [result.userInfo objectForKey:@"NSLocalizedDescription"]];
                  NSLog(@"result is :%@, current ssid is %@, elapsed: %li(s)",
                        info.description,
                        YKGetCurrentSSID(),

@@ -263,29 +263,31 @@
     
     GizWifiDevice *dev = self.deviceListArray[indexPath.row];
     __weak __typeof(self)weakSelf = self;
-    // 方案1:
-    [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) {
-        // 直接订阅会自动绑定
-        if (device.isSubscribed) {
-            [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
-            [[YKCenterCommon sharedInstance] setCurrentDevice:dev];
-            [weakSelf performSegueWithIdentifier:@"YKRemoteList" sender:nil];
-        }
-    }];
-
-    // 方案2:
-//    [YKCenterSDK bindDevice:dev completion:^(NSString * _Nonnull did) {
-//        // 绑定
-//        if (did) {
-//            [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) {
-//                // 订阅
-//                if (device.isSubscribed) {
-//                    [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
-//                    [weakSelf performSegueWithIdentifier:@"YKRemoteList" sender:nil];
-//                }
-//            }];
+    // 建议用方案1:
+//    [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) {
+//        // 直接订阅会自动绑定
+//        if (device.isSubscribed) {
+//            [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
+//            [[YKCenterCommon sharedInstance] setCurrentDevice:dev];
+//            [weakSelf performSegueWithIdentifier:@"YKRemoteList" sender:nil];
 //        }
 //    }];
+
+    // 方案2:
+    [YKCenterSDK bindDevice:dev completion:^(NSString * _Nonnull did) {
+        // 绑定
+        if (did) {
+            [dev setCustomInfo:@"遥控大师" alias:@"小苹果2"];
+            [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) {
+                // 订阅
+                if (device.isSubscribed) {
+                    [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
+                    [[YKCenterCommon sharedInstance] setCurrentDevice:dev];
+                    [weakSelf performSegueWithIdentifier:@"YKRemoteList" sender:nil];
+                }
+            }];
+        }
+    }];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
