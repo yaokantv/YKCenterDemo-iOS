@@ -81,13 +81,21 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
 + (void)bindDevice:(GizWifiDevice *)device completion:(void (^__nullable)(NSString *did))completion;
 
 /**
- 解除遥控中心绑定，完成后使用 block 回调返回结果。
+ 解除遥控中心绑定，完成后使用 block 回调返回结果
 
  @param device 遥控中心对象
- @param completion 成功，error 为空
+ @param completion 解除成功 error 为空，否则为错误信息
  */
 + (void)unbindYKC:(GizWifiDevice *)device completion:(void (^__nullable)(NSError *error))completion;
 
+
+/**
+ 解除遥控中心绑定，完成后使用 block 回调返回结果
+
+ @param did 遥控中心设备ID
+ @param completion 解除成功 error 为空，否则为错误信息
+ */
++ (void)unbindYKCWithDid:(NSString *)did completion:(void (^__nullable)(NSError *error))completion;
 
 /**
  订阅遥控中心，完成后使用 block 回调返回结果
@@ -96,6 +104,14 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
  @param handler 回调参数是订阅成功的遥控中心
  */
 + (void)subscribeDevice:(GizWifiDevice *)device completion:(void (^__nullable)(GizWifiDevice *))handler;
+
+/**
+ 取消订阅遥控中心，完成后使用 block 回调返回结果
+ 
+ @param device 遥控中心对象
+ @param handler 回调参数是订阅成功的遥控中心
+ */
++ (void)unsubscribeDevice:(GizWifiDevice *)device completion:(void (^__nullable)(GizWifiDevice *))handler;
 
 /**
  获取已绑定遥控中心 YKC
