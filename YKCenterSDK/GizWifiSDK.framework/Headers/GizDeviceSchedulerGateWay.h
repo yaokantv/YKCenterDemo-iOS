@@ -9,20 +9,20 @@
 #import <GizWifiSDK/GizDeviceSchedulerSuper.h>
 #import <GizWifiSDK/GizDeviceSchedulerTask.h>
 
-@class GizDeviceSchedulerGateWay;
+@class GizDeviceSchedulerGateway;
 
-@protocol GizDeviceSchedulerGateWayDelegate <NSObject>
+@protocol GizDeviceSchedulerGatewayDelegate <NSObject>
 @optional
 
-- (void)scheduler:(GizDeviceSchedulerGateWay * _Nullable)scheduler didUpdateSchedulerInfo:(NSError * _Nonnull)result;
-- (void)scheduler:(GizDeviceSchedulerGateWay * _Nullable)scheduler didUpdateSchedulerTasks:(NSError * _Nonnull)result taskList:(NSArray * _Nonnull)taskList;
+- (void)scheduler:(GizDeviceSchedulerGateway * _Nullable)scheduler didUpdateSchedulerInfo:(NSError * _Nonnull)result;
+- (void)scheduler:(GizDeviceSchedulerGateway * _Nullable)scheduler didUpdateSchedulerTasks:(NSError * _Nonnull)result taskList:(NSArray <GizDeviceSchedulerTask *>* _Nonnull)taskList;
 
-- (void)scheduler:(GizDeviceSchedulerGateWay * _Nullable)scheduler didEnableScheduler:(NSError * _Nonnull)result sn:(int)sn;
-- (void)scheduler:(GizDeviceSchedulerGateWay * _Nullable)scheduler didUpdateSchedulerEnableStatus:(NSError * _Nonnull)result enableStatus:(BOOL)enableStatus;
+- (void)scheduler:(GizDeviceSchedulerGateway * _Nullable)scheduler didEnableScheduler:(NSError * _Nonnull)result sn:(int)sn;
+- (void)scheduler:(GizDeviceSchedulerGateway * _Nullable)scheduler didUpdateSchedulerEnableStatus:(NSError * _Nonnull)result enableStatus:(BOOL)enableStatus;
 
 @end
 
-@interface GizDeviceSchedulerGateWay : GizDeviceSchedulerSuper
+@interface GizDeviceSchedulerGateway : GizDeviceSchedulerSuper
 
 - (instancetype _Nullable)init NS_UNAVAILABLE;
 
@@ -48,7 +48,7 @@
  @param enabled 定时任务是否开启。true表示开启，false表示不开启
  @param name 定时任务名称。此参数可选填，可填nil
  */
-+ (instancetype _Nullable)schedulerWeekRepeat:(NSString * _Nonnull)time weekDays:(NSArray * _Nonnull)weekDays enabled:(BOOL)enabled name:(NSString * _Nullable)name;
++ (instancetype _Nullable)schedulerWeekRepeat:(NSString * _Nonnull)time weekDays:(NSArray <NSNumber *>* _Nonnull)weekDays enabled:(BOOL)enabled name:(NSString * _Nullable)name;
 
 /**
  GizDeviceScheduler构造函数，用于在云端创建按天重复定时任务
@@ -57,13 +57,13 @@
  @param enabled 定时任务是否开启。true表示开启，false表示不开启
  @param name 定时任务名称。此参数可选填，可传nil
  */
-+ (instancetype _Nullable)schedulerDayRepeat:(NSString * _Nonnull)time monthDays:(NSArray * _Nonnull)monthDays enabled:(BOOL)enabled name:(NSString * _Nullable)name;
++ (instancetype _Nullable)schedulerDayRepeat:(NSString * _Nonnull)time monthDays:(NSArray <NSNumber *>* _Nonnull)monthDays enabled:(BOOL)enabled name:(NSString * _Nullable)name;
 
 /**
- GizDeviceSchedulerGateWay委托
- @see GizDeviceSchedulerGateWayDelegate
+ GizDeviceSchedulerGateway委托
+ @see GizDeviceSchedulerGatewayDelegate
  */
-@property (weak, nonatomic) id<GizDeviceSchedulerGateWayDelegate> _Nullable delegate;
+@property (weak, nonatomic) id<GizDeviceSchedulerGatewayDelegate> _Nullable delegate;
 
 /** 中控延时任务当前剩余的延时时间，单位秒 */
 @property (assign, nonatomic, readonly) unsigned int delayTime;
@@ -79,7 +79,7 @@
 
 /**
  修改定时任务信息，此接口可用于修改云端或中控的定时任务信息。请注意，必须要先修改对应的变量值，然后再调用此接口完成修改。修改成功时返回最新的定时任务信息，修改失败时返回错误信息
- @param schedulerType 定时任务类型，GizSchedulerType枚举，详细见变量schedulerType说明。此参数不能填无效值
+ @param type 定时任务类型，GizSchedulerType枚举，详细见变量schedulerType说明。此参数不能填无效值
  @see 回调 [GizDeviceSchedulerDelegate scheduler:didUpdateSchedulerInfo:]
  */
 - (void)editSchedulerInfo:(GizSchedulerType)type;

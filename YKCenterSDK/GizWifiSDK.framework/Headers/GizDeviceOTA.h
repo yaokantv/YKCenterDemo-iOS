@@ -22,7 +22,7 @@
  @param mcuVersion mcu固件版本，字典格式：{"latest":"xxx", "current":"xxx"}。若此参数为nil，表示没有检查到mcu固件更新信息
  @see 接口 [GizDeviceOTA checkDeviceUpdate:token:device:firmwareType:]
  */
- - (void)didCheckDeviceUpdate:(GizWifiDevice * _Nullable)device result:(NSError * _Nonnull)result wifiVersion:(NSDictionary * _Nullable)wifiVersion mcuVersion:(NSDictionary * _Nullable)mcuVersion;
+ - (void)didCheckDeviceUpdate:(GizWifiDevice * _Nullable)device result:(NSError * _Nonnull)result wifiVersion:(NSDictionary <NSString *, NSString *>* _Nullable)wifiVersion mcuVersion:(NSDictionary <NSString *, NSString *>* _Nullable)mcuVersion;
 
 /**
  设备是否开始升级的回调
@@ -38,7 +38,7 @@
  @param wifiVersion 模组固件版本，字典格式：{"latest":"xxx", "current":"xxx"}。若此参数为nil，表示没有检查到模组固件更新信息
  @param mcuVersion mcu固件版本，字典格式：{"latest":"xxx", "current":"xxx"}。若此参数为nil，表示没有检查到mcu固件更新信息
  */
- - (void)didNotifyDeviceUpdate:(GizWifiDevice * _Nullable)device  wifiVersion:(NSDictionary * _Nullable)wifiVersion mcuVersion:(NSDictionary * _Nullable)mcuVersion;;
+ - (void)didNotifyDeviceUpdate:(GizWifiDevice * _Nullable)device  wifiVersion:(NSDictionary <NSString *, NSString *>* _Nullable)wifiVersion mcuVersion:(NSDictionary <NSString *, NSString *>* _Nullable)mcuVersion;
 
 /**
  设备升级状态通知。在设备升级过程中会主动上报当前状态

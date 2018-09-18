@@ -16,7 +16,7 @@
 /** 联动规则中的中控子设备 */
 @property (strong, nonatomic, readonly) GizWifiDevice * _Nullable device;
 /** 设备或组要执行的操作键值对字典：{操作名字: 操作值}，resultEventType是设备或组事件需要关心此变量 */
-@property (strong, nonatomic, readonly) NSDictionary * _Nonnull data;
+@property (strong, nonatomic, readonly) NSDictionary <NSString *, id>* _Nonnull data;
 
 /** 条件运算符。此变量提供6种运算方法，用于把条件设定值与设备实际状态值做比较 */
 @property (assign, nonatomic, readonly) GizConditionOperator conditionOperator;
@@ -26,6 +26,6 @@
  @param device 触发条件中的中控子设备。此参数不能填nil
  @param data 触发条件中的设备状态阀值：{操作名字: 操作值}，此参数不能填nil或空字典。请注意：无效数据点无法触发结果事件的执行
  */
-+ (id _Nullable)jointActionRuleCondition:(GizWifiDevice * _Nonnull)device data:(NSDictionary * _Nonnull)data conditionOperator:(GizConditionOperator)conditionOperator;
++ (id _Nullable)jointActionRuleCondition:(GizWifiDevice * _Nonnull)device data:(NSDictionary <NSString *, id>* _Nonnull)data conditionOperator:(GizConditionOperator)conditionOperator;
 
 @end

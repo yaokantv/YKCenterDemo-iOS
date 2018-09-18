@@ -2,7 +2,7 @@
 //  GizWifiSSID.h
 //  GizWifiSDK
 //
-//  Created by GeHaitong on 15/7/9.
+//  Created by Tom on 15/7/9.
 //  Copyright (c) 2015年 gizwits. All rights reserved.
 //
 
@@ -21,13 +21,11 @@
 @property (strong, nonatomic, readonly) NSString * _Nullable ssid;
 
 /*
- @deprecated 此变量已废弃，不再提供支持。替代变量为 ssid
- */
-@property (strong, nonatomic, readonly) NSString * _Null_unspecified name DEPRECATED_ATTRIBUTE;
-
-/*
  热点对应的信号强度。取值范围 0-100
  */
 @property (assign, nonatomic, readonly) NSInteger rssi;
+
+/** @deprecated 此变量已废弃，不再提供支持。替代变量为 ssid */
+@property (strong, nonatomic, readonly) NSString * _Null_unspecified name DEPRECATED_MSG_ATTRIBUTE("Please use ssid instead") NS_SWIFT_UNAVAILABLE("");
 
 @end

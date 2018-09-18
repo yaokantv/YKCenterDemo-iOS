@@ -25,7 +25,7 @@
 
 /**
  场景项列表更新回调。编辑场景项、同步更新场景项、场景项列表变化上报使用该回调接口
- @param sceneID 触发回调的场景
+ @param scene 触发回调的场景
  @param result 详细见 GizWifiErrorCode 枚举定义。GIZ_SDK_SUCCESS 表示成功同时sceneItemList为最新的场景项列表；其他为失败并且sceneItemList大小为0
  @param sceneItemList 场景项列表，为GizDeviceSceneItem对象数组
  @see 触发函数 [GizDeviceScene editSceneItems:]
@@ -97,7 +97,7 @@
 
 /**
  启动或取消场景
- @param startup 启动或取消
+ @param sceneStartup 启动或取消
  @param sn 操作序号。如果App需要对应操作执行顺序，sn就要指定为一个正整数。如果App不关心操作执行顺序，sn填0
  @see 回调 [GizDeviceSceneDelegate scene:didExecuteScene:sn:]
  */

@@ -30,21 +30,23 @@
 @interface GizDeviceJointActionCenter : NSObject
 
 /**
- 联动列表Map。Key为设备对象即jointActionOwner，value为这个jointActionOwner设备上的联动列表。联动列表缓存了GizDeviceJointAction对象。使用时，要根据设备对象查找联动列表
- */
-@property (class, strong, nonatomic, readonly) NSMapTable<GizWifiDevice *, NSArray<GizDeviceJointAction *>*>* _Nullable jointActionListMap;
-
-/**
  GizDeviceJointActionCenterDelegate委托
  */
 @property (class, weak, nonatomic) id <GizDeviceJointActionCenterDelegate> _Nullable delegate;
 
 /**
+ * 获取中控设备下的设备联动列表，这个联动列表缓存了GizDeviceJointAction对象
+ * @param jointActionOwner 中控设备，此参数不能填nil
+ * @return 联动列表。参数为nil或无效设备时返回空数组
+ */
++ (NSArray <GizDeviceJointAction *>* _Nullable)getJointActionListGateway:(GizWifiDevice * _Nonnull)jointActionOwner;
+
+/**
  添加联动。添加成功后会被分配一个联动ID，此时会返回最新的联动列表，失败时返回错误信息
- @param jointActionOwner 联动的管理者，参见GizDeviceJointAction类中jointActionOwner变量的描述。此参数不能填nil
- @param jointActionName 联动名称。此参数为选填参数，如果不指定名称此参数填nil，App也可以在成功添加联动以后再修改名称
+ @param jointActionOwner 联动的管理者设备。此参数不能填nil
+ @param jointActionName 联动名称。此参数为选填参数，如果不指定名称此参数填nil，App可以在成功添加联动以后再修改名称
  @param enabled 是否开启联动。true为开启，false为关闭
- @param jointActionRule 联动规则，是GizDeviceJointActionRule对象。此参数为选填参数，如果不指定联动规则此参数填nil，App也可以在成功添加联动以后再添加联动规则
+ @param jointActionRule 联动规则，是GizDeviceJointActionRule对象。此参数不能填nil
  @see 回调 [GizDeviceJointActionCenterDelegate didUpdateJointActions:result:jointActionList:]
  */
 + (void)addJointAction:(GizWifiDevice * _Nonnull)jointActionOwner jointActionName:(NSString * _Nullable)jointActionName enabled:(BOOL)enabled jointActionRule:(GizDeviceJointActionRule * _Nullable)jointActionRule;

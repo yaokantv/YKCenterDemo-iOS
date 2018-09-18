@@ -99,6 +99,6 @@
  @param sn 操作序号。如果App需要对应操作执行顺序，sn就要指定为一个正整数。如果App不关心操作执行顺序，sn填0。负数默认按照0处理
  @see 回调 [GizDeviceGroup group:didWrite:sn:]
  */
-- (void)write:(NSDictionary * _Nonnull)data sn:(int)sn;
+- (void)write:(NSDictionary <NSString *, id>* _Nonnull)data sn:(int)sn;
 
 @end

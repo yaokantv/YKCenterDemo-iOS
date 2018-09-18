@@ -34,6 +34,18 @@
  */
 - (void)didUnbindUser:(NSError * _Nonnull)result deviceID:(NSString * _Nullable)deviceID guestUID:(NSString * _Nullable)guestUID;
 
+
+ /**
+  设备分享权限转移的回调
+
+  @param result 详细见 GizWifiErrorCode 枚举定义。GIZ_SDK_SUCCESS 表示成功，其他为失败
+  @param deviceID 要转移权限设备的ID
+  @param guestUID guest用户ID。owner把分享权限转移给guest用户
+  @see 触发函数：[GizDeviceSharing sharingOwnerTransfer:deviceID:guestUID:];
+  @see GizWifiErrorCode
+  */
+ - (void)didSharingOwnerTransfer:(NSError * _Nonnull)result deviceID:(NSString * _Nullable)deviceID guestUID:(NSString * _Nullable)guestUID;
+
 /*
  获取分享邀请列表的回调
  @param result 详细见 GizWifiErrorCode 枚举定义。GIZ_SDK_SUCCESS 表示成功，其他为失败
@@ -152,6 +164,16 @@
  @see 对应的回调接口：[GizDeviceSharingDelegate didUnbindUser:deviceID:guestUID:];
  */
 + (void)unbindUser:(NSString * _Nonnull)token deviceID:(NSString * _Nonnull)deviceID guestUID:(NSString * _Nonnull)guestUID;
+
+/**
+ * 设备分享权限转移。只有owner才能转移分享权限
+ *
+ * @param token 用户token
+ * @param deviceID 要转移权限的设备ID
+ * @param guestUID guest用户ID。owner把分享权限转移给guest用户
+ * @see 对应的回调接口：[GizDeviceSharingDelegate didSharingOwnerTransfer:did:guestUID:]
+ */
++ (void)sharingOwnerTransfer:(NSString * _Nonnull)token deviceID:(NSString * _Nonnull)deviceID guestUID:(NSString * _Nonnull)guestUID;
 
 /*
  查询设备的分享邀请列表。可以查询自己发起的分享邀请，或者查询分享给自己的分享邀请，owner和guest用户都可以查询

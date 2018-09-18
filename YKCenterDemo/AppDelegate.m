@@ -22,14 +22,16 @@ static NSString *const YK_APP_ID = @"";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
     // 方案1：使用遥控中心SDK进行初始化
     [YKCenterSDK disableSDKLog:NO];
     
+    // 可以放到APP里面任何一个地方初始化，根据你们需求而定
     [YKCenterSDK registApp:YK_APP_ID completion:^(NSError * _Nonnull error) {
         NSLog(@"YKCenterSDK 初始化结果：%@", error);
+        // 此回调成功后，再去使用SDK里面的功能，比如注册登录
     }];
-    
-    
     
     //  方案2：自己管理第三方平台的方式
 //    [YKCenterSDK registYKApp:YK_APP_ID];

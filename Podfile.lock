@@ -1,19 +1,23 @@
 PODS:
   - MBProgressHUD (1.0.0)
-  - YKCenterSDK (2.0.2030)
+  - YKCenterSDK (2.4.2038)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - YKCenterSDK (from `./`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MBProgressHUD
+
 EXTERNAL SOURCES:
   YKCenterSDK:
-    :path: ./
+    :path: "./"
 
 SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  YKCenterSDK: 81e00d487ee2c24f8ebe954b5715f968a3264a47
+  YKCenterSDK: 54f8042fb20ae727d288c4670130b519fdda41c8
 
 PODFILE CHECKSUM: cc5008fbf37101ef7130c02da83786d971d6cd0e
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
