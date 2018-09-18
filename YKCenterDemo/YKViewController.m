@@ -234,13 +234,17 @@
     
     cell.mac.text = dev.macAddress;
     
+    NSLog(@"mac = %@, did = %@, isBind = %ld, netStatus = %ld",
+          dev.macAddress, dev.did, dev.isBind, dev.netStatus);
+    
     if (dev.netStatus == GizDeviceOnline || dev.netStatus == GizDeviceControlled) {
         cell.imageView.backgroundColor = [UIColor brownColor];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.lan.text = dev.isLAN?NSLocalizedString(@"Lan", nil):NSLocalizedString(@"Remote", nil);
-        if (!dev.isSubscribed) {
+        if (!dev.isBind) {
             cell.lan.text = NSLocalizedString(@"unbound", nil);
-        } else if (dev.isSubscribed) {
+        }
+        if (dev.isSubscribed) {
             cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         }
     }
@@ -263,10 +267,11 @@
     
     GizWifiDevice *dev = self.deviceListArray[indexPath.row];
     __weak __typeof(self)weakSelf = self;
-    // 建议用方案1:
+    // 方案1:
 //    [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) {
-//        // 直接订阅会自动绑定
 //        if (device.isSubscribed) {
+//            NSLog(@"did = %@, isBind = %ld, netStatus = %ld",
+//                  device.did, device.isBind, device.netStatus);
 //            [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];
 //            [[YKCenterCommon sharedInstance] setCurrentDevice:dev];
 //            [weakSelf performSegueWithIdentifier:@"YKRemoteList" sender:nil];
@@ -277,7 +282,7 @@
     [YKCenterSDK bindDevice:dev completion:^(NSString * _Nonnull did) {
         // 绑定
         if (did) {
-            [dev setCustomInfo:@"遥控大师" alias:@"小苹果2"];
+//            [dev setCustomInfo:@"遥控大师" alias:@"小苹果2018"];
             [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) {
                 // 订阅
                 if (device.isSubscribed) {
@@ -303,7 +308,9 @@
         __weak __typeof(self)weakSelf = self;
         [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
         [YKCenterSDK unbindYKC:dev completion:^(NSError * _Nonnull error) {
-            [weakSelf refreshBtnPressed:nil];
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            [MBProgressHUD hideHUDForView:strongSelf.navigationController.view animated:YES];
+            [strongSelf refreshBtnPressed:nil];
         }];
     }
 }
