@@ -229,6 +229,7 @@
 		F620E2AF1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKOneKeyMatchRemoteController.m; sourceTree = "<group>"; };
 		F64FDDF61FBECDDE00350337 /* YKTrunkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTrunkViewController.h; sourceTree = "<group>"; };
 		F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTrunkViewController.m; sourceTree = "<group>"; };
+		F66CF9632193CE5D0058FE34 /* YKCenterDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YKCenterDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +349,7 @@
 		3F5A21AA1E27666F006BF365 /* YKCenterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F66CF9632193CE5D0058FE34 /* YKCenterDemo.entitlements */,
 				3FE818C21E715D4C002FD52F /* User */,
 				3FA2D81A1E2DE99C00551F8F /* Remote */,
 				3FA2D7F31E2C5EE800551F8F /* Config */,
@@ -696,6 +698,11 @@
 						DevelopmentTeam = HY8S4564M8;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 					3F5A21C01E27666F006BF365 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1291,6 +1298,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = YKCenterDemo/YKCenterDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1320,6 +1328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = YKCenterDemo/YKCenterDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
