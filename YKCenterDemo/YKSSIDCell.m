@@ -25,13 +25,21 @@
 }
 
 - (void)onTap {
-    NSURL *url = [NSURL URLWithString:@"prefs:root=WIFI"];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
-    } else {
-        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:@"请手动点击桌面的 '设置' 图标，然后选择 '无线局域网'。" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
-    }
+//    NSURL *url = [NSURL URLWithString:@"prefs:root=WIFI"];
+//    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+//        [[UIApplication sharedApplication] openURL:url];
+//    } else {
+//        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:@"请手动点击桌面的 '设置' 图标，然后选择 '无线局域网'。" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
+//    }
     
+    NSArray* urlStrings = @[@"prefs:root=WIFI", @"App-Prefs:root=WIFI"];
+    for(NSString* urlString in urlStrings){
+        NSURL* url = [NSURL URLWithString:urlString];
+        if([[UIApplication sharedApplication] canOpenURL:url]){
+            [[UIApplication sharedApplication] openURL:url];
+            break;
+        }
+    }
     [self setSelected:NO animated:NO];
 }
 

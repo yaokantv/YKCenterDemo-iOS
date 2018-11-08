@@ -1,18 +1,18 @@
 //
-//  YKConfigStartController.m
+//  YKConfigSoftAPCheckPwd.m
 //  YKCenterDemo
 //
 //  Created by Don on 2017/1/16.
 //  Copyright © 2017年 Shenzhen Yaokan Technology Co., Ltd. All rights reserved.
 //
 
-#import "YKConfigStartController.h"
+#import "YKConfigSoftAPCheckPwd.h"
 #import "YKSSIDCell.h"
 #import "YKPasswordCell.h"
 #import "YKCenterCommon.h"
+#import "YKConfigSoftAPStart.h"
 
-@interface YKConfigStartController () <UITableViewDataSource, UITableViewDelegate,
-UITextFieldDelegate, UIAlertViewDelegate>
+@interface YKConfigSoftAPCheckPwd () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -20,106 +20,56 @@ UITextFieldDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) YKPasswordCell *passwordCell;
 
 @property (assign, nonatomic) CGFloat top;
+@property (assign) BOOL isFirstRun;//检查密码有区分是第一次还是其他，第一次一定显示的是上次配置的ssid和密码
 
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 
 @end
 
-@implementation YKConfigStartController
+@implementation YKConfigSoftAPCheckPwd
 
-- (void)didEnterBackground {
-    [self.passwordCell.textPassword resignFirstResponder];
-}
-
-- (void)didBecomeActive {
-    if ([UIDevice currentDevice].systemVersion.floatValue < 8.0) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            usleep(500000);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.passwordCell.textPassword becomeFirstResponder];
-            });
-        });
+- (void)willEnterForeground {
+    NSString *ssid = @"";
+    
+    if (self.isFirstRun) {
+        self.isFirstRun = NO;
+        ssid = [YKCenterCommon sharedInstance].ssid;
     } else {
-        [self.passwordCell.textPassword becomeFirstResponder];
+        ssid = YKGetCurrentSSID();
     }
-    [self getCurrentConfig];
-}
-
-- (void)getCurrentConfig {
-    NSString *ssid = YKGetCurrentSSID();
+    
     self.ssidCell.textSSID.text = ssid;
     self.passwordCell.textPassword.text = [[YKCenterCommon sharedInstance] getPasswrodFromSSID:ssid];
-    
-    if (0 < self.passwordCell.textPassword.text.length) {
-        [self setShowText:NO];
-    } else {
-        [self setShowText:YES];
-    }
+    [self.passwordCell.textPassword becomeFirstResponder];
+    [self setShowText:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.tableView.scrollEnabled = NO;
     self.top = self.navigationController.navigationBar.translucent ? 0 : 64;
-    [self.navigationController.navigationBar setHidden:NO];
-    
-    if (0 == YKGetCurrentSSID().length) {
-        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"No open Wi-Fi", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
-    }
+    self.isFirstRun = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
     [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+
     [super viewWillDisappear:animated];
     [self onTap];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    
     [self.passwordCell.textPassword resignFirstResponder];
 }
 
-- (IBAction)cancelAction:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)softAPAction:(id)sender {
-    if (0 == self.passwordCell.textPassword.text.length) {
-        SHOW_ALERT_EMPTY_PASSWORD(self);
-    }
-    else {
-        [self onPushToSoftAPStart];
-    }
-}
-
-- (void)onPushToSoftAPStart {
-    YKCenterCommon *dataCommon = [YKCenterCommon sharedInstance];
-    [dataCommon saveSSID:self.ssidCell.textSSID.text
-                     key:self.passwordCell.textPassword.text];
-    dataCommon.ssid = self.ssidCell.textSSID.text;
-    UIStoryboard *softapFlow =[UIStoryboard storyboardWithName:@"SoftAP" bundle:nil];
-    UIViewController *startC = [softapFlow instantiateInitialViewController];
-    
-    //    UIViewController *softapStartCtrl = navCtrl.viewControllers.firstObject;
-    
-    [self.navigationController pushViewController:startC animated:YES];
-}
-
-#pragma mark - alert
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (1 == buttonIndex) {
-        if (ALERT_TAG_EMPTY_PASSWORD == alertView.tag) {
-            [self onPushToSoftAPStart];
-        }
-    }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - table view
@@ -154,7 +104,7 @@ UITextFieldDelegate, UIAlertViewDelegate>
                 [self.passwordCell.btnShowText addTarget:self action:@selector(onShowText) forControlEvents:UIControlEventTouchUpInside];
                 
                 //加载初始化的信息
-                [self getCurrentConfig];
+                [self willEnterForeground];
             }
             return self.passwordCell;
         default:
@@ -172,8 +122,10 @@ UITextFieldDelegate, UIAlertViewDelegate>
 
 #pragma mark - text field
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if ([[UIScreen mainScreen] bounds].size.height == 480) {
-        [self setViewY:-118];
+    if (textField == self.ssidCell.textSSID) {
+        [self setViewY:self.top];
+    } else {
+        [self setViewY:self.top];
     }
 }
 
@@ -187,15 +139,22 @@ UITextFieldDelegate, UIAlertViewDelegate>
     return NO;
 }
 
+#pragma mark - alert
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (1 == buttonIndex) {
+        [self onPushToSoftAPStart];
+    }
+}
 
 #pragma mark - view animation
 - (void)setViewY:(CGFloat)y {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationsEnabled:YES];
-    CGRect rc = self.view.frame;
-    rc.origin.y = y;
-    self.view.frame = rc;
-    [UIView commitAnimations];
+    //4s 可能出现问题，先屏蔽
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationsEnabled:YES];
+//    CGRect rc = self.view.frame;
+//    rc.origin.y = y;
+//    self.view.frame = rc;
+//    [UIView commitAnimations];
 }
 
 - (void)setShowText:(BOOL)isShow {
@@ -214,29 +173,46 @@ UITextFieldDelegate, UIAlertViewDelegate>
     [self setShowText:self.passwordCell.textPassword.secureTextEntry];
 }
 
-- (void)onPushToNextPage {
-    YKCenterCommon *dataCommon = [YKCenterCommon sharedInstance];
-    [dataCommon saveSSID:self.ssidCell.textSSID.text
-                     key:self.passwordCell.textPassword.text];
-    dataCommon.ssid = self.ssidCell.textSSID.text;
-    [self performSegueWithIdentifier:@"showConfig2" sender:nil];
-}
-
-- (IBAction)onNext:(id)sender {
-    if (0 == self.passwordCell.textPassword.text.length) {
-        // password is empty
-    } else {
-        [self onPushToNextPage];
-    }
-}
-
 - (IBAction)onTap {
     [self setViewY:self.top];
     [self.passwordCell.textPassword resignFirstResponder];
 }
 
-- (IBAction)onCancel:(id)sender {
-//    SHOW_ALERT_CANCEL_CONFIG(self);
+- (void)onPushToSoftAPStart {
+    if (self.navigationController.viewControllers.lastObject != self) {
+        return;
+    }
+    
+    NSMutableArray *mCtrls = [self.navigationController.viewControllers mutableCopy];
+    for (NSInteger i = mCtrls.count; i > 0; i--) {
+        UIViewController *viewController = mCtrls[i-1];
+        if ([viewController isMemberOfClass:[YKConfigSoftAPStart class]]) {
+            break;
+        }
+        [mCtrls removeObject:viewController];
+    }
+    
+    YKCenterCommon *dataCommon = [YKCenterCommon sharedInstance];
+    dataCommon.ssid = self.ssidCell.textSSID.text;
+    if (nil == dataCommon.ssid) {
+        dataCommon.ssid = @"";
+    }
+    
+    [dataCommon saveSSID:dataCommon.ssid key:self.passwordCell.textPassword.text];
+    
+    [self.navigationController setViewControllers:mCtrls animated:YES];
+}
+
+- (IBAction)onNext:(id)sender {
+    if (0 == self.passwordCell.textPassword.text.length) {
+        SHOW_ALERT_EMPTY_PASSWORD(self);
+    } else {
+        [self onPushToSoftAPStart];
+    }
+}
+
+- (IBAction)onBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

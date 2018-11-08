@@ -69,6 +69,14 @@
 		F620E2AD1FCD167C0090C082 /* YKLearnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F620E2AC1FCD167C0090C082 /* YKLearnTableViewController.m */; };
 		F620E2B01FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = F620E2AF1FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m */; };
 		F64FDDF81FBECDDE00350337 /* YKTrunkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */; };
+		F66CF9B72193D2590058FE34 /* SoftAP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66CF9A32193D13A0058FE34 /* SoftAP.storyboard */; };
+		F66CF9B82193D2820058FE34 /* YKConfigSoftAPCheckPwd.m in Sources */ = {isa = PBXBuildFile; fileRef = F66CF9A62193D13A0058FE34 /* YKConfigSoftAPCheckPwd.m */; };
+		F66CF9B92193D4590058FE34 /* YKConfigSoftAPStart.m in Sources */ = {isa = PBXBuildFile; fileRef = F66CF9AE2193D13A0058FE34 /* YKConfigSoftAPStart.m */; };
+		F66CF9BB2193D5C40058FE34 /* YKSoftAPDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = F66CF9B52193D13A0058FE34 /* YKSoftAPDetection.m */; };
+		F66CF9BC2193D5C70058FE34 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F66CF9B32193D13A0058FE34 /* Reachability.m */; };
+		F66CF9BD2193D6210058FE34 /* YKConfigSoftAPFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = F66CF9A82193D13A0058FE34 /* YKConfigSoftAPFailed.m */; };
+		F66CF9BE2193D6840058FE34 /* YKConfigSoftAPWaiting.m in Sources */ = {isa = PBXBuildFile; fileRef = F66CF9B02193D13A0058FE34 /* YKConfigSoftAPWaiting.m */; };
+		F66CF9C0219408C80058FE34 /* 04-softap-tips.gif in Resources */ = {isa = PBXBuildFile; fileRef = F66CF9BF219408C80058FE34 /* 04-softap-tips.gif */; };
 		F81597718802442D66D96326 /* Pods_YKCenterDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C7936EA2D1ED22FC85314 /* Pods_YKCenterDemoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +238,21 @@
 		F64FDDF61FBECDDE00350337 /* YKTrunkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTrunkViewController.h; sourceTree = "<group>"; };
 		F64FDDF71FBECDDE00350337 /* YKTrunkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTrunkViewController.m; sourceTree = "<group>"; };
 		F66CF9632193CE5D0058FE34 /* YKCenterDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YKCenterDemo.entitlements; sourceTree = "<group>"; };
+		F66CF9A42193D13A0058FE34 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/SoftAP.storyboard; sourceTree = "<group>"; };
+		F66CF9A52193D13A0058FE34 /* YKConfigSoftAPCheckPwd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKConfigSoftAPCheckPwd.h; sourceTree = "<group>"; };
+		F66CF9A62193D13A0058FE34 /* YKConfigSoftAPCheckPwd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKConfigSoftAPCheckPwd.m; sourceTree = "<group>"; };
+		F66CF9A82193D13A0058FE34 /* YKConfigSoftAPFailed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKConfigSoftAPFailed.m; sourceTree = "<group>"; };
+		F66CF9AD2193D13A0058FE34 /* YKConfigSoftAPStart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKConfigSoftAPStart.h; sourceTree = "<group>"; };
+		F66CF9AE2193D13A0058FE34 /* YKConfigSoftAPStart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKConfigSoftAPStart.m; sourceTree = "<group>"; };
+		F66CF9AF2193D13A0058FE34 /* YKConfigSoftAPWaiting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKConfigSoftAPWaiting.h; sourceTree = "<group>"; };
+		F66CF9B02193D13A0058FE34 /* YKConfigSoftAPWaiting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKConfigSoftAPWaiting.m; sourceTree = "<group>"; };
+		F66CF9B22193D13A0058FE34 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F66CF9B32193D13A0058FE34 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F66CF9B42193D13A0058FE34 /* YKSoftAPDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKSoftAPDetection.h; sourceTree = "<group>"; };
+		F66CF9B52193D13A0058FE34 /* YKSoftAPDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKSoftAPDetection.m; sourceTree = "<group>"; };
+		F66CF9B62193D13A0058FE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/SoftAP.storyboard"; sourceTree = "<group>"; };
+		F66CF9BF219408C80058FE34 /* 04-softap-tips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "04-softap-tips.gif"; sourceTree = "<group>"; };
+		F66CF9C2219441B60058FE34 /* YKConfigSoftAPFailed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKConfigSoftAPFailed.h; path = ../../../../../../../demo/GizWits/GokitDemo/GOpenSourceModules/ConfigModule/SoftAP/YKConfigSoftAPFailed.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +410,7 @@
 		3F5A21AB1E27666F006BF365 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F66CF9BF219408C80058FE34 /* 04-softap-tips.gif */,
 				3FA2D80C1E2C7D7D00551F8F /* 02-airlink.gif */,
 				3F5A21AC1E27666F006BF365 /* main.m */,
 			);
@@ -414,6 +438,7 @@
 		3FA2D7F31E2C5EE800551F8F /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				F66CF9A22193D13A0058FE34 /* SoftAP */,
 				3FA2D7E51E2C5CFA00551F8F /* Config.storyboard */,
 				3FA2D7E71E2C5EE200551F8F /* YKConfigStartController.h */,
 				3FA2D7E81E2C5EE200551F8F /* YKConfigStartController.m */,
@@ -547,6 +572,34 @@
 				C9F73659886A02EA84FFEB71 /* Pods_YKCenterSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F66CF9A22193D13A0058FE34 /* SoftAP */ = {
+			isa = PBXGroup;
+			children = (
+				F66CF9A32193D13A0058FE34 /* SoftAP.storyboard */,
+				F66CF9AD2193D13A0058FE34 /* YKConfigSoftAPStart.h */,
+				F66CF9AE2193D13A0058FE34 /* YKConfigSoftAPStart.m */,
+				F66CF9A52193D13A0058FE34 /* YKConfigSoftAPCheckPwd.h */,
+				F66CF9A62193D13A0058FE34 /* YKConfigSoftAPCheckPwd.m */,
+				F66CF9C2219441B60058FE34 /* YKConfigSoftAPFailed.h */,
+				F66CF9A82193D13A0058FE34 /* YKConfigSoftAPFailed.m */,
+				F66CF9AF2193D13A0058FE34 /* YKConfigSoftAPWaiting.h */,
+				F66CF9B02193D13A0058FE34 /* YKConfigSoftAPWaiting.m */,
+				F66CF9B12193D13A0058FE34 /* NetworkDetection */,
+			);
+			path = SoftAP;
+			sourceTree = "<group>";
+		};
+		F66CF9B12193D13A0058FE34 /* NetworkDetection */ = {
+			isa = PBXGroup;
+			children = (
+				F66CF9B22193D13A0058FE34 /* Reachability.h */,
+				F66CF9B32193D13A0058FE34 /* Reachability.m */,
+				F66CF9B42193D13A0058FE34 /* YKSoftAPDetection.h */,
+				F66CF9B52193D13A0058FE34 /* YKSoftAPDetection.m */,
+			);
+			path = NetworkDetection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,6 +776,7 @@
 			knownRegions = (
 				Base,
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 3F5A219F1E27666F006BF365;
 			productRefGroup = 3F5A21A91E27666F006BF365 /* Products */;
@@ -777,12 +831,14 @@
 				3FA2D80D1E2C7D7D00551F8F /* 02-airlink.gif in Resources */,
 				3F5A21F71E277483006BF365 /* YKDeviceListCell.xib in Resources */,
 				3FE818CC1E723A16002FD52F /* YKTextCell.xib in Resources */,
+				F66CF9C0219408C80058FE34 /* 04-softap-tips.gif in Resources */,
 				3FA2D7E61E2C5CFA00551F8F /* Config.storyboard in Resources */,
 				3F5A21B81E27666F006BF365 /* Assets.xcassets in Resources */,
 				3FA2D8091E2C68B400551F8F /* unchecked@2x.png in Resources */,
 				3F5A21B61E27666F006BF365 /* Main.storyboard in Resources */,
 				3FE818C41E715E33002FD52F /* User.storyboard in Resources */,
 				3FF3D8F81F5F8C1100A7110C /* YKPhoneCell.xib in Resources */,
+				F66CF9B72193D2590058FE34 /* SoftAP.storyboard in Resources */,
 				3FA2D7F81E2C5FAA00551F8F /* YKSSIDCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -954,13 +1010,16 @@
 			files = (
 				3FE818C71E7160E0002FD52F /* YKLoginViewController.m in Sources */,
 				3FA2D8801E2F71AD00551F8F /* YKRemoteTableViewController.m in Sources */,
+				F66CF9BE2193D6840058FE34 /* YKConfigSoftAPWaiting.m in Sources */,
 				3FA2D80B1E2C691D00551F8F /* YKConfigTipsController.m in Sources */,
 				3FA2D8301E2E184100551F8F /* YKMatchDeviceTableViewController.m in Sources */,
 				3FEC71061F0357D10018F46C /* YKRemoteACViewController.m in Sources */,
 				3F5A21F61E277483006BF365 /* YKDeviceListCell.m in Sources */,
+				F66CF9BC2193D5C70058FE34 /* Reachability.m in Sources */,
 				F620E2B01FCFAABF0090C082 /* YKOneKeyMatchRemoteController.m in Sources */,
 				3FA2D8131E2C7DB000551F8F /* UIImageView+PlayGIF.m in Sources */,
 				3FA2D8151E2C7EA800551F8F /* YKConfigWaitingController.m in Sources */,
+				F66CF9BB2193D5C40058FE34 /* YKSoftAPDetection.m in Sources */,
 				3FA2D8831E305BEE00551F8F /* YKRemoteViewController.m in Sources */,
 				3FA2D81F1E2DF96D00551F8F /* YKDeviceTypeViewController.m in Sources */,
 				3F52B1211FA07CBA00EA05F7 /* YKOneKeyMatchViewController.m in Sources */,
@@ -968,8 +1027,10 @@
 				3F5A21B31E27666F006BF365 /* YKViewController.m in Sources */,
 				3F5A21B01E27666F006BF365 /* AppDelegate.m in Sources */,
 				F620E2AD1FCD167C0090C082 /* YKLearnTableViewController.m in Sources */,
+				F66CF9B82193D2820058FE34 /* YKConfigSoftAPCheckPwd.m in Sources */,
 				3FF3D8EC1F5F894F00A7110C /* YKForgetViewController.m in Sources */,
 				3FE818CF1E7249CF002FD52F /* YKRegisterViewController.m in Sources */,
+				F66CF9B92193D4590058FE34 /* YKConfigSoftAPStart.m in Sources */,
 				3FE818CA1E723994002FD52F /* YKTextCell.m in Sources */,
 				3FA2D8191E2C7F3B00551F8F /* UAProgressView.m in Sources */,
 				3FA2D8261E2E0DE900551F8F /* YKBrandTableViewController.m in Sources */,
@@ -978,6 +1039,7 @@
 				3FA2D80A1E2C68B400551F8F /* RadioButton.m in Sources */,
 				3FA2D7FC1E2C5FB500551F8F /* YKPasswordCell.m in Sources */,
 				3FA2D7F71E2C5FAA00551F8F /* YKSSIDCell.m in Sources */,
+				F66CF9BD2193D6210058FE34 /* YKConfigSoftAPFailed.m in Sources */,
 				3FA2D8331E2E186400551F8F /* YKMatchKeyTableViewController.m in Sources */,
 				3FA2D8141E2C7DB000551F8F /* YFGIFImageView.m in Sources */,
 				3FA2D7EF1E2C5EE200551F8F /* YKConfigStartController.m in Sources */,
@@ -1076,6 +1138,15 @@
 				3F1382F91F55776500D5FD0A /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F66CF9A32193D13A0058FE34 /* SoftAP.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F66CF9A42193D13A0058FE34 /* en */,
+				F66CF9B62193D13A0058FE34 /* zh-Hans */,
+			);
+			name = SoftAP.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

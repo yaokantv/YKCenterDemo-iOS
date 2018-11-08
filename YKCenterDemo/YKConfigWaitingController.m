@@ -178,11 +178,6 @@
     [self onConfigFailed];
 }
 
-static inline void SHOW_ALERT_CANCEL_CONFIG(id delegate) {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"Discard your configuration?", nil) delegate:delegate cancelButtonTitle:NSLocalizedString(@"NO", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
-    [alertView show];
-}
-
 - (IBAction)onCancel:(id)sender {
     SHOW_ALERT_CANCEL_CONFIG(self);
 

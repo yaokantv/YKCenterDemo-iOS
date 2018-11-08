@@ -70,6 +70,9 @@ FOUNDATION_EXPORT const unsigned char YKCenterSDKVersionString[];
                password:(nullable NSString *)password
              completion:(void (^__nullable)(NSError * _Nullable error, GizWifiDevice * _Nullable  device))completion;
 
++ (void)configSoftAPWithSSID:(NSString *)ssid
+                    password:(nullable NSString *)password
+                  completion:(void (^__nullable)(NSError * _Nullable error, NSString * _Nullable  deviceMac))completion;
 
 
 /**

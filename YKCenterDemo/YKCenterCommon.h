@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
+
+#define SSID_PREFIX     @"XPG-GAgent"
+
 @class GizWifiDevice;
 
 /**
@@ -52,6 +55,21 @@ static inline NSString *YKGetCurrentSSID() {
     return @"";
 }
 
+#define ALERT_TAG_CANCEL_CONFIG     1001
+#define ALERT_TAG_EMPTY_PASSWORD    1002
+
+static inline void SHOW_ALERT_EMPTY_PASSWORD(id delegate) {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"Password is empty?", nil) delegate:delegate cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+    alertView.tag = ALERT_TAG_EMPTY_PASSWORD;
+    [alertView show];
+}
+
+static inline void SHOW_ALERT_CANCEL_CONFIG(id delegate) {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"Discard your configuration?", nil) delegate:delegate cancelButtonTitle:NSLocalizedString(@"NO", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+    alertView.tag = ALERT_TAG_CANCEL_CONFIG;
+    [alertView show];
+}
+
 static inline void SHOW_ALERT_CANCEL(NSString *message, id delegate) {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil)
                                                         message:message
@@ -72,6 +90,8 @@ id YKGetControllerWithClass(Class class, UITableView *tableView, NSString *reuse
 @property (nonatomic, copy) NSString *uid;
 @property (nonatomic, copy) NSString *token;
 
+@property (nonatomic, strong) UIAlertView *cancelAlertView;
+
 + (instancetype)sharedInstance;
 
 - (id)init NS_UNAVAILABLE;
@@ -84,5 +104,8 @@ id YKGetControllerWithClass(Class class, UITableView *tableView, NSString *reuse
 - (void)saveUserDefaults:(NSString *)username password:(NSString *)password uid:(NSString *)uid token:(NSString *)token;
 - (void)removeUserDefaults;
 + (BOOL)isMobileNumber:(NSString *)mobileNum;
+
+- (void)showAlertCancelConfig:(id)delegate;
+- (void)cancelAlertViewDismiss;
 
 @end

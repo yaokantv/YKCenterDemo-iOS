@@ -245,5 +245,14 @@ static YKCenterCommon *instance = nil;
         }
 }
 
+- (void)showAlertCancelConfig:(id)delegate {
+    self.cancelAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"tip", nil) message:NSLocalizedString(@"Discard your configuration?", nil) delegate:delegate cancelButtonTitle:NSLocalizedString(@"NO", nil) otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
+    [self.cancelAlertView show];
+}
+
+- (void)cancelAlertViewDismiss {
+    [self.cancelAlertView dismissWithClickedButtonIndex:self.cancelAlertView.cancelButtonIndex animated:YES];
+}
+
 
 @end

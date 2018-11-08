@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,7 +48,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: Does't support 5G channel Wifi network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnU-Be-P4c">
-                                <rect key="frame" x="38" y="638" width="300" height="21"/>
+                                <rect key="frame" x="37.5" y="638" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="gmi-fc-nbT"/>
                                     <constraint firstAttribute="height" constant="21" id="qL3-pB-FDc"/>
@@ -100,7 +99,18 @@
                             <outletCollection property="gestureRecognizers" destination="aet-Gu-vQi" appends="YES" id="F3b-Ob-KoJ"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Device" id="uhv-4M-VYR"/>
+                    <navigationItem key="navigationItem" title="Add Device" id="uhv-4M-VYR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JeN-zv-DGJ">
+                            <connections>
+                                <action selector="cancelAction:" destination="3Hh-lo-0O0" id="fRd-6F-pMk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="SoftAP" id="xDx-1o-cIq">
+                            <connections>
+                                <action selector="softAPAction:" destination="3Hh-lo-0O0" id="DtW-8c-UXS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="nextBtn" destination="bc8-ND-yDl" id="3fx-I4-M1Q"/>
@@ -166,7 +176,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg9-jK-2ml" customClass="RadioButton">
-                                <rect key="frame" x="73" y="568" width="230" height="27"/>
+                                <rect key="frame" x="72.5" y="568" width="230" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="KqE-8h-n4l"/>
                                     <constraint firstAttribute="width" constant="230" id="wp6-E6-Zt9"/>
@@ -220,7 +230,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计还需1000s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWz-90-V5n">
-                                <rect key="frame" x="140" y="343" width="96" height="21"/>
+                                <rect key="frame" x="139.5" y="343" width="96" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="h5U-jY-0y6"/>
                                     <constraint firstAttribute="height" constant="21" id="tAw-cM-DX8"/>
@@ -230,7 +240,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for and connect the device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm6-jc-41w">
-                                <rect key="frame" x="38" y="314" width="300" height="21"/>
+                                <rect key="frame" x="37.5" y="314" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3Bo-xp-o4u"/>
                                     <constraint firstAttribute="width" constant="300" id="D0v-OG-r6r"/>
@@ -240,7 +250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP3-Xt-UkP" customClass="UAProgressView">
-                                <rect key="frame" x="98" y="112" width="180" height="180"/>
+                                <rect key="frame" x="97.5" y="112" width="180" height="180"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="MJa-Lr-28A"/>
