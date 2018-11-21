@@ -252,7 +252,7 @@
 		F66CF9B52193D13A0058FE34 /* YKSoftAPDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKSoftAPDetection.m; sourceTree = "<group>"; };
 		F66CF9B62193D13A0058FE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/SoftAP.storyboard"; sourceTree = "<group>"; };
 		F66CF9BF219408C80058FE34 /* 04-softap-tips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "04-softap-tips.gif"; sourceTree = "<group>"; };
-		F66CF9C2219441B60058FE34 /* YKConfigSoftAPFailed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKConfigSoftAPFailed.h; path = ../../../../../../../demo/GizWits/GokitDemo/GOpenSourceModules/ConfigModule/SoftAP/YKConfigSoftAPFailed.h; sourceTree = "<group>"; };
+		F6EC1A9321A5512C00F81318 /* YKConfigSoftAPFailed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKConfigSoftAPFailed.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,7 +582,7 @@
 				F66CF9AE2193D13A0058FE34 /* YKConfigSoftAPStart.m */,
 				F66CF9A52193D13A0058FE34 /* YKConfigSoftAPCheckPwd.h */,
 				F66CF9A62193D13A0058FE34 /* YKConfigSoftAPCheckPwd.m */,
-				F66CF9C2219441B60058FE34 /* YKConfigSoftAPFailed.h */,
+				F6EC1A9321A5512C00F81318 /* YKConfigSoftAPFailed.h */,
 				F66CF9A82193D13A0058FE34 /* YKConfigSoftAPFailed.m */,
 				F66CF9AF2193D13A0058FE34 /* YKConfigSoftAPWaiting.h */,
 				F66CF9B02193D13A0058FE34 /* YKConfigSoftAPWaiting.m */,

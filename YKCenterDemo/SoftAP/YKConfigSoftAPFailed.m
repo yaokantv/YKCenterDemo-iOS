@@ -1,5 +1,5 @@
 //
-//  GizConfigSoftAPFailed.m
+//  YKConfigSoftAPFailed.m
 //  YKCenterDemo
 //
 //  Created by Don on 2017/1/16.
