@@ -857,7 +857,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${PODS_ROOT}/../YKCenterSDK/YKCenterSDK.framework",
 				"${PODS_ROOT}/../YKCenterSDK/GizWifiSDK.framework",
@@ -870,7 +870,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YKCenterDemo/Pods-YKCenterDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2AAF2853A8FE4901582AEC4 /* [CP] Check Pods Manifest.lock */ = {
@@ -897,7 +897,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift-frameworks.sh",
 				"${PODS_ROOT}/../YKCenterSDK/YKCenterSDK.framework",
 				"${PODS_ROOT}/../YKCenterSDK/GizWifiSDK.framework",
 			);
@@ -908,7 +908,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YKCenterSwift/Pods-YKCenterSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
