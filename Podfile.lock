@@ -1,5 +1,5 @@
 PODS:
-  - GizWifiSDK (2.06.06.12012)
+  - GizWifiSDK (2.12.12.01600)
   - MBProgressHUD (1.0.0)
   - YKCenterSDK (0.2):
     - GizWifiSDK
@@ -8,15 +8,21 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - YKCenterSDK (from `YKCenterSDK/`)
 
+SPEC REPOS:
+  https://git.oschina.net/dantang/PodSpecs.git:
+    - GizWifiSDK
+  https://github.com/cocoapods/specs.git:
+    - MBProgressHUD
+
 EXTERNAL SOURCES:
   YKCenterSDK:
     :path: YKCenterSDK/
 
 SPEC CHECKSUMS:
-  GizWifiSDK: b2e7b592ee24324ab36b6201a61e5d057400b639
+  GizWifiSDK: 5a310b8c9f56c6821c577539c8c95147efb1d533
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   YKCenterSDK: 51c6bf6739ed05248f8d27c1ec44c2c0bd713e3d
 
 PODFILE CHECKSUM: 48649c2d5c7552223a4a4829eabcc4d754ec5bce
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.6.0
