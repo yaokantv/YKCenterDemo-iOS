@@ -101,7 +101,7 @@
                             {
                                 __weak __typeof(weakSelf)strongSelf = weakSelf;
                                 NSDictionary *dict = [strongSelf.remote toJsonObject];
-                                [strongSelf showAlert:dict.description];
+                                [strongSelf showJson:dict];
                             }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
@@ -116,14 +116,25 @@
     [self presentViewController:ac animated:YES completion:nil];
 }
 
-- (void)showAlert:(NSString *)message{
+- (void)showJson:(NSDictionary *)dict{
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Json"
-                                                               message:message
+                                                               message:dict.description
                                                         preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"关闭"
                                                      style:(UIAlertActionStyleCancel)
                                                    handler:nil];
+    
+    UIAlertAction *import = [UIAlertAction actionWithTitle:@"导入"
+                                                   style:(UIAlertActionStyleDefault)
+                                                 handler:^(UIAlertAction * _Nonnull action)
+                           {
+
+                               [YKRemoteDevice saveRemoteDeviceWithDictionary:dict];
+                               
+                           }];
+    
     [ac addAction:cancel];
+    [ac addAction:import];
     [self presentViewController:ac animated:YES completion:nil];
 }
 
