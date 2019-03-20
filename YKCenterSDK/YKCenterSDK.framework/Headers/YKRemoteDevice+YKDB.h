@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (YKRemoteDevice *)newModel;
 + (YKRemoteDevice *)newMemoryModel;
 
+
+/**
+ 导出遥控器为json格式
+
+ @return 字典类型
+ */
+- (NSDictionary *)toJsonObject;
+
 @end
 
 NS_ASSUME_NONNULL_END
