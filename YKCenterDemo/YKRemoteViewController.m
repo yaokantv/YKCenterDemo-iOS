@@ -75,6 +75,58 @@
                           }];
 }
 
+
+- (IBAction)showActions:(id)sender {
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"请选择"
+                                                                message:nil
+                                                         preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    UIAlertAction *learn = [UIAlertAction actionWithTitle:@"学码"
+                                                      style:(UIAlertActionStyleDefault)
+                                                    handler:^(UIAlertAction * _Nonnull action)
+                              {
+                                  [self learnCode:nil];
+                              }];
+    
+    UIAlertAction *test = [UIAlertAction actionWithTitle:@"测试"
+                                                      style:(UIAlertActionStyleDefault)
+                                                    handler:^(UIAlertAction * _Nonnull action)
+                              {
+                                   [self sendLearnCode:nil];
+                              }];
+    __weak __typeof(self)weakSelf = self;
+    UIAlertAction *exportJson = [UIAlertAction actionWithTitle:@"导出json"
+                                                    style:(UIAlertActionStyleDefault)
+                                                  handler:^(UIAlertAction * _Nonnull action)
+                            {
+                                __weak __typeof(weakSelf)strongSelf = weakSelf;
+                                NSDictionary *dict = [strongSelf.remote toJsonObject];
+                                [strongSelf showAlert:dict.description];
+                            }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                     style:(UIAlertActionStyleCancel)
+                                                   handler:nil];
+    
+    [ac addAction:learn];
+    [ac addAction:test];
+    [ac addAction:exportJson];
+    [ac addAction:cancel];
+    
+    [self presentViewController:ac animated:YES completion:nil];
+}
+
+- (void)showAlert:(NSString *)message{
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Json"
+                                                               message:message
+                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"关闭"
+                                                     style:(UIAlertActionStyleCancel)
+                                                   handler:nil];
+    [ac addAction:cancel];
+    [self presentViewController:ac animated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.remote.keys.count;
