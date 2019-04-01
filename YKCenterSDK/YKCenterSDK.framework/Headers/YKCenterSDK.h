@@ -204,7 +204,7 @@ __attribute__((deprecated("no available anymore")));
  @param completion 发码结果回调
  */
 + (void)sendRemoteWithYKCId:(NSString *)ykcId
-                      datas:(NSArray *)datas
+                      datas:(NSArray<YKRemoteMatchDeviceKey *> *)datas
         completion:(void (^__nullable)(BOOL result, NSError *error))completion;
 
 /**
@@ -232,7 +232,7 @@ __attribute__((deprecated("no available anymore")));
  @param completion 发码结果回调
  */
 + (void)sendRemoteWithYKC:(id)ykcDevice
-                    datas:(NSArray *)datas
+                    datas:(NSArray<YKRemoteMatchDeviceKey *> *)datas
                completion:(void (^__nullable)(BOOL result, NSError *error))completion;
 
 

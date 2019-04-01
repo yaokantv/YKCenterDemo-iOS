@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YKCenterSDK"
-  s.version      = "2.12.2053"
+  s.version      = "2.13.2054"
   s.summary      = "YKCenterSDK makes your app control your home."
 
   # This description is used to generate tags and improve search results.
