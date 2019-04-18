@@ -51,7 +51,7 @@
                                                             forIndexPath:indexPath];
     YKRemoteMatchDevice *match = self.matchList[indexPath.row];
     cell.textLabel.text = match.name;
-    cell.detailTextLabel.text = match.rmodel;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@-%@",match.rmodel,match.rid];
     
     return cell;
 }
