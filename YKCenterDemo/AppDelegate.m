@@ -33,6 +33,10 @@ static NSString *const YK_APP_ID = @"";
         // 此回调成功后，再去使用SDK里面的功能，比如注册登录
     }];
     
+    NSLog([YKCenterSDK sdkVersion]);
+    NSLog([GizWifiSDK getVersion]);
+    
+    
     //  方案2：自己管理第三方平台的方式
 //    [YKCenterSDK registYKApp:YK_APP_ID];
 //    [GizWifiSDK setLogLevel:GizLogPrintNone];

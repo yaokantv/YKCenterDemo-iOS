@@ -194,8 +194,11 @@ extern NSString * _Null_unspecified XPGWifiDeviceHardwareProductKey DEPRECATED_M
 @property (strong, nonatomic, readonly) NSString * _Nullable deviceModuleFirmwareVer;
 @property (strong, nonatomic, readonly) NSString * _Nullable deviceMcuFirmwareVer;
 @property (strong, nonatomic, readonly) NSString * _Nullable productUI;
+@property (strong, nonatomic, readonly) NSString * _Nullable productKeyAdapter;
 @property (strong, nonatomic, readonly) NSString * _Nullable productAdapterUI;
 @property (weak, nonatomic, readonly) GizWifiDevice * _Nullable rootDevice;
+
+
 /**
  GizWifiDeviceNetType类型。设备网络类型
  */

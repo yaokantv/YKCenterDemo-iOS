@@ -330,6 +330,33 @@ typedef NS_ENUM(NSInteger, GizWifiErrorCode) {
     /** 设备mac长度无效 */
     GIZ_SDK_DEVICE_MAC_LENGTH_INVALID = 8258,
     
+    /** 蓝牙设备连接失败 */
+    GIZ_SDK_BLE_DEVICE_CONNECT_FAILED = 8280,
+    /** 蓝牙功能没打开 */
+    GIZ_SDK_BLE_BLUETOOTH_FUNCTION_NOT_TURNED_ON = 8281,
+    /** 服务角色特征值不能为空 */
+    GIZ_SDK_BLE_PARAM_UUID_INFO_REQUIRED = 8282,
+    /** 通信密钥LTK不能为空 */
+    GIZ_SDK_BLE_PARAM_LTK_REQUIRED = 8283,
+    /** 没有找到蓝牙设备对应的外设 */
+    GIZ_SDK_BLE_UNFIND_DEVICE_PERIPHERAL = 8284,
+    /** 登录蓝牙设备失败 */
+    GIZ_SDK_BLE_LOGIN_FAILED = 8285,
+    /** 搜索蓝牙设备操作已经停止 */
+    GIZ_SDK_BLE_SEARCH_DEVICE_STOPED = 8286,
+    /** 查找不到设备的服务和角色特征值 */
+    GIZ_SDK_BLE_CANNOT_FIND_DEVICE_SERVER_OR_CHARACTERISTICS = 8287,
+    /** 当前用户的组网名称或密码不能为空 */
+    GIZ_SDK_BLE_MESHNAME_AND_PASSWORD_CANNOT_BE_EMPTY = 8288,
+    /** 添加分组失败 */
+    GIZ_SDK_BLE_ADD_DEVICE_TO_GROUND_FAILED = 8289,
+    /** 当前有设备正在做切网，分组或者恢复出厂设置，不能同时再进行相关操作 */
+    GIZ_SDK_BLE_HAS_CONFLICT_OPERATION_IS_ONGOING = 8290,
+    /** 当前用户的组网名称或密码无效 */
+    GIZ_SDK_BLE_CURRENT_USER_MESHNAME_OR_PASSWORD_INVALID = 8291,
+    /** 设备处于断开连接状态 */
+    GIZ_SDK_BLE_DEVICE_IS_DISCONNECTED = 8292,
+    
     /** SDK 未初始化 */
     GIZ_SDK_NOT_INITIALIZED = 8300,
     /** daemon程序执行失败 */
@@ -583,6 +610,8 @@ typedef NS_ENUM(NSInteger, GizWifiConfigureMode) {
     GizWifiSoftAP = 0,
     /** AirLink配置模式 */
     GizWifiAirLink = 1,
+    /** 支持多设备进行AirLink配置 */
+    GizWifiAirLinkMulti = 2
 };
 
 /**
@@ -615,7 +644,10 @@ typedef NS_ENUM(NSInteger, GizWifiGAgentType) {
     GizGAgentOther = 11,
     /** 芯海模组 */
     GizGAgentFlyLink = 12,
+    /** 亚马逊模组 */
     GizGAgentMxchipAWS = 13,
+    /** 汉枫v8模组 */
+    GizGAgentHFV8 = 14,
 };
 
 /**
@@ -727,6 +759,8 @@ typedef NS_ENUM(NSInteger, GizPushType) {
     GizPushJiGuang = 1,
     /** 亚马逊推送 */
     GizPushAWS = 2,
+    /** 信鸽推送 */
+    GizPushXinGe = 3
 };
 
 /**
@@ -941,6 +975,23 @@ typedef NS_ENUM(NSInteger, GizOTAFirmwareType) {
     GizOTAFirmareModule = 0,
     /** 设备mcu固件 */
     GizOTAFirmareMcu = 1,
+};
+
+/**
+ @brief 产品适配类型
+ */
+typedef NS_ENUM(NSInteger, GizAdapterType) {
+    GizAdapterNon = 0,
+    GizAdapterDataPointMap = 1,
+    GizAdapterDataPointFunc = 2
+};
+
+/**
+ @brief mesh设备厂商
+ */
+typedef NS_ENUM(NSInteger, GizMeshVerdor) {
+    GizMeshTelink = 0, //泰凌微
+    GizMeshMayi = 1   //蚂蚁
 };
 
 /** @deprecated 此枚举定义已废弃，不再提供支持。请使用替代定义：GizWifiErrorCode */
